@@ -1,0 +1,205 @@
+From 5d6addb9d8b7e66cb06730edaf64d7e004406800 Mon Sep 17 00:00:00 2001
+From: Eric Davis <edavis@littlestreamsoftware.com>
+Date: Mon, 28 Dec 2009 14:42:38 -0800
+Subject: [PATCH] Allow issues to be assigned to a Group.  (#2964)
+
+---
+ app/controllers/issues_controller.rb      |    2 +-
+ app/helpers/issues_helper.rb              |    4 ++--
+ app/models/group.rb                       |    2 ++
+ app/models/issue.rb                       |    8 ++++++--
+ app/models/project.rb                     |    2 +-
+ test/exemplars/group_exemplar.rb          |    9 +++++++++
+ test/functional/issues_controller_test.rb |   29 ++++++++++++++++++++++++++---
+ test/unit/issue_test.rb                   |   12 ++++++++++++
+ 8 files changed, 59 insertions(+), 9 deletions(-)
+ create mode 100644 test/exemplars/group_exemplar.rb
+
+diff --git a/app/controllers/issues_controller.rb b/app/controllers/issues_controller.rb
+index 336f63b..2c3e08a 100644
+--- a/app/controllers/issues_controller.rb
++++ b/app/controllers/issues_controller.rb
+@@ -237,7 +237,7 @@ class IssuesController < ApplicationController
+       tracker = params[:tracker_id].blank? ? nil : @project.trackers.find_by_id(params[:tracker_id])
+       status = params[:status_id].blank? ? nil : IssueStatus.find_by_id(params[:status_id])
+       priority = params[:priority_id].blank? ? nil : IssuePriority.find_by_id(params[:priority_id])
+-      assigned_to = (params[:assigned_to_id].blank? || params[:assigned_to_id] == 'none') ? nil : User.find_by_id(params[:assigned_to_id])
++      assigned_to = (params[:assigned_to_id].blank? || params[:assigned_to_id] == 'none') ? nil : Principal.find_by_id(params[:assigned_to_id])
+       category = (params[:category_id].blank? || params[:category_id] == 'none') ? nil : @project.issue_categories.find_by_id(params[:category_id])
+       fixed_version = (params[:fixed_version_id].blank? || params[:fixed_version_id] == 'none') ? nil : @project.versions.find_by_id(params[:fixed_version_id])
+       custom_field_values = params[:custom_field_values] ? params[:custom_field_values].reject {|k,v| v.blank?} : nil
+diff --git a/app/helpers/issues_helper.rb b/app/helpers/issues_helper.rb
+index 0f28cc0..7c8d5e5 100644
+--- a/app/helpers/issues_helper.rb
++++ b/app/helpers/issues_helper.rb
+@@ -82,8 +82,8 @@ module IssuesHelper
+         t = Tracker.find_by_id(detail.value) and value = t.name if detail.value
+         t = Tracker.find_by_id(detail.old_value) and old_value = t.name if detail.old_value
+       when 'assigned_to_id'
+-        u = User.find_by_id(detail.value) and value = u.name if detail.value
+-        u = User.find_by_id(detail.old_value) and old_value = u.name if detail.old_value
++        u = Principal.find_by_id(detail.value) and value = u.name if detail.value
++        u = Principal.find_by_id(detail.old_value) and old_value = u.name if detail.old_value
+       when 'priority_id'
+         e = IssuePriority.find_by_id(detail.value) and value = e.name if detail.value
+         e = IssuePriority.find_by_id(detail.old_value) and old_value = e.name if detail.old_value
+diff --git a/app/models/group.rb b/app/models/group.rb
+index 80e096b..8ba78af 100644
+--- a/app/models/group.rb
++++ b/app/models/group.rb
+@@ -28,6 +28,8 @@ class Group < Principal
+   def to_s
+     lastname.to_s
+   end
++
++  alias :name :to_s
+   
+   def user_added(user)
+     members.each do |member|
+diff --git a/app/models/issue.rb b/app/models/issue.rb
+index 1facf2a..45d8d23 100644
+--- a/app/models/issue.rb
++++ b/app/models/issue.rb
+@@ -20,7 +20,7 @@ class Issue < ActiveRecord::Base
+   belongs_to :tracker
+   belongs_to :status, :class_name => 'IssueStatus', :foreign_key => 'status_id'
+   belongs_to :author, :class_name => 'User', :foreign_key => 'author_id'
+-  belongs_to :assigned_to, :class_name => 'User', :foreign_key => 'assigned_to_id'
++  belongs_to :assigned_to, :class_name => 'Principal', :foreign_key => 'assigned_to_id'
+   belongs_to :fixed_version, :class_name => 'Version', :foreign_key => 'fixed_version_id'
+   belongs_to :priority, :class_name => 'IssuePriority', :foreign_key => 'priority_id'
+   belongs_to :category, :class_name => 'IssueCategory', :foreign_key => 'category_id'
+@@ -255,7 +255,11 @@ class Issue < ActiveRecord::Base
+     notified = project.notified_users
+     # Author and assignee are always notified unless they have been locked
+     notified << author if author && author.active?
+-    notified << assigned_to if assigned_to && assigned_to.active?
++    if assigned_to.is_a? Group
++      notified += assigned_to.users
++    else
++      notified << assigned_to if assigned_to && assigned_to.active?
++    end
+     notified.uniq!
+     # Remove users that can not view the issue
+     notified.reject! {|user| !visible?(user)}
+diff --git a/app/models/project.rb b/app/models/project.rb
+index 5cc8ab9..1a64a5c 100644
+--- a/app/models/project.rb
++++ b/app/models/project.rb
+@@ -344,7 +344,7 @@ class Project < ActiveRecord::Base
+   
+   # Users issues can be assigned to
+   def assignable_users
+-    members.select {|m| m.roles.detect {|role| role.assignable?}}.collect {|m| m.user}.sort
++    member_principals.select {|m| m.roles.detect {|role| role.assignable?}}.collect {|m| m.principal }.sort
+   end
+   
+   # Returns the mail adresses of users that should be always notified on project events
+diff --git a/test/exemplars/group_exemplar.rb b/test/exemplars/group_exemplar.rb
+new file mode 100644
+index 0000000..56578eb
+--- /dev/null
++++ b/test/exemplars/group_exemplar.rb
+@@ -0,0 +1,9 @@
++class Group < Principal
++  generator_for :lastname, :method => :next_lastname
++
++  def self.next_lastname
++    @last_lastname ||= 'AGroup'
++    @last_lastname.succ!
++    @last_lastname
++  end
++end
+diff --git a/test/functional/issues_controller_test.rb b/test/functional/issues_controller_test.rb
+index 93e2995..5d39ebf 100644
+--- a/test/functional/issues_controller_test.rb
++++ b/test/functional/issues_controller_test.rb
+@@ -532,7 +532,26 @@ class IssuesControllerTest < ActionController::TestCase
+     assert_not_nil v
+     assert_equal 'Value for field 2', v.value
+   end
+-  
++
++  def test_post_new_with_group_assignment
++    @group = Group.find(11)
++    @project = Project.find(1)
++    @project.members << Member.new(:principal => @group, :roles => [Role.first])
++
++    @request.session[:user_id] = 2
++    assert_difference 'Issue.count' do
++      post :new, :project_id => @project.id, 
++                 :issue => {:tracker_id => 3,
++                            :subject => 'This is the test_new_with_group_assignment issue',
++                            :assigned_to_id => @group.id}
++      end
++    assert_redirected_to :controller => 'issues', :action => 'show', :id => Issue.last.id
++    
++    issue = Issue.find_by_subject('This is the test_new_with_group_assignment issue')
++    assert_not_nil issue
++    assert_equal @group.id, issue.assigned_to_id
++  end
++
+   def test_post_new_and_continue
+     @request.session[:user_id] = 2
+     post :new, :project_id => 1, 
+@@ -933,21 +952,25 @@ class IssuesControllerTest < ActionController::TestCase
+   end
+ 
+   def test_bulk_edit
++    @group = Group.find(11)
++    @project = Project.find(1)
++    @project.members << Member.new(:principal => @group, :roles => [Role.first])
+     @request.session[:user_id] = 2
+     # update issues priority
+     post :bulk_edit, :ids => [1, 2], :priority_id => 7,
+-                                     :assigned_to_id => '',
++                                     :assigned_to_id => @group.id,
+                                      :custom_field_values => {'2' => ''},
+                                      :notes => 'Bulk editing'
+     assert_response 302
+     # check that the issues were updated
+     assert_equal [7, 7], Issue.find_all_by_id([1, 2]).collect {|i| i.priority.id}
++    assert_equal [@group.id, @group.id], Issue.find_all_by_id([1, 2]).collect {|i| i.assigned_to.id}
+     
+     issue = Issue.find(1)
+     journal = issue.journals.find(:first, :order => 'created_on DESC')
+     assert_equal '125', issue.custom_value_for(2).value
+     assert_equal 'Bulk editing', journal.notes
+-    assert_equal 1, journal.details.size
++    assert_equal 2, journal.details.size
+   end
+ 
+   def test_bullk_edit_should_send_a_notification
+diff --git a/test/unit/issue_test.rb b/test/unit/issue_test.rb
+index bd37f98..86c22cd 100644
+--- a/test/unit/issue_test.rb
++++ b/test/unit/issue_test.rb
+@@ -27,6 +27,8 @@ class IssueTest < ActiveSupport::TestCase
+            :custom_fields, :custom_fields_projects, :custom_fields_trackers, :custom_values,
+            :time_entries
+ 
++  should_belong_to :assigned_to
++  
+   def test_create
+     issue = Issue.new(:project_id => 1, :tracker_id => 1, :author_id => 3, :status_id => 1, :priority => IssuePriority.all.first, :subject => 'test_create', :description => 'IssueTest#test_create', :estimated_hours => '1:30')
+     assert issue.save
+@@ -362,6 +364,16 @@ class IssueTest < ActiveSupport::TestCase
+     assert !copy.recipients.include?(copy.author.mail)
+   end
+ 
++  test '#recipients should include the assigned group members' do
++    group_member = User.generate_with_protected!
++    group = Group.generate!
++    group.users << group_member
++    
++    issue = Issue.find(12)
++    issue.assigned_to = group
++    assert issue.recipients.include?(group_member.mail)
++  end
++
+   def test_watcher_recipients_should_not_include_users_that_cannot_view_the_issue
+     user = User.find(3)
+     issue = Issue.find(9)
+-- 
+1.6.5
+
