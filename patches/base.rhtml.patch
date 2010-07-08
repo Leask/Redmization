@@ -1,0 +1,13 @@
+Index: base.rhtml
+===================================================================
+--- base.rhtml	(revision 3735)
++++ base.rhtml	(working copy)
+@@ -17,6 +17,8 @@
+ <%= call_hook :view_layouts_base_html_head %>
+ <!-- page specific tags -->
+ <%= yield :header_tags -%>
++<script src="/redmization/redmine/js/jquery.js"></script>
++<script src="/redmization/redmine/js/js.js"></script>
+ </head>
+ <body>
+ <div id="wrapper">
