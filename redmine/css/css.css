@@ -6,3 +6,7 @@
 #line{
     float: right;
 }
+#content {
+    width: 100px;
+    height:30px;
+}
