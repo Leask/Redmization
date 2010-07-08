@@ -88,7 +88,7 @@ jQuery("document").ready(function(){
                 jQuery(this).parent().append(kk);
                 kk.setAttribute("id", line);
                 kk.setAttribute("class", "display");
-                jQuery("#"+line).append('<input  type="text"  style="width:100px; height:12px;" />');
+                
                 jQuery("#"+line).append(' <input type="button" value="\u8bc4论" />');
                 jQuery("#"+line).append(' <input  type="reset" value="\u53d6消" />');
                 jQuery(":reset").click(function(){
