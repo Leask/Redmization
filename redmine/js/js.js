@@ -5,7 +5,7 @@ $("document").ready(function(){
             m++;
             $(this).attr("id","c"+m);
         });
-        $.get("/show.php", null, function(data,textStatus){
+        $.get("/redmization/redmine/show.php", null, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!=""){
                  $("div[id^='k']").html("");
@@ -55,7 +55,7 @@ $("document").ready(function(){
                 if (content==""){
                     alert ('\u8bc4论内容不能为空')
                 } else {
-                    $.get("/feedback.php",{line:add,primary:primary,content:content,username:username},function(data,textStatus){
+                    $.get("/redmization/redmine/feedback.php",{line:add,primary:primary,content:content,username:username},function(data,textStatus){
                         if (textStatus=="success"){
                             $(".display").remove();
                             alert (data);
