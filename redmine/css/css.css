@@ -1,0 +1,8 @@
+.autoscroll {
+    margin-bottom: 1.2em;
+    overflow-x: auto;
+    padding: 1px;
+}
+#line{
+    float: right;
+}
