@@ -30,9 +30,11 @@ jQuery("document").ready(function(){
                                 k++;
                                 var div=document.createElement("div");
                                 th.parent().find("td").append(div);
-                                div.setAttribute("id", "k"+k);
                                 div.setAttribute("class", "display1");
-                                jQuery("#k"+k).text(content);
+                                var div1=document.createElement("div");
+                                  div1.setAttribute("id", "k"+k);
+                                  div.append(div1);
+                                 jQuery("#k"+k).text(content);
                             }
                         });
 
