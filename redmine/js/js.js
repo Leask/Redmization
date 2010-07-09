@@ -44,6 +44,7 @@ jQuery("document").ready(function(){
 
     show();
     jQuery(".line-num").css("cursor","pointer");
+    jQuery(".line-code").css("position","relative");
     jQuery(".line-num").bind ("click",function(){
         function insert(){
             var content=jQuery("#contentk").val();
@@ -85,7 +86,8 @@ jQuery("document").ready(function(){
                 kk.setAttribute("id", line);
                 kk.setAttribute("class", "display");
                 jQuery("#"+line).append('<input  type="text"  id="contentk" style="min-height:12px;height:12px;/>');
-              
+                jQuery("#"+line).append(' <input type="button" value="\u8bc4论" style="heigth:12px;" />');
+                jQuery("#"+line).append(' <input  type="reset" value="\u53d6消" style="heigth:12px;" />');
                 jQuery(":reset").click(function(){
                     jQuery("#"+line).remove();
                 });
