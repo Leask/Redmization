@@ -10,6 +10,12 @@ $content=$_GET['content'];
 $file=$_GET['primary'];
 $username=$_GET['username'];
 $sql="INSERT INTO `feedback`.`feedbackview` (`id`, `url`, `line`, `content`,`filename`,`username`) VALUES (NULL, '$str', '$line', '$content', '$file','$username')";
-mysql_query($sql);
+$result=@mysql_query($sql);
+if ($result){
+
+} else {
+
+}
+
 echo "评论提交成功";
 ?>
