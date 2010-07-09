@@ -80,7 +80,7 @@ jQuery("document").ready(function(){
             if (jQuery(".display")){
                 jQuery(".display").remove();
                 var kk=document.createElement("div");
-                jQuery(this).find("td").append(kk);
+                jQuery(this).parent().find("td").append(kk);
                 kk.setAttribute("id", line);
                 kk.setAttribute("class", "display");
                 jQuery("#"+line).append('<input  type="text"  id="contentk" style="min-height:15px;height:20px;/>');
