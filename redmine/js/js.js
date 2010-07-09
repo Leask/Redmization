@@ -34,7 +34,7 @@ jQuery("document").ready(function(){
                                 jQuery("#k"+k).text(content);
                             }
                         });
-                    
+
                     }
                 }
             }
@@ -76,19 +76,14 @@ jQuery("document").ready(function(){
             add+=",";
         });
         add=add.substr(0,add.length-1);
-        /**
-        var content_div=document.createElement("div");
-        jQuery(this).parent().append(content_div);
-        content_div.setAttribute("id", add);
-        */
         if (line != ""){
             if (jQuery(".display")){
                 jQuery(".display").remove();
                 var kk=document.createElement("div");
-                jQuery(this).parent().append(kk);
+                jQuery(this).append(kk);
                 kk.setAttribute("id", line);
-
-               
+                kk.setAttribute("class", "display");
+                jQuery("#"+line).append('<input  type="text"  id="contentk" style="min-height:15px;height:20px;/>');
                 jQuery("#"+line).append(' <input type="button" value="\u8bc4论" />');
                 jQuery("#"+line).append(' <input  type="reset" value="\u53d6消" />');
                 jQuery(":reset").click(function(){
