@@ -6,7 +6,7 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/js.js"></script>
     </head>
-    <body>
+    <body bgcolor="#000000">
         <div id="loggedas">登录为 <a href="/AnYuan/users/12">孙兴华</a></div>
         <div class="autoscroll">
             <table class="filecontent syntaxhl">

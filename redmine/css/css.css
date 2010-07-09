@@ -1,12 +1,4 @@
-.autoscroll {
-    margin-bottom: 1.2em;
-    overflow-x: auto;
-    padding: 1px;
-}
-#line{
-    float: right;
-}
-#content {
+.display {
     width: 100px;
-    height:30px;
+    height: 20px;
 }
