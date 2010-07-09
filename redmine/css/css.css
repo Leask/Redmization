@@ -1,3 +1,6 @@
 .display {
     float: right;
+    position: absolute;
+    top: 0px;
+    right: 30px;
 }

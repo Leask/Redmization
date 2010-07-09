@@ -43,6 +43,7 @@ jQuery("document").ready(function(){
 
     show();
     jQuery(".line-num").css("cursor","pointer");
+    jQuery(".line-num").css("position","relative");
     jQuery(".line-num").bind ("click",function(){
         function insert(){
             var content=jQuery("#contentk").val();
