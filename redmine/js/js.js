@@ -29,7 +29,7 @@ jQuery("document").ready(function(){
                             if (line==total){
                                 k++;
                                 var div=document.createElement("div");
-                                th.parent().after(div);
+                                th.parent().find("td").append(div);
                                 div.setAttribute("id", "k"+k);
                                 jQuery("#k"+k).text(content);
                             }
