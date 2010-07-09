@@ -32,8 +32,8 @@ jQuery("document").ready(function(){
                                 th.parent().find("td").append(div);
                                 div.setAttribute("class", "display1");
                                 var div1=document.createElement("div");
+                                 div.append(div1);
                                   div1.setAttribute("id", "k"+k);
-                                  div.append(div1);
                                  jQuery("#k"+k).text(content);
                             }
                         });
