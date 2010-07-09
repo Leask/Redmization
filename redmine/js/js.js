@@ -45,7 +45,7 @@ jQuery("document").ready(function(){
     jQuery(".line-num").css("cursor","pointer");
     jQuery(".line-num").bind ("click",function(){
         function insert(){
-            var content=jQuery("#content").val();
+            var content=jQuery("#contentk").val();
             var username=jQuery("#loggedas").find("a").text();
             if (content==""){
                 alert ('\u8bc4论内容不能为空')
@@ -88,7 +88,7 @@ jQuery("document").ready(function(){
                 jQuery(this).parent().append(kk);
                 kk.setAttribute("id", line);
                 kk.setAttribute("class", "display");
-                jQuery("#"+line).append('<input  type="text"  id="content" style="width:100px; height:30px;" />');
+                jQuery("#"+line).append('<input  type="text"  id="contentk" style="min-height:30px;" />');
                 jQuery("#"+line).append(' <input type="button" value="\u8bc4论" />');
                 jQuery("#"+line).append(' <input  type="reset" value="\u53d6消" />');
                 jQuery(":reset").click(function(){
@@ -97,7 +97,7 @@ jQuery("document").ready(function(){
             } else {
                 jQuery(".display").toggle();
             }
-            jQuery("#content").keypress(function(event){
+            jQuery("#contentk").keypress(function(event){
                 var unicode=event.keyCode? event.keyCode : event.charCode;
                 if (unicode==13){
                     insert();
