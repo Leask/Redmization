@@ -21,9 +21,6 @@ jQuery("document").ready(function(){
                         var username=f[i-1].username;
                         content=username+":"+content;
                         var tr=div1.find("tr:gt(0)");
-                         var div=document.createElement("div");
-                         tr.find("td").append(div);
-                         div.setAttribute("class", "display1");
                         jQuery.each(tr,function(m,n){
                             var th=jQuery(this).find("th");
                             var th1=th.eq(0).text();
@@ -31,11 +28,11 @@ jQuery("document").ready(function(){
                             var total=th1+","+th2;
                             if (line==total){
                                 k++;
-                               
-                                var div1=document.createElement("div");
-                                 div.append(div1);
-                                 div1.setAttribute("id", "k"+k);
-                                 jQuery("#k"+k).text(content);
+                                var div=document.createElement("div");
+                                th.parent().find("td").append(div);
+                                div.setAttribute("id", "k"+k);
+                                div.setAttribute("class", "display1");
+                                jQuery("#k"+k).text(content);
                             }
                         });
 
