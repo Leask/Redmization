@@ -31,6 +31,7 @@ jQuery("document").ready(function(){
                                 var div=document.createElement("div");
                                 th.parent().find("td").append(div);
                                 div.setAttribute("id", "k"+k);
+                                div.setAttribute("class", "display1");
                                 jQuery("#k"+k).text(content);
                             }
                         });
@@ -43,7 +44,7 @@ jQuery("document").ready(function(){
 
     show();
     jQuery(".line-num").css("cursor","pointer");
-    jQuery(".line-code").css("position","relative");
+    jQuery(".line-code").css("position","absolute");
     jQuery(".line-num").bind ("click",function(){
         function insert(){
             var content=jQuery("#contentk").val();
