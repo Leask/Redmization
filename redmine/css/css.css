@@ -1,0 +1,11 @@
+.display {
+    position: relative;
+    top: -18px;
+    left: 855px;
+}
+.display1 {
+    position: absolute;
+    top: 0px;
+    left:480px;
+    width: 200px;
+}
