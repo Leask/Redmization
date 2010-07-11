@@ -1,11 +1,3 @@
-.display {
-
-    top: -18px;
-    left: 855px;
-}
-.display1 {
-
-    top: 0px;
-    left:480px;
-    width: 200px;
+pre {
+    display: inline;
 }
