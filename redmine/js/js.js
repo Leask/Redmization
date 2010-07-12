@@ -22,12 +22,6 @@ jQuery("document").ready(function(){
                         content=username+":"+content;
                         var tr=div1.find("tr:gt(0)");
                         jQuery.each(tr,function(m,n){
-                            var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;">&nbsp;</td><td style="width:50%;">&nbsp;</td></tr></table>';
-                            jQuery(".line-num").css("cursor","pointer");
-                            jQuery.each(jQuery(".line-code"),function(){
-                                jQuery(this).append(str);
-                                jQuery(this).children().find("td").eq(0).append(jQuery(this).children("pre").css("display","inline"));
-                            });
                             var th=jQuery(this).find("th");
                             var th1=th.eq(0).text();
                             var th2=th.eq(1).text();
@@ -48,6 +42,12 @@ jQuery("document").ready(function(){
         });
     }
     show();
+    var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;">&nbsp;</td><td style="width:50%;">&nbsp;</td></tr></table>';
+    jQuery(".line-num").css("cursor","pointer");
+    jQuery.each(jQuery(".line-code"),function(){
+       jQuery(this).append(str);
+       jQuery(this).children().find("td").eq(0).append(jQuery(this).children("pre").css("display","inline"));
+    });
     jQuery(".line-num").bind ("click",function(){
         function insert(){
             var content=jQuery("#contentk").val();
