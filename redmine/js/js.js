@@ -81,7 +81,13 @@ jQuery("document").ready(function(){
             if (jQuery(".display")){
                 jQuery(".display").remove();
                 var kk=document.createElement("div");
-                jQuery(this).parent().find("td").append(kk);
+                if (jQuery(this).parent().find("td").children().is("table")==false){
+                    jQuery(this).parent().find("td").append('<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;">&nbsp;</td><td style="width:50%;">&nbsp;</td></tr></table>');
+                    jQuery(this).parent().find("td").find("td").eq(1).append(kk);
+                } else {
+                    jQuery(this).parent().find("td").find("td").eq(1).append(kk);
+                }
+                
                 kk.setAttribute("id", line);
                 kk.setAttribute("class", "display");
                 jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;/>');
