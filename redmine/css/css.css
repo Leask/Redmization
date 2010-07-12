@@ -9,3 +9,7 @@
     margin: 0px;
     padding: 0px;
 }
+#reset,#button {
+   min-height: 12px;
+   height:12px;
+}
