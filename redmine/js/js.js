@@ -29,14 +29,21 @@ jQuery("document").ready(function(){
                             var total=th1+","+th2;
                             if (line==total){
                                 k++;
-                                if (th.parent().find("td").has("table") != false){
+                                if (th.parent().find("td").is("table")){
+                                    var div=document.createElement("div");
+                                    th.parent().find("td").find("td").eq(1).append(div);
+                                    div.setAttribute("id", "k"+k);
+                                    div.setAttribute("class", "display1");
+                                    jQuery("#k"+k).text(content);
+                                } else {
                                     th.parent().find("td").append(str);
+                                    var div=document.createElement("div");
+                                    th.parent().find("td").find("td").eq(1).append(div);
+                                    div.setAttribute("id", "k"+k);
+                                    div.setAttribute("class", "display1");
+                                    jQuery("#k"+k).text(content);
                                 }
-                                var div=document.createElement("div");
-                                th.parent().find("td").find("td").eq(1).append(div);
-                                div.setAttribute("id", "k"+k);
-                                div.setAttribute("class", "display1");
-                                jQuery("#k"+k).text(content);
+                                
                             }
                         });
 
