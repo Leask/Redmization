@@ -46,13 +46,8 @@ jQuery("document").ready(function(){
             }
         });
     }
-    show();
-   
+    show(); 
     jQuery(".line-num").css("cursor","pointer");
-    jQuery.each(jQuery(".line-code"),function(){
-       jQuery(this).append(str);
-       
-    });
     jQuery(".line-num").bind ("click",function(){
         function insert(){
             var content=jQuery("#contentk").val();
