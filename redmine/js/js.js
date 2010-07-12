@@ -31,6 +31,7 @@ jQuery("document").ready(function(){
                                 var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;">&nbsp;</td><td style="width:50%;">&nbsp;</td></tr></table>';
                                 if (th.parent().find("td").children().is("table")==false){
                                       th.parent().find("td").append(str);
+                                      th.parent().find("td").eq(0).append(th.parent().find("td").children("pre").css("display","inline"));
                                 }                 
                                 var div=document.createElement("div");
                                 th.parent().find("td").find("td").eq(1).append(div);
@@ -48,7 +49,10 @@ jQuery("document").ready(function(){
     show();
    
     jQuery(".line-num").css("cursor","pointer");
-
+    jQuery.each(jQuery(".line-code"),function(){
+       jQuery(this).append(str);
+       
+    });
     jQuery(".line-num").bind ("click",function(){
         function insert(){
             var content=jQuery("#contentk").val();
