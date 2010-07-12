@@ -51,7 +51,6 @@ jQuery("document").ready(function(){
     jQuery(".line-num").bind ("click",function(){
         function insert(){
             var content=jQuery("#contentk").val();
-
             var username=jQuery("#loggedas").find("a").text();
             if (content==""){
                 alert ('\u8bc4论内容不能为空')
@@ -87,7 +86,7 @@ jQuery("document").ready(function(){
                 } else {
                     jQuery(this).parent().find("td").find("td").eq(1).append(kk);
                 }
-                
+                jQuery(this).parent().find("td").find("td").children("pre").css("display","inline")
                 kk.setAttribute("id", line);
                 kk.setAttribute("class", "display");
                 jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;/>');
