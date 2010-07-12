@@ -59,15 +59,15 @@ jQuery("document").ready(function(){
                     if (textStatus=="success"){
                         jQuery(".display").remove();
                         alert (data);
-                        alert (content);
                         jQuery("#content").val("");
-                        jQuery(this).parent().find("td").find("td").eq(1).append(content);
+                        now.parent().find("td").find("td").eq(1).append(content);
                     }
                 });
             }
         }
         var line=jQuery(this).text();
         var total=jQuery(this).parent().children('.line-num');
+        var now=jQuery(this);
         var add="";
         var file=jQuery(this).parent().parent().parent().children().eq(1).text();
         var primary=jQuery(this).parent().parent().parent().parent().attr("id");
