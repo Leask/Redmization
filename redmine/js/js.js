@@ -97,7 +97,7 @@ jQuery("document").ready(function(){
                      jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;"/>');
                 jQuery("#"+line).append('<input type="button" value="comment" id="#button" disabled="disabled" />');
                 jQuery("#"+line).append('<input  type="reset" value="cancel"  id="#reset"/>');
-                }
+               
                 }else{
                  jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;"/>');
                 jQuery("#"+line).append('<input type="button" value="\u8bc4论" id="#button" disabled="disabled" />');
