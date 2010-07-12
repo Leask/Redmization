@@ -21,7 +21,7 @@ jQuery("document").ready(function(){
                         var username=f[i-1].username;
                         content=username+":"+content;
                         var tr=div1.find("tr:gt(0)");
-                        jQuery.each(tr,function(m,n){
+                        jQuery.each(tr,function(){
                             var th=jQuery(this).find("th");
                             var th1=th.eq(0).text();
                             var th2=th.eq(1).text();
@@ -51,16 +51,12 @@ jQuery("document").ready(function(){
     jQuery(".line-num").bind ("click",function(){
         function insert(){
             var content=jQuery("#contentk").val();
+
             var username=jQuery("#loggedas").find("a").text();
             if (content==""){
                 alert ('\u8bc4论内容不能为空')
             } else {
-                jQuery.get("/redmization/redmine/feedback.php",{
-                    line:add,
-                    primary:primary,
-                    content:content,
-                    username:username
-                },function(data,textStatus){
+                jQuery.get("/redmization/redmine/feedback.php",{line:add,primary:primary,content:content,username:username},function(data,textStatus){
                     if (textStatus=="success"){
                         jQuery(".display").remove();
                         alert (data);
@@ -85,7 +81,7 @@ jQuery("document").ready(function(){
             if (jQuery(".display")){
                 jQuery(".display").remove();
                 var kk=document.createElement("div");
-                jQuery(this).parent().find("td").find("td").eq(1).append(kk);
+                jQuery(this).parent().find("td").append(kk);
                 kk.setAttribute("id", line);
                 kk.setAttribute("class", "display");
                 jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;/>');
@@ -110,6 +106,7 @@ jQuery("document").ready(function(){
                 }
             });
             jQuery(":button").click(function(){
+                
                 insert();
             });
         }
