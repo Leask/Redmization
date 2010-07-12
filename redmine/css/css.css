@@ -2,6 +2,10 @@
     float: left;
     clear: both;
 }
+display {
+    float: left;
+    clear: both;
+}
 #insert td {
     padding: 0px;
 }
