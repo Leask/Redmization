@@ -19,17 +19,19 @@ jQuery("document").ready(function(){
                         var line=f[i-1].line;
                         var content=f[i-1].content;
                         var username=f[i-1].username;
-                        var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;">&nbsp;</td><td style="width:50%;">&nbsp;</td></tr></table>';
                         content=username+":"+content;
                         var tr=div1.find("tr:gt(0)");
-                        tr.find("td").append(str);
                         jQuery.each(tr,function(m,n){
+                            var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;">&nbsp;</td><td style="width:50%;">&nbsp;</td></tr></table>';
                             var th=jQuery(this).find("th");
                             var th1=th.eq(0).text();
                             var th2=th.eq(1).text();
                             var total=th1+","+th2;
                             if (line==total){
                                 k++;
+                                if (th.parent().find("td").has("table") != false){
+                                    th.parent().find("td").append(str);
+                                }
                                 var div=document.createElement("div");
                                 th.parent().find("td").find("td").eq(1).append(div);
                                 div.setAttribute("id", "k"+k);
