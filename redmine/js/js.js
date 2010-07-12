@@ -86,7 +86,7 @@ jQuery("document").ready(function(){
                 } else {
                     jQuery(this).parent().find("td").find("td").eq(1).append(kk);
                 }
-                jQuery(this).parent().find("td").find("td").children("pre").css("display","inline")
+                jQuery(this).parent().find("td").find("td").children("pre").css("display","inline");
                 kk.setAttribute("id", line);
                 kk.setAttribute("class", "display");
                 jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;/>');
