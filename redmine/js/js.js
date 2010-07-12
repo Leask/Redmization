@@ -88,9 +88,9 @@ jQuery("document").ready(function(){
                 jQuery(this).parent().find("td").find("td").eq(1).append(kk);
                 kk.setAttribute("id", line);
                 kk.setAttribute("class", "display");
-                jQuery("#"+line).append('<input  type="text"  id="contentk"  id="text" style="min-height:16px;height:16px;/>');
+                jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;/>');
                 jQuery("#"+line).append('<input type="button" value="\u8bc4论" id="#button" />');
-                jQuery("#"+line).append('<input  type="reset" value="\u53d6消"  id="#reset/>');
+                jQuery("#"+line).append('<input  type="reset" value="\u53d6消"  id="#reset"/>');
                 jQuery(":reset").click(function(){
                     jQuery("#"+line).remove();
                 });
