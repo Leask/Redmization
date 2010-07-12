@@ -59,8 +59,8 @@ jQuery("document").ready(function(){
                     if (textStatus=="success"){
                         jQuery(".display").remove();
                         alert (data);
+                        alert (content);
                         jQuery("#content").val("");
-
                         jQuery(this).parent().find("td").find("td").eq(1).append(content);
                     }
                 });
