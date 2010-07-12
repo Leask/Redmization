@@ -105,6 +105,9 @@ jQuery("document").ready(function(){
                 }
 
                 jQuery("#contentk").focus();
+                jQuery("#contentk").change(function(){
+                jQuery("#button").attr("disabled","");
+              });
                 jQuery(":reset").click(function(){
                     jQuery("#"+line).remove();
                 });
@@ -122,9 +125,6 @@ jQuery("document").ready(function(){
                 if (unicode==27){
                     jQuery("#"+line).remove();
                 }
-            });
-            jQuery("#contentk").change(function(){
-                jQuery("#button").attr("disabled","");
             });
             jQuery(":button").click(function(){
                 insert();
