@@ -60,7 +60,10 @@ jQuery("document").ready(function(){
                         jQuery(".display").remove();
                         alert (data);
                         jQuery("#content").val("");
-                        now.parent().find("td").find("td").eq(1).append(username+":"+content);
+                         var div=document.createElement("div");
+                          now.parent().find("td").find("td").eq(1).append(div);
+                          div.setAttribute("class", "display1");
+                          div.append(username+":"+content);
                     }
                 });
             }
