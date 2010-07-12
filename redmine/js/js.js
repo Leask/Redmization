@@ -124,9 +124,6 @@ jQuery("document").ready(function(){
                     jQuery("#"+line).remove();
                 }
             });
-            jQuery("#contentk").change(function(){
-                jQuery("#button").attr("disabled","true");
-            });
             jQuery(":button").click(function(){
                 
                 insert();
