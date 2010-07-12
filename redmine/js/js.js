@@ -60,7 +60,7 @@ jQuery("document").ready(function(){
                         jQuery(".display").remove();
                         alert (data);
                         jQuery("#content").val("");
-                        now.parent().find("td").find("td").eq(1).append(content);
+                        now.parent().find("td").find("td").eq(1).append(username+":"+content);
                     }
                 });
             }
