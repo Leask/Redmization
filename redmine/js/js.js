@@ -30,8 +30,8 @@ jQuery("document").ready(function(){
                                 k++;
                                 var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;">&nbsp;</td><td style="width:50%;">&nbsp;</td></tr></table>';
                                 if (th.parent().find("td").children().is("table")==false){
-                                      th.parent().find("td").append(str);
-                                      th.parent().find("td").find("td").eq(0).append(th.parent().find("td").children("pre").css("display","inline"));
+                                    th.parent().find("td").append(str);
+                                    th.parent().find("td").find("td").eq(0).append(th.parent().find("td").children("pre").css("display","inline"));
                                 }                 
                                 var div=document.createElement("div");
                                 th.parent().find("td").find("td").eq(1).append(div);
@@ -55,15 +55,19 @@ jQuery("document").ready(function(){
             if (content==""){
                 alert ('\u8bc4论内容不能为空')
             } else {
-                jQuery.post("/redmization/redmine/feedback.php",{line:add,primary:primary,content:content,username:username},function(data,textStatus){
+                jQuery.post("/redmization/redmine/feedback.php",{
+                    line:add,
+                    primary:primary,
+                    content:content,
+                    username:username
+                },function(data,textStatus){
                     if (textStatus=="success"){
                         jQuery(".display").remove();
-                        alert (data);
                         jQuery("#content").val("");
-                         var div=document.createElement("div");
-                          now.parent().find("td").find("td").eq(1).append(div);
-                          div.setAttribute("class", "display1");
-                          now.parent().find("td").find("td").eq(1).find("div:last").append(username+":"+content);
+                        var div=document.createElement("div");
+                        now.parent().find("td").find("td").eq(1).append(div);
+                        div.setAttribute("class", "display1");
+                        now.parent().find("td").find("td").eq(1).find("div:last").append(username+":"+content);
                     }
                 });
             }
@@ -94,13 +98,13 @@ jQuery("document").ready(function(){
                 kk.setAttribute("id", line);
                 kk.setAttribute("class", "display");
                 if (jQuery(".home").text()=="Home"){
-                     jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;"/>');
-                jQuery("#"+line).append('<input type="button" value="Comment" id="#button" disabled="disabled" />');
-                jQuery("#"+line).append('<input  type="reset" value="Cancel"  id="#reset"/>');
+                    jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;"/>');
+                    jQuery("#"+line).append('<input type="button" value="Comment" id="#button" disabled="disabled" />');
+                    jQuery("#"+line).append('<input  type="reset" value="Cancel"  id="#reset"/>');
                 }else{
-                 jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;"/>');
-                jQuery("#"+line).append('<input type="button" value="\u8bc4论" id="#button" disabled="disabled" />');
-                jQuery("#"+line).append('<input  type="reset" value="\u53d6消"  id="#reset"/>');
+                    jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;"/>');
+                    jQuery("#"+line).append('<input type="button" value="\u8bc4论" id="#button" disabled="disabled" />');
+                    jQuery("#"+line).append('<input  type="reset" value="\u53d6消"  id="#reset"/>');
                 }
 
                 jQuery("#contentk").focus();
