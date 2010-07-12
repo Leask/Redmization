@@ -13,3 +13,19 @@
    min-height: 12px;
    height:12px;
 }
+button, input[type="reset"], input[type="button"], input[type="submit"] {
+-moz-appearance:button;
+-moz-binding:none;
+-moz-box-sizing:border-box;
+-moz-user-select:none;
+background-color:buttonface;
+border:0px;
+color:buttontext;
+cursor:default;
+font:-moz-button;
+line-height:normal;
+padding:0;
+text-align:center;
+text-shadow:none;
+white-space:normal;
+}
