@@ -60,7 +60,8 @@ jQuery("document").ready(function(){
                         jQuery(".display").remove();
                         alert (data);
                         jQuery("#content").val("");
-                        show();
+
+                        jQuery(this).parent().find("td").find("td").eq(1).append(content);
                     }
                 });
             }
