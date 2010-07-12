@@ -112,8 +112,9 @@ jQuery("document").ready(function(){
                 jQuery(".display").toggle();
             }
             jQuery("#contentk").keypress(function(event){
+                alert ('dddd');
                 jQuery("#button").attr("disabled", "12");
-                var unicode=event.keyCode? event.keyCode : event.charCode;
+                var unicode=event.keyCode ? event.keyCode : event.charCode;
                 if (unicode==13){
                     insert();
                 }
