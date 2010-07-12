@@ -42,7 +42,7 @@ jQuery("document").ready(function(){
         });
     }
     show();
-    var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td>&nbsp;</td><td>&nbsp;</td></tr></table>';
+    var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;">&nbsp;</td><td style="width:50%;">&nbsp;</td></tr></table>';
     jQuery(".line-num").css("cursor","pointer");
     jQuery.each(jQuery(".line-code"),function(){
        jQuery(this).append(str);
