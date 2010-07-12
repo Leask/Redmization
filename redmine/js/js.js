@@ -32,12 +32,18 @@ jQuery("document").ready(function(){
                                 if (th.parent().find("td").children().is("table")==false){
                                     th.parent().find("td").append(str);
                                     th.parent().find("td").find("td").eq(0).append(th.parent().find("td").children("pre").css("display","inline"));
-                                }                 
+                                    var kk=true;
+                                }
                                 var div=document.createElement("div");
                                 th.parent().find("td").find("td").eq(1).append(div);
                                 div.setAttribute("id", "k"+k);
                                 div.setAttribute("class", "display1");
-                                jQuery("#k"+k).text(content);
+                                if (kk==true){
+                                     jQuery("#k"+k).text("++"+content);
+                                } else {
+                                    jQuery("#k"+k).text(content);
+                                }
+                                 kk=false;
                             }
                         });
 
