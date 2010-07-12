@@ -124,10 +124,9 @@ jQuery("document").ready(function(){
                 }
             });
             jQuery("#contentk").change(function(){
-                jQuery("#button").attr("disabled","true");
+                jQuery("#button").attr("disabled","");
             });
             jQuery(":button").click(function(){
-                
                 insert();
             });
         }
