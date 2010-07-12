@@ -19,7 +19,7 @@ jQuery("document").ready(function(){
                         var line=f[i-1].line;
                         var content=f[i-1].content;
                         var username=f[i-1].username;
-                        content=username+":"+content+"  ";
+                        content=username+":"+content+"     ";
                         var tr=div1.find("tr:gt(0)");
                         jQuery.each(tr,function(m,n){
                             var th=jQuery(this).find("th");
