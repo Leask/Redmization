@@ -5,3 +5,7 @@
 #insert td {
     padding: 0px;
 }
+#button,#reset,#text {
+    margin: 0px;
+    padding: 0px;
+}
