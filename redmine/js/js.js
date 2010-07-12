@@ -37,10 +37,10 @@ jQuery("document").ready(function(){
                                     jQuery("#k"+k).text(content);
                                 } else {
                                     th.parent().find("td").append(str);
-                                    var div=document.createElement("div");
+                                    var div1=document.createElement("div");
                                     th.parent().find("td").find("td").eq(1).append(div);
-                                    div.setAttribute("id", "k"+k);
-                                    div.setAttribute("class", "display1");
+                                    div1.setAttribute("id", "k"+k);
+                                    div1.setAttribute("class", "display1");
                                     jQuery("#k"+k).text(content);
                                 }
                                 
