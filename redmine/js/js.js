@@ -99,7 +99,7 @@ jQuery("document").ready(function(){
                 jQuery("#"+line).append('<input  type="reset" value="Cancel"  id="#reset"/>');
                 }else{
                  jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;"/>');
-                jQuery("#"+line).append('<input type="button" value="\u8bc4论" id="#button" disabled="disabled" />');
+                jQuery("#"+line).append('<input type="button" value="\u8bc4论" id="button" disabled="disabled" />');
                 jQuery("#"+line).append('<input  type="reset" value="\u53d6消"  id="#reset"/>');
                 }
 
@@ -112,7 +112,7 @@ jQuery("document").ready(function(){
                 jQuery(".display").toggle();
             }
             jQuery("#contentk").keypress(function(event){
-                alert (jQuery("#button").attr("disabled"));
+                jQuery("#button").removeAttr();
                 var unicode=event.keyCode ? event.keyCode : event.charCode;
                 if (unicode==13){
                     insert();
