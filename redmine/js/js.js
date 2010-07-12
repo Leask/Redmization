@@ -105,15 +105,16 @@ jQuery("document").ready(function(){
                 }
 
                 jQuery("#contentk").focus();
-                jQuery("#contentk").change(function(){
-                jQuery("#button").attr("disabled","");
-              });
+               
                 jQuery(":reset").click(function(){
                     jQuery("#"+line).remove();
                 });
             } else {
                 jQuery(".display").toggle();
             }
+              jQuery("#contentk").change(function(){
+                 jQuery("#button").attr("disabled","");
+              });
             jQuery("#contentk").keypress(function(event){
                 var unicode=event.keyCode? event.keyCode : event.charCode;
                 if (unicode==13){
