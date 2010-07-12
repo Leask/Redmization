@@ -39,7 +39,7 @@ jQuery("document").ready(function(){
                                 div.setAttribute("id", "k"+k);
                                 div.setAttribute("class", "display1");
                                 if (kk==true){
-                                     jQuery("#k"+k).text("++"+content);
+                                     jQuery("#k"+k).text("*"+content);
                                 } else {
                                     jQuery("#k"+k).text(content);
                                 }
@@ -73,7 +73,12 @@ jQuery("document").ready(function(){
                         var div=document.createElement("div");
                         now.parent().find("td").find("td").eq(1).append(div);
                         div.setAttribute("class", "display1");
-                        now.parent().find("td").find("td").eq(1).find("div:last").append(username+":"+content);
+                        
+                        if (now.parent().find("td").find("td").eq(1).is("div")==true){
+                            now.parent().find("td").find("td").eq(1).find("div:last").append(username+":"+content);
+                        } else {
+                            now.parent().find("td").find("td").eq(1).find("div:last").append("*"+username+":"+content);
+                        }
                     }
                 });
             }
