@@ -97,24 +97,20 @@ jQuery("document").ready(function(){
                      jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;"/>');
                 jQuery("#"+line).append('<input type="button" value="comment" id="#button" disabled="disabled" />');
                 jQuery("#"+line).append('<input  type="reset" value="cancel"  id="#reset"/>');
-               
+                }
                 }else{
                  jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;"/>');
-                jQuery("#"+line).append('<input type="button" value="\u8bc4论" id="#button" />');
+                jQuery("#"+line).append('<input type="button" value="\u8bc4论" id="#button" disabled="disabled" />');
                 jQuery("#"+line).append('<input  type="reset" value="\u53d6消"  id="#reset"/>');
                 }
 
                 jQuery("#contentk").focus();
-               
                 jQuery(":reset").click(function(){
                     jQuery("#"+line).remove();
                 });
             } else {
                 jQuery(".display").toggle();
             }
-              jQuery("#contentk").change(function(){
-                 jQuery("#button").attr("disabled","");
-              });
             jQuery("#contentk").keypress(function(event){
                 var unicode=event.keyCode? event.keyCode : event.charCode;
                 if (unicode==13){
@@ -127,7 +123,11 @@ jQuery("document").ready(function(){
                     jQuery("#"+line).remove();
                 }
             });
+            jQuery("#contentk").change(function(){
+                jQuery("#button").attr("disabled","true");
+            });
             jQuery(":button").click(function(){
+                
                 insert();
             });
         }
