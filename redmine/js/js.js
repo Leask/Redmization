@@ -55,7 +55,7 @@ jQuery("document").ready(function(){
             if (content==""){
                 alert ('\u8bc4论内容不能为空')
             } else {
-                jQuery.get("/redmization/redmine/feedback.php",{line:add,primary:primary,content:content,username:username},function(data,textStatus){
+                jQuery.post("/redmization/redmine/feedback.php",{line:add,primary:primary,content:content,username:username},function(data,textStatus){
                     if (textStatus=="success"){
                         jQuery(".display").remove();
                         alert (data);
@@ -93,9 +93,18 @@ jQuery("document").ready(function(){
                 jQuery(this).parent().find("td").find("td").eq(0).append(jQuery(this).parent().find("td").children("pre").css("display","inline"));
                 kk.setAttribute("id", line);
                 kk.setAttribute("class", "display");
-                jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;/>');
-                jQuery("#"+line).append('<input type="button" value="\u8bc4论" id="#button" />');
+                if (jQuery(".home").text()=="Home"){
+                     jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;"/>');
+                jQuery("#"+line).append('<input type="button" value="comment" id="#button" disabled="disabled" />');
+                jQuery("#"+line).append('<input  type="reset" value="cancel"  id="#reset"/>');
+                }
+                }else{
+                 jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;"/>');
+                jQuery("#"+line).append('<input type="button" value="\u8bc4论" id="#button" disabled="disabled" />');
                 jQuery("#"+line).append('<input  type="reset" value="\u53d6消"  id="#reset"/>');
+                }
+
+                jQuery("#contentk").focus();
                 jQuery(":reset").click(function(){
                     jQuery("#"+line).remove();
                 });
@@ -113,6 +122,9 @@ jQuery("document").ready(function(){
                 if (unicode==27){
                     jQuery("#"+line).remove();
                 }
+            });
+            jQuery("#contentk").change(function(){
+                jQuery("#button").attr("disabled","true");
             });
             jQuery(":button").click(function(){
                 
