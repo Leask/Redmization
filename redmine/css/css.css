@@ -13,4 +13,14 @@
 #reset,#button {
    min-height: 12px;
    height:12px;
+   background-color:buttonface;
+   border:1px;
+   color:buttontext;
+   cursor:default;
+   font:-moz-button;
+   line-height:normal !important;
+   padding:0 6px;
+   text-align:center;
+   text-shadow:none;
+   white-space:pre;
 }
