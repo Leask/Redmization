@@ -1,11 +1,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-<meta content="text/html; charset=utf-8"/>
+    <head>
 <title>SaaS - / - Diff - 安元项目管理系统</title>
-<link type="text/css"  href="css/css.css" rel="stylesheet"/>
-<link type="text/css"  href="css/test.css" rel="stylesheet"/>
-<script  type="text/javascript" src="js/jquery.js"></script>
-<script  type="text/javascript"  src="js/js.js"></script>
+<link type="text/css" rel="stylesheet" href="css/css.css"/>
+<link type="text/css" rel="stylesheet" href="css/test.css"/>
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/js.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -55,12 +54,12 @@
 
     <div id="content">
 
-        <h2>修订 672da034:8ded9f23 </h2>
+        <h2>修订 b049d7c7:a91b663b </h2>
 
 <!-- Choose view type -->
-<form method="get" action="/AnYuan/projects/saas/repository/diff">
-  <input type="hidden" value="8ded9f23090113956b8854c860796b86abce1776" name="rev" id="rev"/>
-  <input type="hidden" value="672da034437410b5e027bf9b8f00f1c227721186" name="rev_to" id="rev_to"/>
+<form method="get" action="/AnYuan/projects/saas/repository/revisions/a91b663b4aa77cfccca9e507ec3ed16c57957119/diff">
+  <input type="hidden" value="a91b663b4aa77cfccca9e507ec3ed16c57957119" name="rev" id="rev"/>
+  <input type="hidden" value="b049d7c7eff9df8f19ca07bf198c942972853cce" name="rev_to" id="rev_to"/>
   <p><label>查看差别</label>
   <select onchange="if (this.value != '') {this.form.submit()}" name="type" id="type"><option selected="selected" value="inline">直列</option>
 <option value="sbs">并排</option></select></p>
@@ -69,140 +68,137 @@
 <div class="autoscroll" id="c1">
 <table class="filecontent syntaxhl">
 <thead>
-<tr><th class="filename" colspan="3">b/library/company/companyctrl.php</th></tr>
+<tr><th class="filename" colspan="3">b/controller/demo.php</th></tr>
 </thead>
 <tbody>
 
 <tr>
-  <th class="line-num" style="cursor: pointer;">278</th>
-  <th class="line-num" style="cursor: pointer;">278</th>
+  <th class="line-num" style="cursor: pointer;">441</th>
+  <th class="line-num" style="cursor: pointer;">441</th>
     <td class="line-code ">
+    <pre>        Base::load('library.user.userctrl');
+</pre>
+ </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">442</th>
+  <th class="line-num" style="cursor: pointer;">442</th>
+    <td class="line-code ">
+    <pre>        $objUserCtrl = new UserCtrl;
+</pre>
+   
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">443</th>
+  <th class="line-num" style="cursor: pointer;">443</th>
+    <td class="line-code ">
+    <pre></pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">444</th>
+  <th class="line-num" style="cursor: pointer;"></th>
+    <td class="line-code diff_out">
+    <pre>        $objUserCtrl-&gt;freezeUser('Leask')</pre>
+    </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">444</th>
+    <td class="line-code diff_in">
+    <pre>        $bolResult = $objUserCtrl-&gt;freezeUser('Leask');</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">445</th>
+  <th class="line-num" style="cursor: pointer;">445</th>
+    <td class="line-code ">
+    <pre></pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">446</th>
+  <th class="line-num" style="cursor: pointer;"></th>
+    <td class="line-code diff_out">
+    <pre>        echo 'User Leask has been freesed!';
+</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">446</th>
+    <td class="line-code diff_in">
+    <pre>        if ($bolResult) {
+</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">447</th>
+    <td class="line-code diff_in">
+    <pre>            echo 'User Leask has been freesed!';
+</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">448</th>
+    <td class="line-code diff_in">
+    <pre>        } else {
+</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">449</th>
+    <td class="line-code diff_in">
+    <pre>            echo 'Failure!';
+</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">450</th>
+    <td class="line-code diff_in">
     <pre>        }
 </pre>
   </td>
   </tr>
 
 <tr>
-  <th class="line-num" style="cursor: pointer;">279</th>
-  <th class="line-num" style="cursor: pointer;">279</th>
+  <th class="line-num" style="cursor: pointer;">447</th>
+  <th class="line-num" style="cursor: pointer;">451</th>
     <td class="line-code ">
-    <pre>        if (!$intId
-</pre>
+    <pre></pre>
   </td>
   </tr>
 
 <tr>
-  <th class="line-num" style="cursor: pointer;">280</th>
-  <th class="line-num" style="cursor: pointer;">280</th>
+  <th class="line-num" style="cursor: pointer;">448</th>
+  <th class="line-num" style="cursor: pointer;">452</th>
     <td class="line-code ">
-    <pre>            || (($intParent = $this-&gt;objDbio-&gt;queryScalar(
+    <pre>        $objUserCtrl = null;
 </pre>
   </td>
   </tr>
 
 <tr>
-  <th class="line-num" style="cursor: pointer;">281</th>
-  <th class="line-num" style="cursor: pointer;"></th>
-    <td class="line-code diff_out">
-    <pre>                                 'SELECT `parent`  '
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">282</th>
-  <th class="line-num" style="cursor: pointer;"></th>
-    <td class="line-code diff_out">
-    <pre>                               . 'FROM `cmp_'  . $strCompanyId . '_role` '
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">283</th>
-  <th class="line-num" style="cursor: pointer;"></th>
-    <td class="line-code diff_out">
-    <pre>                               . 'WHERE `id`=' . $intId
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">284</th>
-  <th class="line-num" style="cursor: pointer;"></th>
-    <td class="line-code diff_out">
-    <pre>                             )) === false)
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">281</th>
-  <td class="line-code diff_in" >
-      <pre>  'SELECT `parent`  '</pre>
-      <div id="281" class="display" >
-          <input type="text" style="min-height: 18px; height: 18px;" id="contentk"/>
-          <input type="button" style="" value="评论"/>
-          <input type="reset" style="" value="取消" />
-      </div>
-  </td>
-  
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">282</th>
-    <td class="line-code diff_in">
-        <pre style="display:inline;"> 'FROM `cmp_' </pre>
-        <div id="282" class="display">
-            <input type="text" style="min-height: 18px; height: 18px;" id="contentk"/>
-            <input type="button" style="" value="评论"/>
-            <input type="reset" style="" value="取消"/></div>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">283</th>
-    <td class="line-code diff_in">
-    <pre>                                . 'WHERE `id`=' . $intId
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">284</th>
-    <td class="line-code diff_in">
-    <pre>                              )) === false)
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">285</th>
-  <th class="line-num" style="cursor: pointer;">285</th>
+  <th class="line-num" style="cursor: pointer;">449</th>
+  <th class="line-num" style="cursor: pointer;">453</th>
     <td class="line-code ">
-    <pre>            ) {
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">286</th>
-  <th class="line-num" style="cursor: pointer;">286</th>
-    <td class="line-code ">
-    <pre>            Debug::out('Invalid role id "' . $intId . '"!');
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">287</th>
-  <th class="line-num" style="cursor: pointer;">287</th>
-    <td class="line-code ">
-    <pre>            return false;
+    <pre>    }
 </pre>
   </td>
   </tr>
@@ -211,80 +207,131 @@
 <th class="line-num" style="cursor: pointer;">...</th><th class="line-num" style="cursor: pointer;">...</th><td></td>
 </tr>
 <tr>
-  <th class="line-num" style="cursor: pointer;">297</th>
-  <th class="line-num" style="cursor: pointer;">297</th>
+  <th class="line-num" style="cursor: pointer;">457</th>
+  <th class="line-num" style="cursor: pointer;">461</th>
     <td class="line-code ">
-    <pre>            return true;
+    <pre>        Base::load('library.user.userctrl');
 </pre>
   </td>
   </tr>
 
 <tr>
-  <th class="line-num" style="cursor: pointer;">298</th>
-  <th class="line-num" style="cursor: pointer;">298</th>
+  <th class="line-num" style="cursor: pointer;">458</th>
+  <th class="line-num" style="cursor: pointer;">462</th>
     <td class="line-code ">
+    <pre>        $objUserCtrl = new UserCtrl;
+</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">459</th>
+  <th class="line-num" style="cursor: pointer;">463</th>
+    <td class="line-code ">
+    <pre></pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">460</th>
+  <th class="line-num" style="cursor: pointer;"></th>
+    <td class="line-code diff_out">
+    <pre>        $objUserCtrl-&gt;thawUser('Leask');
+</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">464</th>
+    <td class="line-code diff_in">
+    <pre>        $bolResult = $objUserCtrl-&gt;thawUser('Leask');
+</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">461</th>
+  <th class="line-num" style="cursor: pointer;">465</th>
+    <td class="line-code ">
+    <pre></pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">462</th>
+  <th class="line-num" style="cursor: pointer;"></th>
+    <td class="line-code diff_out">
+    <pre>        echo 'User Leask has been thawed!';
+</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">466</th>
+    <td class="line-code diff_in">
+    <pre>        if ($bolResult) {
+</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">467</th>
+    <td class="line-code diff_in">
+    <pre>            echo 'User Leask has been thawed!';
+</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">468</th>
+    <td class="line-code diff_in">
     <pre>        } else {
 </pre>
   </td>
   </tr>
 
 <tr>
-  <th class="line-num" style="cursor: pointer;">299</th>
-  <th class="line-num" style="cursor: pointer;">299</th>
-    <td class="line-code ">
-    <pre>            Debug::out('Unable to remove role!'
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">300</th>
   <th class="line-num" style="cursor: pointer;"></th>
-    <td class="line-code diff_out">
-    <pre>                     . "\n" . 'company id: "' . $strCompanyId . '"'
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">300</th>
+  <th class="line-num" style="cursor: pointer;">469</th>
     <td class="line-code diff_in">
-    <pre>                     . "\n" . 'company_id: "' . $strCompanyId . '"'
+    <pre>            echo 'Failure!';
 </pre>
   </td>
   </tr>
 
 <tr>
-  <th class="line-num" style="cursor: pointer;">301</th>
-  <th class="line-num" style="cursor: pointer;">301</th>
-    <td class="line-code ">
-    <pre>                     . "\n" . 'role id: "'    . $intId . '"');
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">302</th>
-  <th class="line-num" style="cursor: pointer;">302</th>
-    <td class="line-code ">
-    <pre>            return false;
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">303</th>
-  <th class="line-num" style="cursor: pointer;">303</th>
-    <td class="line-code ">
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">470</th>
+    <td class="line-code diff_in">
     <pre>        }
 </pre>
   </td>
   </tr>
 
 <tr>
-  <th class="line-num" style="cursor: pointer;">304</th>
-  <th class="line-num" style="cursor: pointer;">304</th>
+  <th class="line-num" style="cursor: pointer;">463</th>
+  <th class="line-num" style="cursor: pointer;">471</th>
+    <td class="line-code ">
+    <pre></pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">464</th>
+  <th class="line-num" style="cursor: pointer;">472</th>
+    <td class="line-code ">
+    <pre>        $objUserCtrl = null;
+</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">465</th>
+  <th class="line-num" style="cursor: pointer;">473</th>
     <td class="line-code ">
     <pre>    }
 </pre>
@@ -292,16 +339,8 @@
   </tr>
 
 <tr>
-  <th class="line-num" style="cursor: pointer;">305</th>
-  <th class="line-num" style="cursor: pointer;">305</th>
-    <td class="line-code ">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">306</th>
-  <th class="line-num" style="cursor: pointer;">306</th>
+  <th class="line-num" style="cursor: pointer;">466</th>
+  <th class="line-num" style="cursor: pointer;">474</th>
     <td class="line-code ">
     <pre></pre>
   </td>
@@ -309,88 +348,24 @@
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">307</th>
+  <th class="line-num" style="cursor: pointer;">475</th>
     <td class="line-code diff_in">
-    <pre>    /**
+    <pre></pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">476</th>
+    <td class="line-code diff_in">
+    <pre>    public function actionCreateCompany()
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">308</th>
-    <td class="line-code diff_in">
-    <pre>     * Add user to company
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">309</th>
-    <td class="line-code diff_in">
-    <pre>     *
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">310</th>
-    <td class="line-code diff_in">
-    <pre>     * @param string $strUserId
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">311</th>
-    <td class="line-code diff_in">
-    <pre>     * @param string $strCompanyId
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">312</th>
-    <td class="line-code diff_in">
-    <pre>     * @return boolean depends on the success
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">313</th>
-    <td class="line-code diff_in">
-    <pre>     */
-</pre>
-  <div id="k1" class="display1">sunxinghua008:sdaas</div></td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">314</th>
-    <td class="line-code diff_in">
-    <pre>    public function addUserToCompany($strUserId,
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">315</th>
-    <td class="line-code diff_in">
-    <pre>                                     $strCompanyId)
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">316</th>
+  <th class="line-num" style="cursor: pointer;">477</th>
     <td class="line-code diff_in">
     <pre>    {
 </pre>
@@ -399,520 +374,454 @@
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">317</th>
+  <th class="line-num" style="cursor: pointer;">478</th>
     <td class="line-code diff_in">
-    <pre>        if (!$this-&gt;objUserCtrl-&gt;isUserExists($strUserId)) {
+    <pre>        @$strName          = $_POST['name'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">318</th>
+  <th class="line-num" style="cursor: pointer;">479</th>
     <td class="line-code diff_in">
-    <pre>            Debug::out('User "'    . $strUserId    . '" does not exists!');
+    <pre>        @$strPermissions   = $_POST['permissions'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">319</th>
+  <th class="line-num" style="cursor: pointer;">480</th>
     <td class="line-code diff_in">
-    <pre>            return false;
+    <pre>        @$strParent        = $_POST['parent'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">320</th>
+  <th class="line-num" style="cursor: pointer;">481</th>
     <td class="line-code diff_in">
-    <pre>        }
+    <pre>        @$strType          = $_POST['type'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">321</th>
+  <th class="line-num" style="cursor: pointer;">482</th>
     <td class="line-code diff_in">
-    <pre>        if (!$this-&gt;isCompanyNameExists($strCompanyId)) {
+    <pre>        @$strBusinessModel = $_POST['businessmodel'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">322</th>
+  <th class="line-num" style="cursor: pointer;">483</th>
     <td class="line-code diff_in">
-    <pre>            Debug::out('Company "' . $strCompanyId . '" does not exists!');
+    <pre>        @$strScale         = $_POST['scale'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">323</th>
+  <th class="line-num" style="cursor: pointer;">484</th>
     <td class="line-code diff_in">
-    <pre>            return false;
+    <pre>        @$strCountry       = $_POST['country'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">324</th>
+  <th class="line-num" style="cursor: pointer;">485</th>
     <td class="line-code diff_in">
-    <pre>        }
+    <pre>        @$strProvince      = $_POST['province'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">325</th>
+  <th class="line-num" style="cursor: pointer;">486</th>
     <td class="line-code diff_in">
-    <pre>        $arrayCompanyOfUser = $this-&gt;objUserCtrl-&gt;getCompanyByUserId(
+    <pre>        @$strCity          = $_POST['city'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">326</th>
+  <th class="line-num" style="cursor: pointer;">487</th>
     <td class="line-code diff_in">
-    <pre>                                  $strUserId
+    <pre>        @$strAddress       = $_POST['address'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">327</th>
+  <th class="line-num" style="cursor: pointer;">488</th>
     <td class="line-code diff_in">
-    <pre>                              );
+    <pre>        @$strZip           = $_POST['zip'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">328</th>
+  <th class="line-num" style="cursor: pointer;">489</th>
     <td class="line-code diff_in">
-    <pre>        if (!$resultInUserTable) {
+    <pre>        @$strTel           = $_POST['tel'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">329</th>
+  <th class="line-num" style="cursor: pointer;">490</th>
     <td class="line-code diff_in">
-    <pre>            Debug::out('Can not get current company infos from user table!');
+    <pre>        @$strMobile        = $_POST['mobile'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">330</th>
+  <th class="line-num" style="cursor: pointer;">491</th>
     <td class="line-code diff_in">
-    <pre>            return false;
+    <pre>        @$strFax           = $_POST['fax'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">331</th>
+  <th class="line-num" style="cursor: pointer;">492</th>
     <td class="line-code diff_in">
-    <pre>        }
+    <pre>        @$strEmail         = $_POST['email'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">332</th>
+  <th class="line-num" style="cursor: pointer;">493</th>
     <td class="line-code diff_in">
-    <pre>        $bolInUserTable = in_array($strCompanyId, $arrayCompanyOfUser)
+    <pre>        @$strQq            = $_POST['qq'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">333</th>
+  <th class="line-num" style="cursor: pointer;">494</th>
     <td class="line-code diff_in">
-    <pre>                        ? true
+    <pre>        @$strMsn           = $_POST['msn'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">334</th>
+  <th class="line-num" style="cursor: pointer;">495</th>
     <td class="line-code diff_in">
-    <pre>                        : false;
+    <pre>        @$strContact       = $_POST['contact'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">335</th>
+  <th class="line-num" style="cursor: pointer;">496</th>
     <td class="line-code diff_in">
-    <pre>        $bolInMemberTable = $this-&gt;objDbio-&gt;queryScalar(
+    <pre>        @$strMainBusiness  = $_POST['mainbusiness'];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">336</th>
+  <th class="line-num" style="cursor: pointer;">497</th>
     <td class="line-code diff_in">
-    <pre>                                'SELECT `user_id` '
+    <pre>        @$strIndustry      = $_POST[''];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">337</th>
+  <th class="line-num" style="cursor: pointer;">498</th>
     <td class="line-code diff_in">
-    <pre>                              . 'FROM `cmp_` ' . $strCompanyId . '_member` '
+    <pre>        @$strInterest      = $_POST[''];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">338</th>
+  <th class="line-num" style="cursor: pointer;">499</th>
     <td class="line-code diff_in">
-    <pre>                              . 'WHERE `user_id`="' . $strUserId . '"'
+    <pre>        @$strAbout         = $_POST[''];
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">339</th>
+  <th class="line-num" style="cursor: pointer;">500</th>
     <td class="line-code diff_in">
-    <pre>                            )
+    <pre></pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">501</th>
+    <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">502</th>
+    <td class="line-code diff_in">
+    <pre>        Base::load('library.company.companyctrl');
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">340</th>
+  <th class="line-num" style="cursor: pointer;">503</th>
     <td class="line-code diff_in">
-    <pre>                          ? true
+    <pre>        $objCompanyCtrl = new CompanyCtrl;
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">341</th>
+  <th class="line-num" style="cursor: pointer;">504</th>
     <td class="line-code diff_in">
-    <pre>                          : false;
+    <pre></pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">505</th>
+    <td class="line-code diff_in">
+    <pre>        //temp
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">342</th>
+  <th class="line-num" style="cursor: pointer;">506</th>
     <td class="line-code diff_in">
-    <pre>        if ($bolInUserTable !== $bolInMemberTable) {
+    <pre>        $objCompanyCtrl-&gt;createCompany($strName,
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">343</th>
+  <th class="line-num" style="cursor: pointer;">507</th>
     <td class="line-code diff_in">
-    <pre>            Debug::out('Invalid relationship between user and company!'
+    <pre>                                       $strPermissions   = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">344</th>
+  <th class="line-num" style="cursor: pointer;">508</th>
     <td class="line-code diff_in">
-    <pre>                     . "\n" . 'user_id: "'    . $strUserId . '"'
+    <pre>                                       $strParent        = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">345</th>
+  <th class="line-num" style="cursor: pointer;">509</th>
     <td class="line-code diff_in">
-    <pre>                     . "\n" . 'company_id: "' . $strCompanyId . '"');
+    <pre>                                       $strType          = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">346</th>
+  <th class="line-num" style="cursor: pointer;">510</th>
     <td class="line-code diff_in">
-    <pre>            return false;
+    <pre>                                       $strBusinessModel = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">347</th>
+  <th class="line-num" style="cursor: pointer;">511</th>
     <td class="line-code diff_in">
-    <pre>        }
+    <pre>                                       $strScale         = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">348</th>
+  <th class="line-num" style="cursor: pointer;">512</th>
     <td class="line-code diff_in">
-    <pre>        if ($bolInUserTable) {
+    <pre>                                       $strCountry       = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">349</th>
+  <th class="line-num" style="cursor: pointer;">513</th>
     <td class="line-code diff_in">
-    <pre>            Debug::out('User already exists in the company!'
+    <pre>                                       $strProvince      = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">350</th>
+  <th class="line-num" style="cursor: pointer;">514</th>
     <td class="line-code diff_in">
-    <pre>                     . "\n" . 'user_id: "'    . $strUserId . '"'
+    <pre>                                       $strCity          = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">351</th>
+  <th class="line-num" style="cursor: pointer;">515</th>
     <td class="line-code diff_in">
-    <pre>                     . "\n" . 'company_id: "' . $strCompanyId . '"');
+    <pre>                                       $strAddress       = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">352</th>
+  <th class="line-num" style="cursor: pointer;">516</th>
     <td class="line-code diff_in">
-    <pre>            return false;
+    <pre>                                       $strZip           = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">353</th>
+  <th class="line-num" style="cursor: pointer;">517</th>
     <td class="line-code diff_in">
-    <pre>        }
+    <pre>                                       $strTel           = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">354</th>
+  <th class="line-num" style="cursor: pointer;">518</th>
     <td class="line-code diff_in">
-    <pre>        $arrStrSql = array(
+    <pre>                                       $strMobile        = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">355</th>
+  <th class="line-num" style="cursor: pointer;">519</th>
     <td class="line-code diff_in">
-    <pre>            'INSERT INTO `cmp_` ' . $strCompanyId . '_member` '
+    <pre>                                       $strFax           = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">356</th>
+  <th class="line-num" style="cursor: pointer;">520</th>
     <td class="line-code diff_in">
-    <pre>          . 'SET `user_id`="'     . $strUserId . '"',
+    <pre>                                       $strEmail         = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">357</th>
+  <th class="line-num" style="cursor: pointer;">521</th>
     <td class="line-code diff_in">
-    <pre>            'UPDATE `sys_user_base` '
+    <pre>                                       $strQq            = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">358</th>
+  <th class="line-num" style="cursor: pointer;">522</th>
     <td class="line-code diff_in">
-    <pre>          . 'SET `company`="'     . addslashes(
+    <pre>                                       $strMsn           = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">359</th>
+  <th class="line-num" style="cursor: pointer;">523</th>
     <td class="line-code diff_in">
-    <pre>                                        serialize(
+    <pre>                                       $strContact       = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">360</th>
+  <th class="line-num" style="cursor: pointer;">524</th>
     <td class="line-code diff_in">
-    <pre>                                            array_merge($arrayCompanyOfUser,
+    <pre>                                       $strMainBusiness  = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">361</th>
+  <th class="line-num" style="cursor: pointer;">525</th>
     <td class="line-code diff_in">
-    <pre>                                                        array($strCompanyId)
+    <pre>                                       $strIndustry      = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">362</th>
+  <th class="line-num" style="cursor: pointer;">526</th>
     <td class="line-code diff_in">
-    <pre>                                        )
+    <pre>                                       $strInterest      = '',
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">363</th>
+  <th class="line-num" style="cursor: pointer;">527</th>
     <td class="line-code diff_in">
-    <pre>                                    )) .'" '
+    <pre>                                       $strAbout         = '');
 </pre>
   </td>
   </tr>
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">364</th>
-    <td class="line-code diff_in">
-    <pre>          . 'WHERE `user_id`="' . $strUserId . '"',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">365</th>
-    <td class="line-code diff_in">
-    <pre>        );
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">366</th>
-    <td class="line-code diff_in">
-    <pre>        if ($this-&gt;objDbio-&gt;transaction($arrStrSql)) {
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">367</th>
-    <td class="line-code diff_in">
-    <pre>            return true;
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">368</th>
-    <td class="line-code diff_in">
-    <pre>        } else {
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">369</th>
-    <td class="line-code diff_in">
-    <pre>            Debug::out('Unable to add user to company!'
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">370</th>
-    <td class="line-code diff_in">
-    <pre>                     . "\n" . 'user_id: "'    . $strUserId . '"'
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">371</th>
-    <td class="line-code diff_in">
-    <pre>                     . "\n" . 'company_id: "' . $strCompanyId . '"');
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">372</th>
-    <td class="line-code diff_in">
-    <pre>            return false;
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">373</th>
-    <td class="line-code diff_in">
-    <pre>        }
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">374</th>
+  <th class="line-num" style="cursor: pointer;">528</th>
     <td class="line-code diff_in">
     <pre>    }
 </pre>
@@ -921,35 +830,104 @@
 
 <tr>
   <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">375</th>
+  <th class="line-num" style="cursor: pointer;">529</th>
     <td class="line-code diff_in">
     <pre></pre>
   </td>
   </tr>
 
 <tr>
-  <th class="line-num" style="cursor: pointer;">307</th>
-  <th class="line-num" style="cursor: pointer;">376</th>
-    <td class="line-code ">
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">530</th>
+    <td class="line-code diff_in">
     <pre></pre>
   </td>
   </tr>
 
 <tr>
-  <th class="line-num" style="cursor: pointer;">308</th>
-  <th class="line-num" style="cursor: pointer;">377</th>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">531</th>
+    <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">467</th>
+  <th class="line-num" style="cursor: pointer;">532</th>
     <td class="line-code ">
-    <pre>    public function createCompany($strName,
+    <pre>}
+</pre>
+  </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll" id="c2">
+<table class="filecontent syntaxhl">
+<thead>
+<tr><th class="filename" colspan="3">b/library/common/object.php</th></tr>
+</thead>
+<tbody>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">80</th>
+  <th class="line-num" style="cursor: pointer;">80</th>
+    <td class="line-code ">
+    <pre>    {
 </pre>
   </td>
   </tr>
 
 <tr>
-  <th class="line-num" style="cursor: pointer;">309</th>
-  <th class="line-num" style="cursor: pointer;">378</th>
+  <th class="line-num" style="cursor: pointer;">81</th>
+  <th class="line-num" style="cursor: pointer;">81</th>
     <td class="line-code ">
-    <pre>                                  $strPermissions   = '',
+    <pre>        Base::load('library.validate.' . strtolower(get_class($this)) . 'rule');
 </pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">82</th>
+  <th class="line-num" style="cursor: pointer;">82</th>
+    <td class="line-code ">
+    <pre>    }
+</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">83</th>
+    <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;"></th>
+  <th class="line-num" style="cursor: pointer;">84</th>
+    <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">83</th>
+  <th class="line-num" style="cursor: pointer;">85</th>
+    <td class="line-code ">
+    <pre>}
+</pre>
+  </td>
+  </tr>
+
+<tr>
+  <th class="line-num" style="cursor: pointer;">84</th>
+  <th class="line-num" style="cursor: pointer;">86</th>
+    <td class="line-code ">
+    <pre></pre>
   </td>
   </tr>
 </tbody>
@@ -961,7 +939,7 @@
 
 
 <p class="other-formats">导出
-	<span><a rel="nofollow" class="diff" href="/AnYuan/projects/saas/repository/revisions/8ded9f23090113956b8854c860796b86abce1776/diff?format=diff&amp;rev_to=672da034437410b5e027bf9b8f00f1c227721186">Unified diff</a></span>
+	<span><a rel="nofollow" class="diff" href="/AnYuan/projects/saas/repository/revisions/a91b663b4aa77cfccca9e507ec3ed16c57957119/diff.diff?rev_to=b049d7c7eff9df8f19ca07bf198c942972853cce">Unified diff</a></span>
 </p>
 
 

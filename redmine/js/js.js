@@ -29,7 +29,7 @@ jQuery("document").ready(function(){
                             if (line==total){
                                 k++;
                                 var div=document.createElement("div");
-                                th.parent().find("td").append(div);
+                                th.parent().find("td").find("td").eq(1).append(div);
                                 div.setAttribute("id", "k"+k);
                                 div.setAttribute("class", "display1");
                                 jQuery("#k"+k).text(content);
@@ -41,9 +41,13 @@ jQuery("document").ready(function(){
             }
         });
     }
-
     show();
+    var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td>&nbsp;</td><td>&nbsp;</td></tr></table>';
     jQuery(".line-num").css("cursor","pointer");
+    jQuery.each(jQuery(".line-code"),function(){
+       jQuery(this).append(str);
+       jQuery(this).children().find("td").eq(0).append(jQuery(this).children("pre").css("display","inline"));
+    });
     jQuery(".line-num").bind ("click",function(){
         function insert(){
             var content=jQuery("#contentk").val();
@@ -81,12 +85,12 @@ jQuery("document").ready(function(){
             if (jQuery(".display")){
                 jQuery(".display").remove();
                 var kk=document.createElement("div");
-                jQuery(this).parent().find("td").append(kk);
+                jQuery(this).parent().find("td").find("td").eq(1).append(kk);
                 kk.setAttribute("id", line);
                 kk.setAttribute("class", "display");
                 jQuery("#"+line).append('<input  type="text"  id="contentk" style="min-height:16px;height:16px;/>');
-                jQuery("#"+line).append(' <input type="button" value="\u8bc4论" style="heigth:12px;" />');
-                jQuery("#"+line).append(' <input  type="reset" value="\u53d6消" style="heigth:12px;" />');
+                jQuery("#"+line).append('<input type="button" value="\u8bc4论" style="heigth:12px;" />');
+                jQuery("#"+line).append('<input  type="reset" value="\u53d6消" style="heigth:12px;" />');
                 jQuery(":reset").click(function(){
                     jQuery("#"+line).remove();
                 });
