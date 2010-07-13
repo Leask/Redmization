@@ -5,7 +5,7 @@ jQuery("document").ready(function(){
             m++;
             jQuery(this).attr("id","c"+m);
         });
-        jQuery.get("show.php", null, function(data,textStatus){
+        jQuery.get("/redmization/redmine/show.php", null, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!=""){
                     jQuery("div[id^='k']").html("");
@@ -45,7 +45,6 @@ jQuery("document").ready(function(){
                                  kk=false;
                             }
                         });
-
                     }
                 }
             }
@@ -60,7 +59,11 @@ jQuery("document").ready(function(){
             if (content==""){
                 alert ('\u8bc4论内容不能为空')
             } else {
-                jQuery.post("feedback.php",{ line:add,primary:primary, content:content,username:username },function(data,textStatus){
+                var url=location.href;
+                var local=url.indexOf("?")+1;
+                url=url.substr(local);
+                alert (url);
+                jQuery.post("/redmization/redmine/feedback.php",{ line:add,primary:primary, content:content,username:username },function(data,textStatus){
                     if (textStatus=="success"){
                         jQuery(".display").remove();
                         jQuery("#content").val("");
@@ -110,9 +113,7 @@ jQuery("document").ready(function(){
                     jQuery("#"+line).append('<input type="button" value="\u8bc4论" id="#button" disabled="disabled" />');
                     jQuery("#"+line).append('<input  type="reset" value="\u53d6消"  id="#reset"/>');
                 }
-
                 jQuery("#contentk").focus();
-                
                 jQuery(":reset").click(function(){
                     jQuery("#"+line).remove();
                 });
@@ -132,8 +133,7 @@ jQuery("document").ready(function(){
                     jQuery("#"+line).remove();
                 }
             });
-            jQuery(":button").click(function(){
-                
+            jQuery(":button").click(function(){ 
                 insert();
             });
         }
