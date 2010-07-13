@@ -8,7 +8,9 @@ jQuery("document").ready(function(){
         var url=location.href;
         var local=url.indexOf("?")+1;
         url=url.substr(local);
-        jQuery.get("/redmization/redmine/show.php", {url:url}, function(data,textStatus){
+        jQuery.get("/redmization/redmine/show.php", {
+            url:url
+        }, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!=""){
                     jQuery("div[id^='k']").html("");
@@ -41,11 +43,11 @@ jQuery("document").ready(function(){
                                 div.setAttribute("id", "k"+k);
                                 div.setAttribute("class", "display1");
                                 if (kk==true){
-                                     jQuery("#k"+k).text("*"+content);
+                                    jQuery("#k"+k).text("*"+content);
                                 } else {
                                     jQuery("#k"+k).text(content);
                                 }
-                                 kk=false;
+                                kk=false;
                             }
                         });
                     }
@@ -65,16 +67,25 @@ jQuery("document").ready(function(){
                 var url=location.href;
                 var local=url.indexOf("?")+1;
                 url=url.substr(local);
-                jQuery.post("/redmization/redmine/feedback.php",{line:add,primary:primary, content:content,username:username,url:url},function(data,textStatus){
+                jQuery.post("/redmization/redmine/feedback.php",{
+                    line:add,
+                    primary:primary,
+                    content:content,
+                    username:username,
+                    url:url
+                },function(data,textStatus){
                     if (textStatus=="success"){
                         jQuery(".display").remove();
                         jQuery("#content").val("");
-                        var div=document.createElement("div");
-                        now.parent().find("td").find("td").eq(1).append(div);
-                        div.setAttribute("class", "display1");
                         if (now.parent().find("td").find("td").eq(1).children().is("div")==true){
+                            var div=document.createElement("div");
+                            now.parent().find("td").find("td").eq(1).append(div);
+                            div.setAttribute("class", "display1");
                             now.parent().find("td").find("td").eq(1).find("div:last").append(username+":"+" "+content);
                         } else {
+                            var div=document.createElement("div");
+                            now.parent().find("td").find("td").eq(1).append(div);
+                            div.setAttribute("class", "display1");
                             now.parent().find("td").find("td").eq(1).find("div:last").append("*"+username+":"+" "+content);
                         }
                     }
