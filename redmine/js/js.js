@@ -5,7 +5,10 @@ jQuery("document").ready(function(){
             m++;
             jQuery(this).attr("id","c"+m);
         });
-        jQuery.get("/redmization/redmine/show.php", null, function(data,textStatus){
+        var url=location.href;
+        var local=url.indexOf("?")+1;
+        url=url.substr(local);
+        jQuery.get("/redmization/redmine/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!=""){
                     jQuery("div[id^='k']").html("");
