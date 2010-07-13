@@ -59,14 +59,10 @@ jQuery("document").ready(function(){
             if (content==""){
                 alert ('\u8bc4论内容不能为空')
             } else {
-<<<<<<< HEAD
                 var url=location.href;
                 var local=url.indexOf("?")+1;
                 url=url.substr(local);
-                alert (url);
-=======
->>>>>>> f2b5045d71ff2fc523cbbe79e24a7bbeb9aeab78
-                jQuery.post("/redmization/redmine/feedback.php",{ line:add,primary:primary, content:content,username:username },function(data,textStatus){
+                jQuery.post("/redmization/redmine/feedback.php",{ line:add,primary:primary, content:content,username:username,url:url },function(data,textStatus){
                     if (textStatus=="success"){
                         jQuery(".display").remove();
                         jQuery("#content").val("");
