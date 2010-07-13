@@ -5,13 +5,12 @@ jQuery("document").ready(function(){
             m++;
             jQuery(this).attr("id","c"+m);
         });
-        jQuery.get("/redmization/redmine/show.php", null, function(data,textStatus){
+        jQuery.get("show.php", null, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!=""){
                     jQuery("div[id^='k']").html("");
                     eval('var f='+data);
-                    var num;
-                    num=f.length;
+                    var num=f.length;
                     var i;
                     var k=0;
                     for (i=1;i<=num;i++){
@@ -19,7 +18,7 @@ jQuery("document").ready(function(){
                         var line=f[i-1].line;
                         var content=f[i-1].content;
                         var username=f[i-1].username;
-                        content=username+":"+content;
+                        content=username+":"+" "+content;
                         var tr=div1.find("tr:gt(0)");
                         jQuery.each(tr,function(){
                             var th=jQuery(this).find("th");
@@ -61,23 +60,17 @@ jQuery("document").ready(function(){
             if (content==""){
                 alert ('\u8bc4论内容不能为空')
             } else {
-                jQuery.post("/redmization/redmine/feedback.php",{
-                    line:add,
-                    primary:primary,
-                    content:content,
-                    username:username
-                },function(data,textStatus){
+                jQuery.post("feedback.php",{ line:add,primary:primary, content:content,username:username },function(data,textStatus){
                     if (textStatus=="success"){
                         jQuery(".display").remove();
                         jQuery("#content").val("");
                         var div=document.createElement("div");
                         now.parent().find("td").find("td").eq(1).append(div);
                         div.setAttribute("class", "display1");
-                        
-                        if (now.parent().find("td").find("td").eq(1).is("div")==true){
-                            now.parent().find("td").find("td").eq(1).find("div:last").append(username+":"+content);
+                        if (now.parent().find("td").find("td").eq(1).children().is("div")==true){
+                            now.parent().find("td").find("td").eq(1).find("div:last").append(username+":"+" "+content);
                         } else {
-                            now.parent().find("td").find("td").eq(1).find("div:last").append("*"+username+":"+content);
+                            now.parent().find("td").find("td").eq(1).find("div:last").append("*"+username+":"+" "+content);
                         }
                     }
                 });
