@@ -12,7 +12,7 @@ jQuery("document").ready(function(){
             url:url
         }, function(data,textStatus){
             if (textStatus=="success"){
-                if (data!=""){
+                if (data!="true"){
                     jQuery("div[id^='k']").html("");
                     eval('var f='+data);
                     var num=f.length;
