@@ -65,7 +65,7 @@ jQuery("document").ready(function(){
                 var url=location.href;
                 var local=url.indexOf("?")+1;
                 url=url.substr(local);
-                jQuery.post("/redmization/redmine/feedback.php",{ line:add,primary:primary, content:content,username:username,url:url },function(data,textStatus){
+                jQuery.post("/redmization/redmine/feedback.php",{line:add,primary:primary, content:content,username:username,url:url},function(data,textStatus){
                     if (textStatus=="success"){
                         jQuery(".display").remove();
                         jQuery("#content").val("");
@@ -124,6 +124,9 @@ jQuery("document").ready(function(){
             }
             jQuery("#contentk").keypress(function(event){
                 jQuery(":button").removeAttr("disabled");
+                if (jQuery("#contentk").text().length==0){
+                    jQuery(":button").Attr("disabled","disabled");
+                }
                 var unicode=event.keyCode ? event.keyCode : event.charCode;
                 if (unicode==13){
                     insert();
