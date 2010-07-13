@@ -4,4 +4,5 @@ $conn=@mysql_connect("localhost", "root", "AnYuan") or die("mysql数据库没有
 mysql_query("set names utf8");
 $str=stristr(__FILE__, "?");
 $str=substr($str, 1);
+echo $str;
 ?>
