@@ -124,8 +124,8 @@ jQuery("document").ready(function(){
             }
             jQuery("#contentk").keypress(function(event){
                 jQuery(":button").removeAttr("disabled");
+                alert (jQuery("#contentk").text());
                 if (jQuery("#contentk").text().length==0){
-                    alert ("dddd");
                     jQuery(":button").attr("disabled","disabled");
                 }
                 var unicode=event.keyCode ? event.keyCode : event.charCode;
