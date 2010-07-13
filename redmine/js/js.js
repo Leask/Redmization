@@ -18,11 +18,7 @@ jQuery("document").ready(function(){
                         var line=f[i-1].line;
                         var content=f[i-1].content;
                         var username=f[i-1].username;
-<<<<<<< HEAD
                         content=username+":"+" "+content;
-=======
-                        content=username+":"+"  "+content;
->>>>>>> 5408d3b9aa24c91603a6734469c111a6fbfe308a
                         var tr=div1.find("tr:gt(0)");
                         jQuery.each(tr,function(){
                             var th=jQuery(this).find("th");
@@ -71,18 +67,10 @@ jQuery("document").ready(function(){
                         var div=document.createElement("div");
                         now.parent().find("td").find("td").eq(1).append(div);
                         div.setAttribute("class", "display1");
-<<<<<<< HEAD
                         if (now.parent().find("td").find("td").eq(1).children().is("div")==true){
                             now.parent().find("td").find("td").eq(1).find("div:last").append(username+":"+" "+content);
                         } else {
                             now.parent().find("td").find("td").eq(1).find("div:last").append("*"+username+":"+" "+content);
-=======
-                        
-                        if (now.parent().find("td").find("td").eq(1).children().is("div")==true){
-                            now.parent().find("td").find("td").eq(1).find("div:last").append(username+":"+"  "+content);
-                        } else {
-                            now.parent().find("td").find("td").eq(1).find("div:last").append("*"+username+":"+"  "+content);
->>>>>>> 5408d3b9aa24c91603a6734469c111a6fbfe308a
                         }
                     }
                 });
