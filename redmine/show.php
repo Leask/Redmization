@@ -8,7 +8,7 @@ $query=mysql_query($sql);
     $arr[]=array("primary"=>$row["filename"],"url"=>$row["url"],"line"=>$row["line"],"content"=>$row["content"],"username"=>$row["username"]);
 }
 if (count($arr)==0) {
-   echo "true";
+   echo "no";
 } else {
    echo  json_encode($arr);
 }
