@@ -10,8 +10,8 @@ jQuery("document").ready(function(){
         url=url.substr(local);
 		alert (url);
         jQuery.get("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
-		    alert (data);
             if (textStatus=="success"){
+			      alert (data);
                 if (data!="no"){
                     jQuery("div[id^='k']").html("");
                     eval('var f='+data);
