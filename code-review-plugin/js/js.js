@@ -9,7 +9,7 @@ jQuery("document").ready(function(){
         var local=url.indexOf("?")+1;
         url=url.substr(local);
 		alert (url);
-        jQuery.get("/redmization/redmine/show.php", {url:url}, function(data,textStatus){
+        jQuery.get("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
 		    alert (data);
             if (textStatus=="success"){
                 if (data!="no"){
@@ -67,7 +67,7 @@ jQuery("document").ready(function(){
                 var url=location.href;
                 var local=url.indexOf("?")+1;
                 url=url.substr(local);
-                jQuery.post("/redmization/redmine/feedback.php",{
+                jQuery.post("/redmization/code-review-plugin/feedback.php",{
                     line:add,
                     primary:primary,
                     content:content,
