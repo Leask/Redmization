@@ -41,7 +41,7 @@ jQuery("document").ready(function(){
                                 div.setAttribute("id", "k"+k);
                                 div.setAttribute("class", "display1");
                                 if (kk==true){
-                                    jQuery("#k"+k).text(content);
+                                    jQuery("#k"+k).text("*"+content);
                                 } else {
                                     jQuery("#k"+k).text(content);
                                 }
@@ -81,11 +81,10 @@ jQuery("document").ready(function(){
                             div.setAttribute("class", "display1");
                             now.parent().find("td").find("td").eq(1).find("div:last").append(username+":"+" "+content);
                         } else {
-						    now.parent().find("td").find("td").eq(1).html("");
                             var div=document.createElement("div");
                             now.parent().find("td").find("td").eq(1).append(div);
                             div.setAttribute("class", "display1");
-                            now.parent().find("td").find("td").eq(1).find("div:last").append(username+":"+" "+content);
+                            now.parent().find("td").find("td").eq(1).find("div:last").append("*"+username+":"+" "+content);
                         }
                     }
                 });
@@ -108,7 +107,7 @@ jQuery("document").ready(function(){
                 jQuery(".display").remove();
                 var kk=document.createElement("div");
                 if (jQuery(this).parent().find("td").children().is("table")==false){
-                    jQuery(this).parent().find("td").append('<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;">&nbsp;</td><td style="width:50%;">&nbsp;</td></tr></table>');
+                    jQuery(this).parent().find("td").append('<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;"></td><td style="width:50%;"></td></tr></table>');
                     jQuery(this).parent().find("td").find("td").eq(1).append(kk);
                 } else {
                     jQuery(this).parent().find("td").find("td").eq(1).append(kk);
