@@ -9,5 +9,7 @@ $sql="INSERT INTO `feedback`.`feedbackview` (`id`, `url`, `line`, `content`,`fil
 $result=mysql_query($sql);
 if ($result==true) {
     echo "提交成功";
+} else {
+    echo $result;
 }
 ?>
