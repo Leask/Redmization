@@ -75,6 +75,7 @@ jQuery("document").ready(function(){
                     url:url
                 },function(data,textStatus){
                     if (textStatus=="success"){
+					    alert (data);
                         jQuery(".display").remove();
                         jQuery("#content").val("");
                         if (now.parent().find("td").find("td").eq(1).children().is("div")==true){
