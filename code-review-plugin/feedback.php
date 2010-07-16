@@ -1,7 +1,7 @@
 <?php
 require_once ("conn.php");
 $line=$_POST['line'];
-$content=$_POST['content'];
+$content=addslashes($_POST['content']);
 $file=$_POST['primary'];
 $username=$_POST['username'];
 $str=$_POST['url'];
