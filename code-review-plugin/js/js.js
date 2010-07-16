@@ -11,11 +11,11 @@ jQuery("document").ready(function(){
 		alert (url);
         jQuery.get("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
-			      alert (data);
                 if (data!="no"){
                     jQuery("div[id^='k']").html("");
                     eval('var f='+data);
                     var num=f.length;
+					alert (num);
                     var i;
                     var k=0;
                     for (i=1;i<=num;i++){
@@ -56,14 +56,13 @@ jQuery("document").ready(function(){
         });
     }
     show(); 
-	/**
     jQuery(".line-num").css("cursor","pointer");
     jQuery(".line-num").bind ("click",function(){
         function insert(){
             var content=jQuery("#contentk").val();
             var username=jQuery("#loggedas").find("a").text();
             if (content==""){
-                alert ('\u8bc4论内容不能为空')
+                alert ("评论内容不能为空");
             } else {
                 var url=location.href;
                 var local=url.indexOf("?")+1;
@@ -155,5 +154,4 @@ jQuery("document").ready(function(){
             });
         }
     });
-	*/
 });
