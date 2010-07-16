@@ -5,9 +5,7 @@ jQuery("document").ready(function(){
             m++;
             jQuery(this).attr("id","c"+m);
         });
-        var url=location.href;
-        var local=url.indexOf("?")+1;
-        url=url.substr(local);
+		url=jQuery("#content").children("h2").text();
         jQuery.post("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!="no"){
@@ -62,9 +60,7 @@ jQuery("document").ready(function(){
             if (content==""){
                
             } else {
-                var url=location.href;
-                var local=url.indexOf("?")+1;
-                url=url.substr(local);
+		         url=jQuery("#content").children("h2").text();
                 jQuery.post("/redmization/code-review-plugin/feedback.php",{
                     line:add,
                     primary:primary,
