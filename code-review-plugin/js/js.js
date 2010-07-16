@@ -61,6 +61,7 @@ jQuery("document").ready(function(){
                
             } else {
                		url=jQuery("#content").children("h2").val();
+					alert (url);
                 jQuery.post("/redmization/code-review-plugin/feedback.php",{
                     line:add,
                     primary:primary,
