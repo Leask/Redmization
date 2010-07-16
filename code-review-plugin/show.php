@@ -1,8 +1,10 @@
 <?php
-
 require_once ("conn.php");
+$str="";
 $str=$_GET['url'];
+$sql="";
 $sql="select * from feedbackview where url='".$str."'";
+$query="";
 $query=mysql_query($sql);
 $vailable=false;
  while ($row=mysql_fetch_array($query)){
