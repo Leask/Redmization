@@ -5,7 +5,6 @@ jQuery("document").ready(function(){
             m++;
             jQuery(this).attr("id","c"+m);
         });
-		    show(); 
         var url=location.href;
         var local=url.indexOf("?")+1;
         url=url.substr(local);
@@ -56,6 +55,7 @@ jQuery("document").ready(function(){
             }
         });
     }
+    show(); 
     jQuery(".line-num").css("cursor","pointer");
     jQuery(".line-num").bind ("click",function(){
         function insert(){
