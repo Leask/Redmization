@@ -81,6 +81,7 @@ jQuery("document").ready(function(){
                             div.setAttribute("class", "display1");
                             now.parent().find("td").find("td").eq(1).find("div:last").append(username+":"+" "+content);
                         } else {
+						    now.parent().find("td").find("td").eq(1).html("");
                             var div=document.createElement("div");
                             now.parent().find("td").find("td").eq(1).append(div);
                             div.setAttribute("class", "display1");
@@ -121,8 +122,8 @@ jQuery("document").ready(function(){
                     jQuery("#"+line).append('<input  type="reset" value="Cancel"  id="#reset"/>');
                 }else{
                     jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;"/>');
-                    jQuery("#"+line).append('<input type="button" value="\u8bc4论" id="#button" disabled="disabled" />');
-                    jQuery("#"+line).append('<input  type="reset" value="\u53d6消"  id="#reset"/>');
+                    jQuery("#"+line).append('<input type="button" value="评论" id="#button" disabled="disabled" />');
+                    jQuery("#"+line).append('<input  type="reset" value="取消"  id="#reset"/>');
                 }
                 jQuery("#contentk").focus();
                 jQuery(":reset").click(function(){
