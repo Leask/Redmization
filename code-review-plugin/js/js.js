@@ -56,6 +56,7 @@ jQuery("document").ready(function(){
         });
     }
     show(); 
+	/**
     jQuery(".line-num").css("cursor","pointer");
     jQuery(".line-num").bind ("click",function(){
         function insert(){
@@ -154,4 +155,5 @@ jQuery("document").ready(function(){
             });
         }
     });
+	*/
 });
