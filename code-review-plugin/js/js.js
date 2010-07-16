@@ -5,7 +5,7 @@ jQuery("document").ready(function(){
             m++;
             jQuery(this).attr("id","c"+m);
         });
-		url=jQuery("#content").children("h2").val();
+		url=jQuery("#content").children().find(""h2"").val();
         jQuery.post("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!="no"){
@@ -60,8 +60,7 @@ jQuery("document").ready(function(){
             if (content==""){
                
             } else {
-               		url=jQuery("#content").children("h2").val();
-					alert (url);
+               		url=jQuery("#content").children().find(""h2"").val();
                 jQuery.post("/redmization/code-review-plugin/feedback.php",{
                     line:add,
                     primary:primary,
