@@ -9,7 +9,7 @@ jQuery("document").ready(function(){
         var local=url.indexOf("?")+1;
         url=url.substr(local);
 		alert (url);
-        jQuery.get("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
+        jQuery.post("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!="no"){
                     jQuery("div[id^='k']").html("");
