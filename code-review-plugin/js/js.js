@@ -60,7 +60,7 @@ jQuery("document").ready(function(){
             var content=jQuery("#contentk").val();
             var username=jQuery("#loggedas").find("a").text();
             if (content==""){
-                alert ("评论内容不能为空");
+               
             } else {
                 var url=location.href;
                 var local=url.indexOf("?")+1;
