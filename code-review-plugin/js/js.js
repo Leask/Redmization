@@ -8,9 +8,9 @@ jQuery("document").ready(function(){
         var url=location.href;
         var local=url.indexOf("?")+1;
         url=url.substr(local);
-        jQuery.get("/redmization/redmine/show.php", {
-            url:url
-        }, function(data,textStatus){
+		alert (url);
+        jQuery.get("/redmization/redmine/show.php", {url:url}, function(data,textStatus){
+		    alert (data);
             if (textStatus=="success"){
                 if (data!="no"){
                     jQuery("div[id^='k']").html("");
