@@ -13,7 +13,7 @@ $email= new Email(array(
                  'username' => 'anyuanproject@gmail.com',
                  'password' => 'AnYuan.Project.for.Redmine',
                  'timeout' => 3,
-          ));
+          ),"anyuanproject@gmail.com");
 $email->send('"sunxinghua" <sunxinghua008@gmail.com>', "孙兴华用来测试的", "还是来测试的");
 $sql="INSERT INTO `feedback`.`feedbackview` (`id`, `url`, `line`, `content`,`filename`,`username`) VALUES (NULL, '$str', '$line', '$content', '$file','$username')";
 $result=mysql_query($sql);
