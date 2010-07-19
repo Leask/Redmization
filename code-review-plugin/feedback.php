@@ -9,7 +9,9 @@ $email= new Email(array(
                  'password' => 'AnYuan.Project.for.Redmine'
           ),"anyuanproject@gmail.com");
 
-echo $email->send('"sunxinghua" <sunxinghua008@gmail.com>', "孙兴华用来测试的", "还是来测试的");
+if ($email->send('sunxinghua008@gmail.com', "孙兴华用来测试的", "还是来测试的")) {
+    echo 'success';
+}
 die();
 $line=$_POST['line'];
 $content=addslashes($_POST['content']);
