@@ -6,8 +6,7 @@ $email= new Email(array(
                  'port' => '587', // Backup port: 465
                  'auth' => true,
                  'username' => 'anyuanproject@gmail.com',
-                 'password' => 'AnYuan.Project.for.Redmine',
-                 'timeout' => 3,
+                 'password' => 'AnYuan.Project.for.Redmine'
           ),"anyuanproject@gmail.com");
 
 $email->send('"sunxinghua" <sunxinghua008@gmail.com>', "孙兴华用来测试的", "还是来测试的");
