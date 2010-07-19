@@ -62,7 +62,6 @@ jQuery("document").ready(function(){
             } else {
 		         url=jQuery("#content").children("h2").text();
                  var kk=jQuery(".filename").text();
-                 alert (kk);
                 jQuery.post("/redmization/code-review-plugin/sendmail.php",{
                     line:add,
                     primary:kk,
