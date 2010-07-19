@@ -11,6 +11,6 @@ $email= new Email(array(
                  'username' => 'anyuanproject@gmail.com',
                  'password' => 'AnYuan.Project.for.Redmine'
           ),"anyuanproject@gmail.com");
-$email->send('"$username"."<$username@gmail.com>"', "$filename", "$content");
+$email->send('"$username"."<$username@gmail.com>"', "评论内容", "$content");
 echo "邮件发送成功";
 ?>
