@@ -58,7 +58,7 @@ class Email
         /**
          * Get smtp server configuration and create a pear main object
          */
-        $this->objPearMail = @Mail::factory(
+        $this->objPearMail = Mail::factory(
                                  'smtp',
                                  $arrSmtpParams?:Main::$SMTP_PARAMS
                              );
@@ -95,16 +95,16 @@ class Email
         // Add text and(or) html body to message
         if ($strTextMessage) {
             $this->arrHeaders['Content-type'] = 'text/plain; charset=utf-8';
-            @$objMime->setTXTBody($strTextMessage);
+            $objMime->setTXTBody($strTextMessage);
         }
         if ($strHtmlMessage) {
             $this->arrHeaders['Content-type'] = 'text/html; charset=utf-8';
-            @$objMime->setHTMLBody($strHtmlMessage);
+            $objMime->setHTMLBody($strHtmlMessage);
         }
 
         // Add attachment(s)
         foreach ($arrAttachments as $arrAttachment) {
-            @$objMime->addAttachment($arrAttachment['file'],
+            $objMime->addAttachment($arrAttachment['file'],
                                      $arrAttachment['content_type'],
                                      $arrAttachment['file_name'],
                                      0);
@@ -123,7 +123,7 @@ class Email
                      );
 
         // Error handle
-        if (@PEAR::isError($objResult)) {
+        if (PEAR::isError($objResult)) {
             // Comment this when using this class outside our framework
             //Debug::out('Message can not be sent: ' . @$objResult->getMessage());
             return false;
