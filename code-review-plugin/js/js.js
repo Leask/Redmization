@@ -101,6 +101,8 @@ jQuery("document").ready(function(){
         var add="";
         var file=jQuery(this).parent().parent().parent().children().eq(1).text();
         var primary=jQuery(this).parent().parent().parent().parent().attr("id");
+        var ab=jQuery(this).parent().parent().parent().parent().children(".filename").text();
+        alert (ab);
         file=file.replace(/(^\s*)/g,"");
         jQuery.each(total, function(m){
             if (jQuery(total).eq(m).text()==""){
