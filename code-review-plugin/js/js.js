@@ -103,8 +103,13 @@ jQuery("document").ready(function(){
         var primary=jQuery(this).parent().parent().parent().parent().attr("id");
         file=file.replace(/(^\s*)/g,"");
         jQuery.each(total, function(m){
-            add+= (jQuery(total).eq(m).text());
+            if (jQuery(total).eq(m).text()==""){
+                add+="0";
+                add+=",";
+            }else{
+                 add+= (jQuery(total).eq(m).text());
             add+=",";
+            }
         });
         add=add.substr(0,add.length-1);
         if (line != ""){
