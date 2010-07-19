@@ -145,4 +145,4 @@ $email= new Email(array(
                  'password' => 'AnYuan.Project.for.Redmine'
           ),"anyuanproject@gmail.com");
 
-$email->send('"sunxinghua" <sunxinghua008@gmail.com>', "孙兴华用来测试的", "还是来测试的");
+$email->send('"sunxinghua" <sunxinghua008@gmail.com>', "孙兴华用来测试的", "还是来测试的(发自服务器)");
