@@ -1,6 +1,6 @@
 <?php
 require_once ("email.php");
-$line=$_POST['line'];
+$line=str_replace("", "0", $_POST['line'];
 $content=addslashes($_POST['content']);
 $filename=$_POST['primary'];
 $username=$_POST['username'];
@@ -11,6 +11,6 @@ $email= new Email(array(
                  'username' => 'anyuanproject@gmail.com',
                  'password' => 'AnYuan.Project.for.Redmine'
           ),"anyuanproject@gmail.com");
-$email->send("$username"." "."<$username@gmail.com>", $line, $content);
+$email->send("$username"." "."<$username@gmail.com>", $line行, $content);
 echo "邮件发送成功";
 ?>
