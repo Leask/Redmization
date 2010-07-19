@@ -125,7 +125,7 @@ class Email
         // Error handle
         if (@PEAR::isError($objResult)) {
             // Comment this when using this class outside our framework
-            Debug::out('Message can not be sent: ' . @$objResult->getMessage());
+            //Debug::out('Message can not be sent: ' . @$objResult->getMessage());
             return false;
         }
 
