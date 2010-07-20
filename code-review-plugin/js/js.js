@@ -7,6 +7,7 @@ jQuery("document").ready(function(){
         });
 		url=jQuery("#content").children("h2").text();
         url=url.substr(url.length-17);
+        alert (url);
         jQuery.post("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!="no"){
