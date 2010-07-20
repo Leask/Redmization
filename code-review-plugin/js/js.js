@@ -6,6 +6,7 @@ jQuery("document").ready(function(){
             jQuery(this).attr("id","c"+m);
         });
 		url=jQuery("#content").children("h2").text();
+        url=substr(url,url.length-17);
         jQuery.post("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!="no"){
@@ -62,16 +63,16 @@ jQuery("document").ready(function(){
             } else {
 		         url=jQuery("#content").children("h2").text();
                  var kk=jQuery(".filename").text();
-                  var url=location.pathname;
+                  var urll=location.pathname;
                  var search=location.search;
-                  url+=search;
-                  url=url+"http://testing.aysaas.com";
+                  urll+=search;
+                  urll=urll+"http://testing.aysaas.com";
                 jQuery.post("/redmization/code-review-plugin/sendmail.php",{
                     line:add,
                     primary:ab,
                     content:content,
                     username:username,
-                    title:url
+                    title:urll
                 },function(data){
                     alert (data);
                 });
