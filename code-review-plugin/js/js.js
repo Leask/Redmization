@@ -63,19 +63,7 @@ jQuery("document").ready(function(){
 		         url=jQuery("#content").children("h2").text();
                  var kk=jQuery(".filename").text();
                  		url=jQuery("#content").children("h2").text();
-        var urll=location.pathname;
-       var search=location.search;
-urll+=search;
- urll="http://testing.aysaas.com"+urll;
-                jQuery.post("/redmization/code-review-plugin/sendmail.php",{
-                    line:add,
-                    primary:ab,
-                    content:content,
-                    username:username,
-                    title:urll
-                },function(data){
-                    alert (data);
-                });
+
                 jQuery.post("/redmization/code-review-plugin/feedback.php",{
                     line:add,
                     primary:primary,
