@@ -21,8 +21,7 @@ $email= new Email(array(
                  'auth' => true,
                  'username' => 'anyuanproject@gmail.com',
                  'password' => 'AnYuan.Project.for.Redmine'
-          )
-        );
+          ),"anyuanproject@gmail.com");
 $email->send($newrecevier, $filename."文件下".$line."行", $content);
 echo "邮件发送成功";
 ?>
