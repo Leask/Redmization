@@ -6,7 +6,7 @@ jQuery("document").ready(function(){
             jQuery(this).attr("id","c"+m);
         });
 		url=jQuery("#content").children("h2").text();
-        url=url.substr(url.length-16);
+        url=url.substr(url.length-14);
         jQuery.post("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!="no"){
@@ -61,8 +61,7 @@ jQuery("document").ready(function(){
             if (content==""){
                
             } else {
-		         url=jQuery("#content").children("h2").text();
-                  url=url.substr(url.length-16);
+		     
                  var kk=jQuery(".filename").text();
                   var urll=location.pathname;
                  var search=location.search;
@@ -77,6 +76,8 @@ jQuery("document").ready(function(){
                 },function(data){
                     alert (data);
                 });
+                    url=jQuery("#content").children("h2").text();
+                  url=url.substr(url.length-14);
                 jQuery.post("/redmization/code-review-plugin/feedback.php",{
                     line:add,
                     primary:primary,
