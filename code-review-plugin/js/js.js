@@ -17,11 +17,13 @@ jQuery("document").ready(function(){
                     var k=0;
                     for (i=1;i<=num;i++){
                         if (jQuery(".home").text()=="Home"){
+                            var kk="#"+"Revision"+" "+f[i-1].primary;
                             var div1=jQuery("#"+"Revision"+" "+f[i-1].primary).children();
                         } else {
                             var div1=jQuery("#"+"修订"+" "+f[i-1].primary).children();
+                            var kk="#"+"修订"+" "+f[i-1].primary;
                         }
-                        alert (div1);
+                        alert (kk);
                         var line=f[i-1].line;
                         var content=f[i-1].content;
                         var username=f[i-1].username;
