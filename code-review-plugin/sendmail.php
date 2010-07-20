@@ -3,6 +3,7 @@ require_once ("email.php");
 $line=str_replace("", "0", $_POST['line']);
 $content=addslashes($_POST['content']);
 $filename=$_POST['primary'];
+$url=$_POST['title'];
 $recevier=array(
           array("sunxinghua008","sunxinghua008@gmail.com"),
           array("xjzc","xjzc01@gmail.com"),
@@ -22,6 +23,6 @@ $email= new Email(array(
                  'username' => 'anyuanproject@gmail.com',
                  'password' => 'AnYuan.Project.for.Redmine'
           ),"anyuanproject@gmail.com");
-$email->send($newrecevier, "[SAAS]".$filename."文件下".$line."行", $content);
+$email->send($newrecevier, "[SAAS]".$filename."文件下".$line."行", $url."<br>".$content);
 echo "邮件发送成功";
 ?>
