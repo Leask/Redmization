@@ -18,7 +18,6 @@ jQuery("document").ready(function(){
                     for (i=1;i<=num;i++){
                         var div1=jQuery("#"+f[i-1].primary).children();
                         var line=f[i-1].line;
-                        line=line.replace("*","");
                         var content=f[i-1].content;
                         var username=f[i-1].username;
                         content=username+":"+" "+content;
@@ -114,7 +113,7 @@ jQuery("document").ready(function(){
         file=file.replace(/(^\s*)/g,"");
         jQuery.each(total, function(m){
             if (jQuery(total).eq(m).text()==""){
-                add+="*";
+                //add+="*";
                 add+=",";
             }else{
                  add+= (jQuery(total).eq(m).text());
