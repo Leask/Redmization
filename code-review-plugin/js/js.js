@@ -6,7 +6,6 @@ jQuery("document").ready(function(){
             jQuery(this).attr("id","c"+m);
         });
 		url=jQuery("#content").children("h2").text();
-        url=url.substr(url.length-18);
         jQuery.post("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!="no"){
@@ -16,14 +15,7 @@ jQuery("document").ready(function(){
                     var i;
                     var k=0;
                     for (i=1;i<=num;i++){
-                        if (jQuery(".home").text()=="Home"){
-                            var kk="#"+"Revision"+" "+f[i-1].primary;
-                            var div1=jQuery("#"+"Revision"+" "+f[i-1].primary).children();
-                        } else {
-                            var div1=jQuery("#"+"修订"+" "+f[i-1].primary).children();
-                            var kk="#"+"修订"+" "+f[i-1].primary;
-                        }
-                        alert (kk);
+                        var div1=jQuery("#"+f[i-1].primary).children();
                         var line=f[i-1].line;
                         var content=f[i-1].content;
                         var username=f[i-1].username;
@@ -68,12 +60,13 @@ jQuery("document").ready(function(){
             if (content==""){
                
             } else {
-		     
+		         url=jQuery("#content").children("h2").text();
                  var kk=jQuery(".filename").text();
-                  var urll=location.pathname;
-                 var search=location.search;
-                  urll+=search;
-                  urll="http://testing.aysaas.com"+urll;
+                 		url=jQuery("#content").children("h2").text();
+        var urll=location.pathname;
+       var search=location.search;
+urll+=search;
+ urll="http://testing.aysaas.com"+urll;
                 jQuery.post("/redmization/code-review-plugin/sendmail.php",{
                     line:add,
                     primary:ab,
@@ -83,8 +76,6 @@ jQuery("document").ready(function(){
                 },function(data){
                     alert (data);
                 });
-                    url=jQuery("#content").children("h2").text();
-                  url=url.substr(url.length-18);
                 jQuery.post("/redmization/code-review-plugin/feedback.php",{
                     line:add,
                     primary:primary,
