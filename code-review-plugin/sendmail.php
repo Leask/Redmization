@@ -10,6 +10,7 @@ $recevier=array(
           array("lovelywcm"=>"lovelywcm@gmail.com")
     );
 //$username=$_POST['username'];
+$username="sunxinghua008";
 for ($i=0;$i<count($recevier);$i++) {
     if ($recevier[$i][0]!=$username){
         $newrecevier[]=$recevier[$i][1];
