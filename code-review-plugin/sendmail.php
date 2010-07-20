@@ -23,6 +23,6 @@ $email= new Email(array(
                  'password' => 'AnYuan.Project.for.Redmine'
           )
         );
-$email->send($newrecevier, "[SAAS]".$filename."文件下".$line."行", $content);
+$email->send($newrecevier, $filename."文件下".$line."行", $content);
 echo "邮件发送成功";
 ?>
