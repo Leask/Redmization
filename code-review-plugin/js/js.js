@@ -7,7 +7,7 @@ jQuery("document").ready(function(){
         });
 		url=jQuery("#content").children("h2").text();
         url=url.substr(url.length-18);
-        jQuery.post("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
+        jQuery.post("http://redmization.aysaas.com/code-review-plugin/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!="no"){
                     jQuery("div[id^='k']").html("");
@@ -67,7 +67,7 @@ jQuery("document").ready(function(){
                  var search=location.search;
                   urll+=search;
                   urll="http://testing.aysaas.com"+urll;
-                jQuery.post("/redmization/code-review-plugin/sendmail.php",{
+                jQuery.post("http://redmization.aysaas.com/code-review-plugin/sendmail.php",{
                     line:add,
                     primary:ab,
                     content:content,
@@ -78,7 +78,7 @@ jQuery("document").ready(function(){
                 });
                     url=jQuery("#content").children("h2").text();
                   url=url.substr(url.length-18);
-                jQuery.post("/redmization/code-review-plugin/feedback.php",{
+                jQuery.post("http://redmization.aysaas.com/code-review-plugin/feedback.php",{
                     line:add,
                     primary:primary,
                     content:content,
