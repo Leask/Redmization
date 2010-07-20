@@ -17,7 +17,11 @@ jQuery("document").ready(function(){
                     var i;
                     var k=0;
                     for (i=1;i<=num;i++){
-                        var div1=jQuery("#"+f[i-1].primary).children();
+                        if (jQuery(".home").text()=="Home"){
+                            var div1=jQuery("#"+"Revision"+" "+f[i-1].primary).children();
+                        } else {
+                            var div1=jQuery("#"+"修订"+" "+f[i-1].primary).children();
+                        }
                         var line=f[i-1].line;
                         var content=f[i-1].content;
                         var username=f[i-1].username;
