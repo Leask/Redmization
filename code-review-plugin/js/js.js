@@ -9,6 +9,7 @@ jQuery("document").ready(function(){
         jQuery.post("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!="no"){
+                    alert (data);
                     jQuery("div[id^='k']").html("");
                     eval('var f='+data);
                     var num=f.length;
