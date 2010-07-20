@@ -7,7 +7,6 @@ jQuery("document").ready(function(){
         });
 		url=jQuery("#content").children("h2").text();
         url=url.substr(url.length-16);
-        alert (url);
         jQuery.post("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!="no"){
@@ -63,6 +62,7 @@ jQuery("document").ready(function(){
                
             } else {
 		         url=jQuery("#content").children("h2").text();
+                  url=url.substr(url.length-16);
                  var kk=jQuery(".filename").text();
                   var urll=location.pathname;
                  var search=location.search;
