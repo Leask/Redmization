@@ -65,6 +65,7 @@ jQuery("document").ready(function(){
                   var url=location.pathname;
                  var search=location.search;
                   url+=search;
+                  url=""+"http://testing.aysaas.com";
                 jQuery.post("/redmization/code-review-plugin/sendmail.php",{
                     line:add,
                     primary:ab,
