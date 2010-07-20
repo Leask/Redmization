@@ -1,8 +1,8 @@
 <?php
 require_once ("email.php");
-//$line=str_replace("", "0", $_POST['line']);
-//$content=addslashes($_POST['content']);
-//$filename=$_POST['primary'];
+$line=str_replace("", "0", $_POST['line']);
+$content=addslashes($_POST['content']);
+$filename=$_POST['primary'];
 $recevier=array(
           array("sunxinghua008","sunxinghua008@gmail.com"),
           array("xjzc","xjzc01@gmail.com"),
