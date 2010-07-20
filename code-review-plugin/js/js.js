@@ -6,10 +6,10 @@ jQuery("document").ready(function(){
             jQuery(this).attr("id","c"+m);
         });
 		url=jQuery("#content").children("h2").text();
+        url=url.substr(url.length-18);
         jQuery.post("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!="no"){
-                    alert (data);
                     jQuery("div[id^='k']").html("");
                     eval('var f='+data);
                     var num=f.length;
@@ -18,6 +18,7 @@ jQuery("document").ready(function(){
                     for (i=1;i<=num;i++){
                         var div1=jQuery("#"+f[i-1].primary).children();
                         var line=f[i-1].line;
+                        line=line.replace("*","");
                         var content=f[i-1].content;
                         var username=f[i-1].username;
                         content=username+":"+" "+content;
@@ -61,16 +62,23 @@ jQuery("document").ready(function(){
             if (content==""){
                
             } else {
-		         url=jQuery("#content").children("h2").text();
+		     
                  var kk=jQuery(".filename").text();
-              /**  jQuery.post("/redmization/code-review-plugin/sendmail.php",{
+                  var urll=location.pathname;
+                 var search=location.search;
+                  urll+=search;
+                  urll="http://testing.aysaas.com"+urll;
+                jQuery.post("/redmization/code-review-plugin/sendmail.php",{
                     line:add,
                     primary:ab,
                     content:content,
-                    username:username
+                    username:username,
+                    title:urll
                 },function(data){
                     alert (data);
-                });*/
+                });
+                    url=jQuery("#content").children("h2").text();
+                  url=url.substr(url.length-18);
                 jQuery.post("/redmization/code-review-plugin/feedback.php",{
                     line:add,
                     primary:primary,
@@ -106,7 +114,7 @@ jQuery("document").ready(function(){
         file=file.replace(/(^\s*)/g,"");
         jQuery.each(total, function(m){
             if (jQuery(total).eq(m).text()==""){
-                add+="0";
+                add+="*";
                 add+=",";
             }else{
                  add+= (jQuery(total).eq(m).text());
