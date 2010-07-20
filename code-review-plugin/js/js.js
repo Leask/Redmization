@@ -10,7 +10,6 @@ jQuery("document").ready(function(){
         jQuery.post("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
                 if (data!="no"){
-                    alert (data);
                     jQuery("div[id^='k']").html("");
                     eval('var f='+data);
                     var num=f.length;
@@ -22,6 +21,7 @@ jQuery("document").ready(function(){
                         } else {
                             var div1=jQuery("#"+"修订"+" "+f[i-1].primary).children();
                         }
+                        alert (div1);
                         var line=f[i-1].line;
                         var content=f[i-1].content;
                         var username=f[i-1].username;
