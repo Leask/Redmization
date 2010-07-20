@@ -1,6 +1,7 @@
 <?php
 require_once ("email.php");
-$line=str_replace("", "0", $_POST['line']);
+$line= $_POST['line'];
+$line=preg_replace("/,(.*)/", "*,\\1", $line);
 $content=addslashes($_POST['content']);
 $filename=$_POST['primary'];
 $url=$_POST['title'];
