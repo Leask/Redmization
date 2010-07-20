@@ -6,7 +6,7 @@ jQuery("document").ready(function(){
             jQuery(this).attr("id","c"+m);
         });
 		url=jQuery("#content").children("h2").text();
-        url=url.substr(url.length-17);
+        url=url.substr(url.length-16);
         alert (url);
         jQuery.post("/redmization/code-review-plugin/show.php", {url:url}, function(data,textStatus){
             if (textStatus=="success"){
