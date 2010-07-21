@@ -65,24 +65,8 @@ jQuery("document").ready(function(){
                 var content=jQuery("#contentk").val();
                 var username=jQuery("#loggedas").find("a").text();
                 if (content==""){
-
                 } else {
-
-                    var kk=jQuery(".filename").text();
-                    var urll=location.pathname;
-                    var search=location.search;
-                    urll+=search;
-                    urll="http://testing.aysaas.com"+urll;
-                    jQuery.post("/projects/redmization/code-review-plugin/sendmail.php",{
-                        line:add,
-                        primary:ab,
-                        content:content,
-                        username:username,
-                        title:urll
-                    },function(data){
-                        alert (data);
-                    });
-                    url=jQuery("#content").children("h2").text();
+                    //   url=jQuery("#content").children("h2").text();
                     url=url.substr(url.length-18);
                     jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
                         line:add,
@@ -94,6 +78,8 @@ jQuery("document").ready(function(){
                         if (textStatus=="success"){
                             jQuery(".display").remove();
                             jQuery("#content").val("");
+                            var name1=ab+line;
+                            now.parent().children().append("<a name="+name1+"id="+name1+">");
                             if (now.parent().find("td").find("td").eq(1).children().is("div")==true){
                                 var div=document.createElement("div");
                                 now.parent().find("td").find("td").eq(1).append(div);
@@ -106,6 +92,26 @@ jQuery("document").ready(function(){
                                 now.parent().find("td").find("td").eq(1).find("div:last").append("*"+username+":"+" "+content);
                             }
                         }
+                    });
+
+                  //发送邮件
+
+
+
+                    var kk=jQuery(".filename").text();
+                    var urll=location.pathname;
+                    var search=location.search;
+                    urll+=search;
+                    urll="http://testing.aysaas.com"+urll;
+                    jQuery.post("/projects/redmization/code-review-plugin/sendmail.php",{
+                        line:add,
+                        primary:ab,
+                        content:content,
+                        username:username,
+                        title:urll,
+                        name1:name1
+                    },function(data){
+                        alert (data);
                     });
                 }
             }
