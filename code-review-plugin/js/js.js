@@ -79,6 +79,7 @@ jQuery("document").ready(function(){
                             jQuery(".display").remove();
                             jQuery("#content").val("");
                             var name1=ab+line;
+                            alert (name1);
                             now.parent().children().append("<a name="+name1+"id="+name1+">");
                             if (now.parent().find("td").find("td").eq(1).children().is("div")==true){
                                 var div=document.createElement("div");
