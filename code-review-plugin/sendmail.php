@@ -24,6 +24,6 @@ $email= new Email(array(
                  'username' => 'anyuanproject@gmail.com',
                  'password' => 'AnYuan.Project.for.Redmine'
           ),"anyuanproject@gmail.com");
-$email->send($newrecevier, "[SaaS]".$filename, '', "<html><body>".$url."<br>".$username.":".$content."</body></html>");
+//$email->send($newrecevier, "[SaaS]".$filename, '', "<html><body>".$url."<br>".$username.":".$content."</body></html>");
 echo "邮件发送成功";
 ?>

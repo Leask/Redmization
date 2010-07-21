@@ -35,7 +35,7 @@ jQuery("document").ready(function(){
                                 var total=th1+","+th2;
                                 if (line==total){
                                     k++;
-                                    var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;"></td><td style="width:50%;"></td></tr></table>';
+                                    var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;vertical-align:top;"></td><td style="width:50%;"></td></tr></table>';
                                     if (th.parent().find("td").children().is("table")==false){
                                         th.parent().find("td").append(str);
                                         th.parent().find("td").find("td").eq(0).append(th.parent().find("td").children("pre").css("display","inline"));
@@ -139,7 +139,7 @@ jQuery("document").ready(function(){
                     jQuery(".display").remove();
                     var kk=document.createElement("div");
                     if (jQuery(this).parent().find("td").children().is("table")==false){
-                        jQuery(this).parent().find("td").append('<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;"></td><td style="width:50%;"></td></tr></table>');
+                        jQuery(this).parent().find("td").append('<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;vertical-align: top;"></td><td style="width:50%;"></td></tr></table>');
                         jQuery(this).parent().find("td").find("td").eq(1).append(kk);
                     } else {
                         jQuery(this).parent().find("td").find("td").eq(1).append(kk);
