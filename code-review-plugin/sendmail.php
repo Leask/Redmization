@@ -5,7 +5,6 @@ $line=preg_replace("/,(.*)/", "*,\\1", $line);
 $content=addslashes($_POST['content']);
 $filename=$_POST['primary'];
 $url=$_POST['title'];
-$name1=$_POST['name1'];
 $recevier=array(
           array("sunxinghua008","sunxinghua008@gmail.com"),
           array("xjzc","xjzc01@gmail.com"),
@@ -25,6 +24,6 @@ $email= new Email(array(
                  'username' => 'anyuanproject@gmail.com',
                  'password' => 'AnYuan.Project.for.Redmine'
           ),"anyuanproject@gmail.com");
-//$email->send($newrecevier, "[SaaS]".$filename, '', "<html><body>".$url."<br>".$username.":".$content."#".$name1."</body></html>");
+$email->send($newrecevier, "[SaaS]".$filename, '', "<html><body>".$url."<br>".$username.":".$content."</body></html>");
 echo "邮件发送成功";
 ?>
