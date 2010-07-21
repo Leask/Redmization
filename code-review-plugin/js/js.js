@@ -2,6 +2,7 @@ jQuery("document").ready(function(){
     var location_url=location.href;
     var patt=new RegExp("repository");
     var last=patt.test(location_url);
+    alert (last);
     if (last) {
         function show (){
             var classnum=jQuery(".autoscroll");
