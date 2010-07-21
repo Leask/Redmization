@@ -68,6 +68,8 @@ jQuery("document").ready(function(){
                 } else {
                     //   url=jQuery("#content").children("h2").text();
                     url=url.substr(url.length-18);
+                    var name1=ab+line;
+                    alert ("<a name="+name1+"id="+name1+">");
                     jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
                         line:add,
                         primary:primary,
@@ -78,8 +80,7 @@ jQuery("document").ready(function(){
                         if (textStatus=="success"){
                             jQuery(".display").remove();
                             jQuery("#content").val("");
-                            var name1=ab+line;
-                            now.parent().children().append("<a name="+name1+"id="+name1+">");
+                            now.append("<a name="+name1+"id="+name1+">");
                             if (now.parent().find("td").find("td").eq(1).children().is("div")==true){
                                 var div=document.createElement("div");
                                 now.parent().find("td").find("td").eq(1).append(div);
@@ -94,7 +95,7 @@ jQuery("document").ready(function(){
                         }
                     });
 
-                  //发送邮件
+                    //发送邮件
 
 
 
