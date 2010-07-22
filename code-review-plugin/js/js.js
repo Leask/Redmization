@@ -48,7 +48,8 @@ jQuery("document").ready(function(){
                                     if (kk==true){
                                         jQuery("#k"+k).text("*"+content);
                                     } else {
-                                        jQuery("#k"+k).text(" "+content);
+                                        jQuery("#k"+k).text(content);
+										jQuery("#k"+k).css("padding-left","4px");
                                     }
                                     kk=false;
                                 }
@@ -82,7 +83,7 @@ jQuery("document").ready(function(){
                                 var div=document.createElement("div");
                                 now.parent().find("td").find("td").eq(1).append(div);
                                 div.setAttribute("class", "display1");
-                                now.parent().find("td").find("td").eq(1).find("div:last").append(" "+username+":"+" "+content);
+                                now.parent().find("td").find("td").eq(1).find("div:last").append("&nbsp;&nbsp;"+username+":"+" "+content);
                             } else {
                                 var div=document.createElement("div");
                                 now.parent().find("td").find("td").eq(1).append(div);
