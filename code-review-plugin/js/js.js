@@ -107,7 +107,6 @@ jQuery("document").ready(function(){
                         content:content,
                         username:username,
                         title:urll,
-                        name1:name1
                     },function(data){
                         alert (data);
                     });
