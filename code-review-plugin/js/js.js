@@ -49,7 +49,7 @@ jQuery("document").ready(function(){
                                         jQuery("#k"+k).text("*"+content);
                                     } else {
                                         jQuery("#k"+k).text(content);
-										jQuery("#k"+k).css("padding-left","4px");
+										jQuery("#k"+k).css("padding-left","8px");
                                     }
                                     kk=false;
                                 }
