@@ -48,7 +48,7 @@ jQuery("document").ready(function(){
                                     if (kk==true){
                                         jQuery("#k"+k).text("*"+content);
                                     } else {
-                                        jQuery("#k"+k).text("&nbsp;"+content);
+                                        jQuery("#k"+k).text(&nbsp;+content);
                                     }
                                     kk=false;
                                 }
