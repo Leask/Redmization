@@ -146,11 +146,11 @@ jQuery("document").ready(function(){
                     kk.setAttribute("id", line);
                     kk.setAttribute("class", "display");
                     if (jQuery(".home").text()=="Home"){
-                        jQuery("#"+line).append('<textarea name="contentk" id="contentk" cols="20" rows="1" style="min-height:16px;height:16px;"></textarea>');
+                        jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;"/>');
                         jQuery("#"+line).append('<input type="button" value="Comment" id="#button" disabled="disabled" />');
                         jQuery("#"+line).append('<input  type="reset" value="Cancel"  id="#reset"/>');
                     }else{
-                        jQuery("#"+line).append('<textarea name="contentk" id="contentk" cols="20" rows="1" style="min-height:16px;height:16px;"></textarea>');
+                        jQuery("#"+line).append('<input  type="text"  id="contentk"  style="min-height:16px;height:16px;"/>');
                         jQuery("#"+line).append('<input type="button" value="评论" id="#button" disabled="disabled" />');
                         jQuery("#"+line).append('<input  type="reset" value="取消"  id="#reset"/>');
                     }
@@ -171,11 +171,6 @@ jQuery("document").ready(function(){
                         insert();
                     }
                 });
-				jQuery("#contentk").bind("onpropertychange",function(){
-				    if (jQuery("#contentk").val().length>=0) {
-					     jQuery(":button").removeAttr("disabled");
-					}
-				});
 				/**
 				jQuery("#contentk").click(function(){
 				    if (jQuery("#contentk").val().length>=0){
