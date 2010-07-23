@@ -83,7 +83,8 @@ jQuery("document").ready(function(){
                                 var div=document.createElement("div");
                                 now.parent().find("td").find("td").eq(1).append(div);
                                 div.setAttribute("class", "display1");
-                                now.parent().find("td").find("td").eq(1).find("div:last").append("&nbsp;&nbsp;"+username+"："+" "+content);
+                                now.parent().find("td").find("td").eq(1).find("div:last").append(username+"："+" "+content);
+								now.parent().find("td").find("td").eq(1).find("div:last").css("padding-left","8px");
                             } else {
                                 var div=document.createElement("div");
                                 now.parent().find("td").find("td").eq(1).append(div);
