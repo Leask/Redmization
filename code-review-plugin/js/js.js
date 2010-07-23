@@ -26,7 +26,7 @@ jQuery("document").ready(function(){
                             var line=f[i-1].line;
                             var content=f[i-1].content;
                             var username=f[i-1].username;
-                            content=username+":"+" "+content;
+                            content=username+"："+" "+content;
                             var tr=div1.find("tr:gt(0)");
                             jQuery.each(tr,function(){
                                 var th=jQuery(this).find("th");
@@ -83,7 +83,7 @@ jQuery("document").ready(function(){
                                 var div=document.createElement("div");
                                 now.parent().find("td").find("td").eq(1).append(div);
                                 div.setAttribute("class", "display1");
-                                now.parent().find("td").find("td").eq(1).find("div:last").append("&nbsp;&nbsp;"+username+":"+" "+content);
+                                now.parent().find("td").find("td").eq(1).find("div:last").append("&nbsp;&nbsp;"+username+"："+" "+content);
                             } else {
                                 var div=document.createElement("div");
                                 now.parent().find("td").find("td").eq(1).append(div);
