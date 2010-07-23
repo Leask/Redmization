@@ -163,7 +163,7 @@ jQuery("document").ready(function(){
                 }
                 jQuery("#contentk").keypress(function(event){
                     jQuery(":button").removeAttr("disabled");
-                    if (jQuery("#contentk").val().length<0){
+                    if (jQuery("#contentk").val()==undefined){
                         jQuery(":button").attr("disabled","disabled");
                     }
                     var unicode=event.keyCode ? event.keyCode : event.charCode;
@@ -171,6 +171,19 @@ jQuery("document").ready(function(){
                         insert();
                     }
                 });
+				function handle()
+				{
+				    jQuery(":button").removeAttr("disabled");
+					if (jQuery("#contentk").val==undefined){
+						jQuery(":button").attr("disabled","disabled");
+					}
+				}
+				var objTextarea=document.getElementById("contentk");
+				if (document.all){
+				    objTextarea.onpropertychange=handle;
+				}else{
+				    objTextarea.addEventListener("input",handle,false);
+				}
 				/**
 				jQuery("#contentk").click(function(){
 				    if (jQuery("#contentk").val().length>=0){
