@@ -161,7 +161,7 @@ jQuery("document").ready(function(){
                 } else {
                     jQuery(".display").toggle();
                 }
-                jQuery("#contentk").keypress(function(event){
+                jQuery("#contentk").keydown(function(event){
                     jQuery(":button").removeAttr("disabled");
                     if (jQuery("#contentk").val().length==0){
                         jQuery(":button").attr("disabled","disabled");
@@ -171,7 +171,7 @@ jQuery("document").ready(function(){
                         insert();
                     }
                 });
-                jQuery("*").keypress(function(event){
+                jQuery("*").keydown(function(event){
                     var unicode=event.keyCode? event.keyCode : event.charCode;
                     if (unicode==27){
                         jQuery("#"+line).remove();
