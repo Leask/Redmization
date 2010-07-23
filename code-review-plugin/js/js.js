@@ -146,11 +146,11 @@ jQuery("document").ready(function(){
                     kk.setAttribute("id", line);
                     kk.setAttribute("class", "display");
                     if (jQuery(".home").text()=="Home"){
-                        jQuery("#"+line).append('<textarea name="contentk" cols="25" rows="4" id="contentk"  style="min-height:20px;height:20px;"></textarea>');
+                        jQuery("#"+line).append('<textarea name="contentk" cols="25" rows="4" id="contentk"  style="min-height:20px;height:20px;padding:0px; margin:0px;"></textarea>');
                         jQuery("#"+line).append('<input type="button" value="Comment" id="#button" disabled="disabled" />');
                         jQuery("#"+line).append('<input  type="reset" value="Cancel"  id="#reset"/>');
                     }else{
-                        jQuery("#"+line).append('<textarea name="contentk" cols="25" rows="4" id="contentk"  style="min-height:20px;height:20px;"></textarea>');
+                        jQuery("#"+line).append('<textarea name="contentk" cols="25" rows="4" id="contentk"  style="min-height:20px;height:20px;padding:0px; margin:0px;"></textarea>');
                         jQuery("#"+line).append('<input type="button" value="评论" id="#button" disabled="disabled" />');
                         jQuery("#"+line).append('<input  type="reset" value="取消"  id="#reset"/>');
                     }
