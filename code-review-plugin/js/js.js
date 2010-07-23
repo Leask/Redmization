@@ -171,11 +171,13 @@ jQuery("document").ready(function(){
                         insert();
                     }
                 });
+				/**
 				jQuery("#contentk").click(function(){
 				    if (jQuery("#contentk").val().length>=0){
 					    jQuery(":button").attr("disabled","disabled");
 					}
 				});
+				*/
                 jQuery("*").keypress(function(event){
                     var unicode=event.keyCode? event.keyCode : event.charCode;
                     if (unicode==27){
