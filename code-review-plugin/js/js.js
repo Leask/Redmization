@@ -174,7 +174,7 @@ jQuery("document").ready(function(){
 				function handle()
 				{
 				    jQuery(":button").removeAttr("disabled");
-					if (jQuery("#contentk").val==undefined){
+					if ((jQuery("#contentk").val==undefined)||(jQuery("#contentk").val.length==0)){
 						jQuery(":button").attr("disabled","disabled");
 					}
 				}
