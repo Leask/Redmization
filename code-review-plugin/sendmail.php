@@ -8,7 +8,7 @@ $url=$_POST['title'];
 $recevier=array(
           array("sunxinghua008","sunxinghua008@gmail.com"),
           array("xjzc","xjzc01@gmail.com"),
-          array("leaskh","leaskh@gmail.com"),
+          array("leask","leaskh@gmail.com"),
           array("lovelywcm","lovelywcm@gmail.com")
     );
 $username=$_POST['username'];
