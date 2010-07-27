@@ -148,13 +148,13 @@ jQuery("document").ready(function(){
                     if (jQuery(".home").text()=="Home"){
                         jQuery("#"+line).append('<textarea name="contentk" cols="25" rows="4" id="contentk"  style="min-height:40px;height:40px;padding:0px; margin:0px;"></textarea>');
                         jQuery("#"+line).append('<br>');
-						jQuery("#"+line).append('<input type="button" value="Comment" id="#button" disabled="disabled" />');
-                        jQuery("#"+line).append('<input  type="reset" value="Cancel"  id="#reset"/>');
+						jQuery("#"+line).append('&nbsp;&nbsp;&nbsp;<input type="button" value="Comment" id="#button" disabled="disabled" />');
+                        jQuery("#"+line).append('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input  type="reset" value="Cancel"  id="#reset"/>');
                     }else{
                         jQuery("#"+line).append('<textarea name="contentk" cols="25" rows="4" id="contentk"  style="min-height:40px;height:40px;padding:0px; margin:0px;"></textarea>');
                         jQuery("#"+line).append('<br>');
-						jQuery("#"+line).append('<input type="button" value="评论" id="#button" disabled="disabled" />');
-                        jQuery("#"+line).append('<input  type="reset" value="取消"  id="#reset"/>');
+						jQuery("#"+line).append('&nbsp;&nbsp;&nbsp;<input type="button" value="评论" id="#button" disabled="disabled" />');
+                        jQuery("#"+line).append('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input  type="reset" value="取消"  id="#reset"/>');
                     }
                     jQuery("#contentk").focus();
                     jQuery(":reset").click(function(){
