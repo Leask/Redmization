@@ -108,7 +108,7 @@ jQuery("document").ready(function(){
                         primary:ab,
                         content:content,
                         username:username,
-                        title:urll,
+                        title:urll
                     },function(data){
                         //alert (data);
                     });
