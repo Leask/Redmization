@@ -1,13 +1,12 @@
 <?php
-$content = "";
-$content = addslashes($_POST['content']);
-if ($content != "") {
+if (isset ($_POST['content'])) {
     require_once ("email.php");
     $line = $_POST['line'];
     $line = preg_replace("/,(.*)/", "*,\\1", $line);
     $filename = $_POST['primary'];
     $url = $_POST['title'];
 	$username = $_POST['username'];
+	$content = addslashes($_POST['content']);
     $recevier = array(
         array("sunxinghua008", "sunxinghua008@gmail.com"),
         array("xjzc", "xjzc01@gmail.com"),
