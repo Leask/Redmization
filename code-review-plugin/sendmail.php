@@ -1,4 +1,5 @@
 <?php
+$content = "";
 $content = addslashes($_POST['content']);
 if ($content != "") {
     require_once ("email.php");
@@ -27,6 +28,6 @@ if ($content != "") {
                     ), "anyuanproject@gmail.com");
     $email->send($newrecevier, "[SaaS]" . " " . $filename, '', "<html><body>" . "<br>" . $username . "：" . "<a href=" . $url . ">" . $content . "</a>" . "</body></html>");
 } else {
-    echo '<script type="text/javascript">alert ("你无权访问此文件!!!");history.go(-1);</script>';
+    echo '<script type="text/javascript">alert ("You do not have access to this document!!!");history.go(-1);</script>';
 }
 ?>
