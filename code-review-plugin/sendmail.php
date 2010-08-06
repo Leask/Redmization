@@ -10,7 +10,7 @@ if (isset ($_POST['content'])) {
     $recevier = array(
         array("sunxinghua008", "sunxinghua008@gmail.com"),
         array("xjzc", "xjzc01@gmail.com"),
-        array("leask", "leaskh@gmail.com"),
+        array("Leask", "leaskh@gmail.com"),
         array("lovelywcm", "lovelywcm@gmail.com")
     );
     for ($i = 0; $i < count($recevier); $i++) {
