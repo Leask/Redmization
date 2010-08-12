@@ -10,7 +10,7 @@ jQuery("document").ready(function(){
                 jQuery(this).attr("id","c"+m);
             });
             url=jQuery("#content").children("h2").text();
-            if (!url.charAt('/')) {
+            if (url.charAt(':')) {
                 url=url.substr(url.length-18);
             }
             jQuery.post("/projects/redmization/code-review-plugin/show.php", {
@@ -70,11 +70,9 @@ jQuery("document").ready(function(){
                 if (content==""){
                 } else {
                     //   url=jQuery("#content").children("h2").text();
-                    alert (url);
-                    if (!url.charAt('root')) {
+                    if (url.charAt(':')) {
                         url=url.substr(url.length-18);
                     }
-                    alert (url.length);
                     jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
                         line:add,
                         primary:primary,
