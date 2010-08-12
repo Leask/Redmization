@@ -13,8 +13,8 @@ jQuery("document").ready(function(){
             if (url.indexOf(':')>-1) {
                 newUrl = url.substr(url.length-18);
             } else {
-                for (i=0; i<url.childNodes.length;i++) {
-                    newUrl = url.childNodes[0].innerHTML;
+                for (i=0; i<jQuery("#content").children("h2").childNodes.length;i++) {
+                    newUrl += jQuery("#content").children("h2").childNodes[0].innerHTML;
                 }
             }
             url = newUrl;
