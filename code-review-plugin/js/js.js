@@ -73,7 +73,7 @@ jQuery("document").ready(function(){
                     if (!url.charAt('root')) {
                         url=url.substr(url.length-18);
                     }
-                    alert (url);
+                    alert (url.length);
                     jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
                         line:add,
                         primary:primary,
