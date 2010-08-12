@@ -1,4 +1,5 @@
 jQuery("document").ready(function(){
+//浴火凤凰
     var location_url=location.href;
     var patt=new RegExp("repository");
     var last=patt.test(location_url);
