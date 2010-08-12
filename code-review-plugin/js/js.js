@@ -10,8 +10,15 @@ jQuery("document").ready(function(){
                 jQuery(this).attr("id","c"+m);
             });
             url=jQuery("#content").children("h2").text();
-            alert (url.indexOf(':'));
-            url=url.substr(url.length-18);
+            if (url.indexOf(':')>-1) {
+                newUrl = url.substr(url.length-18);
+            } else {
+                for (i=0; i<url.childNodes.length;i++) {
+                    newUrl = url.childNodes[0].innerHTML;
+                }
+            }
+            url = newUrl;
+            alert (url);
             jQuery.post("/projects/redmization/code-review-plugin/show.php", {
                 url:url
             }, function(data,textStatus){
