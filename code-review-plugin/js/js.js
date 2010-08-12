@@ -70,6 +70,7 @@ jQuery("document").ready(function(){
                 if (content==""){
                 } else {
                     //   url=jQuery("#content").children("h2").text();
+                    alert (url.charAt('root'));
                     if (!url.charAt('root')) {
                         url=url.substr(url.length-18);
                     }
