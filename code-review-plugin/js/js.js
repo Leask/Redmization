@@ -13,9 +13,9 @@ jQuery("document").ready(function(){
             if (url.indexOf(':')>-1) {
                 newUrl = url.substr(url.length-18);
             } else {
-                for (i=0; i<jQuery("#content").children("h2").childNodes.length;i++) {
-                    newUrl += jQuery("#content").children("h2").childNodes[0].innerHTML;
-                }
+                jQuery.each (jQuery("#content").children("h2"),function(){
+                    newUrl += jQuery(this).text();
+                });
             }
             url = newUrl;
             alert (url);
