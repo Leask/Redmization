@@ -12,7 +12,6 @@
  * @since      1.4
  */
 
-
 /**
  * Email class
  */
