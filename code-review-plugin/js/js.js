@@ -10,7 +10,7 @@ jQuery("document").ready(function(){
                 jQuery(this).attr("id","c"+m);
             });
             url=jQuery("#content").children("h2").text();
-            if (url.length < 50) {
+            if (!url.charAt('/')) {
                 url=url.substr(url.length-18);
             }
             jQuery.post("/projects/redmization/code-review-plugin/show.php", {
@@ -70,7 +70,7 @@ jQuery("document").ready(function(){
                 if (content==""){
                 } else {
                     //   url=jQuery("#content").children("h2").text();
-                    if (url.length < 50) {
+                    if (!url.charAt('/')) {
                         url=url.substr(url.length-18);
                     }
                     alert (url);
