@@ -1,4 +1,6 @@
 <?php
+
+
 require_once ("conn.php");
 $str=$_POST['url'];
 $sql="select * from feedbackview where url='".$str."'";
