@@ -10,7 +10,7 @@ jQuery("document").ready(function(){
                 jQuery(this).attr("id","c"+m);
             });
             url=jQuery("#content").children("h2").text();
-            alert (url.charAt(':'));
+            alert (url.indexOf(':'));
             url=url.substr(url.length-18);
             jQuery.post("/projects/redmization/code-review-plugin/show.php", {
                 url:url
