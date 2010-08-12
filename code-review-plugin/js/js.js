@@ -9,11 +9,13 @@ jQuery("document").ready(function(){
                 m++;
                 jQuery(this).attr("id","c"+m);
             });
+            var newUrl;
             url=jQuery("#content").children("h2").text();
             if (url.indexOf(':')>-1) {
                 newUrl = url.substr(url.length-18);
             } else {
                 jQuery.each (jQuery("#content").children("h2"),function(){
+                    alert (jQuery(this).text());
                     newUrl += jQuery(this).text();
                 });
             }
