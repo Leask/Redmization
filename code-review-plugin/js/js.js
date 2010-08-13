@@ -4,6 +4,8 @@ jQuery("document").ready(function(){
     var patt=new RegExp("repository");
     var last=patt.test(location_url);
     var maoHao = false;
+    var newUrl ='';
+    last = true;
     if (last) {
         function show (){
             var classnum=jQuery(".autoscroll");
@@ -12,11 +14,14 @@ jQuery("document").ready(function(){
                 jQuery(this).attr("id","c"+m);
             });
             url=jQuery("#content").children("h2").text();
+            
             if (url.indexOf(':')>-1) {
                 newUrl=url.substr(url.length-18);
                 maoHao = true;
             } else {
-                newUrl = url;
+                jQuery.each (jQuery("#content").children("h2").children(),function(){
+                    newUrl = newUrl + jQuery(this).text();
+                });
             }
             url = newUrl;
             jQuery.post("/projects/redmization/code-review-plugin/show.php", {
@@ -34,7 +39,7 @@ jQuery("document").ready(function(){
                             var line=f[i-1].line;
                             var content=f[i-1].content;
                             var username=f[i-1].username;
-                            content=username+"："+content;
+                            content=username+"\uff1a"+content;
                             var tr=div1.find("tr");
                             jQuery.each(tr,function(){
                                 var th=jQuery(this).find("th");
@@ -80,10 +85,13 @@ jQuery("document").ready(function(){
                 if (content==""){
                 } else {
                     url=jQuery("#content").children("h2").text();
+                    newUrl = '';
                     if (url.indexOf(':')>-1) {
                         newUrl=url.substr(url.length-18);
                     } else {
-                        newUrl = url;
+                        jQuery.each (jQuery("#content").children("h2").children(),function(){
+                            newUrl = newUrl + jQuery(this).text();
+                        });
                     }
                     url = newUrl;
                     jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
@@ -100,13 +108,13 @@ jQuery("document").ready(function(){
                                 var div=document.createElement("div");
                                 now.parent().find("td").find("td").eq(1).append(div);
                                 div.setAttribute("class", "display1");
-                                now.parent().find("td").find("td").eq(1).find("div:last").append(username+"："+content);
+                                now.parent().find("td").find("td").eq(1).find("div:last").append(username+"\uff1a"+content);
                                 now.parent().find("td").find("td").eq(1).find("div:last").css("padding-left","8px");
                             } else {
                                 var div=document.createElement("div");
                                 now.parent().find("td").find("td").eq(1).append(div);
                                 div.setAttribute("class", "display1");
-                                now.parent().find("td").find("td").eq(1).find("div:last").append("*"+username+"："+content);
+                                now.parent().find("td").find("td").eq(1).find("div:last").append("*"+username+"\uff1a"+content);
                             }
                         }
                     });
