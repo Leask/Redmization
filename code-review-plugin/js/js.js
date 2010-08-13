@@ -1,8 +1,9 @@
 jQuery("document").ready(function(){
-//浴火凤凰
+    //浴火凤凰
     var location_url=location.href;
     var patt=new RegExp("repository");
     var last=patt.test(location_url);
+    var newUrl;
     if (last) {
         function show (){
             var classnum=jQuery(".autoscroll");
@@ -11,7 +12,14 @@ jQuery("document").ready(function(){
                 jQuery(this).attr("id","c"+m);
             });
             url=jQuery("#content").children("h2").text();
-            url=url.substr(url.length-18);
+            if (url.indexOf(':')>-1) {
+                newUrl=url.substr(url.length-18);
+            } else {
+                jQuery (jQuery("#content").children("h2"),function(){
+                    newUrl+=jQuery(this).text();
+                });
+                url = newUrl;
+            }
             jQuery.post("/projects/redmization/code-review-plugin/show.php", {
                 url:url
             }, function(data,textStatus){
@@ -50,7 +58,7 @@ jQuery("document").ready(function(){
                                         jQuery("#k"+k).text("*"+content);
                                     } else {
                                         jQuery("#k"+k).text(content);
-										jQuery("#k"+k).css("padding-left","8px");
+                                        jQuery("#k"+k).css("padding-left","8px");
                                     }
                                     kk=false;
                                 }
@@ -69,7 +77,15 @@ jQuery("document").ready(function(){
                 if (content==""){
                 } else {
                     //   url=jQuery("#content").children("h2").text();
-                    url=url.substr(url.length-18);
+                    if (url.indexOf(':')>-1) {
+                        newUrl=url.substr(url.length-18);
+                    } else {
+                        jQuery (jQuery("#content").children("h2"),function(){
+                            newUrl+=jQuery(this).text();
+                        });
+                        url = newUrl;
+                    }
+                    alert (newUrl);
                     jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
                         line:add,
                         primary:primary,
@@ -85,7 +101,7 @@ jQuery("document").ready(function(){
                                 now.parent().find("td").find("td").eq(1).append(div);
                                 div.setAttribute("class", "display1");
                                 now.parent().find("td").find("td").eq(1).find("div:last").append(username+"："+content);
-								now.parent().find("td").find("td").eq(1).find("div:last").css("padding-left","8px");
+                                now.parent().find("td").find("td").eq(1).find("div:last").css("padding-left","8px");
                             } else {
                                 var div=document.createElement("div");
                                 now.parent().find("td").find("td").eq(1).append(div);
@@ -95,7 +111,7 @@ jQuery("document").ready(function(){
                         }
                     });
 
-                  //发送邮件
+                    //发送邮件
 
 
 
@@ -112,7 +128,7 @@ jQuery("document").ready(function(){
                         title:urll
                     },function(data){
                         //alert (data);
-                    });
+                        });
                 }
             }
             var line=jQuery(this).text();
@@ -149,12 +165,12 @@ jQuery("document").ready(function(){
                     if (jQuery(".home").text()=="Home"){
                         jQuery("#"+line).append('<textarea name="contentk" cols="25" rows="4" id="contentk"  style="min-height:40px;height:40px;padding:0px; margin:0px;"></textarea>');
                         jQuery("#"+line).append('<br><br>');
-						jQuery("#"+line).append('&nbsp;&nbsp;&nbsp;<input type="button" value="Comment" id="#button" disabled="disabled" />');
+                        jQuery("#"+line).append('&nbsp;&nbsp;&nbsp;<input type="button" value="Comment" id="#button" disabled="disabled" />');
                         jQuery("#"+line).append('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input  type="reset" value="Cancel"  id="#reset"/>');
                     }else{
                         jQuery("#"+line).append('<textarea name="contentk" cols="25" rows="4" id="contentk"  style="min-height:40px;height:40px;padding:0px; margin:0px;"></textarea>');
                         jQuery("#"+line).append('<br><br>');
-						jQuery("#"+line).append('&nbsp;&nbsp;&nbsp;<input type="button" value="评论" id="#button" disabled="disabled" />');
+                        jQuery("#"+line).append('&nbsp;&nbsp;&nbsp;<input type="button" value="评论" id="#button" disabled="disabled" />');
                         jQuery("#"+line).append('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input  type="reset" value="取消"  id="#reset"/>');
                     }
                     jQuery("#contentk").focus();
@@ -174,20 +190,20 @@ jQuery("document").ready(function(){
                         insert();
                     }
                 });
-				function handle()
-				{
-				    jQuery(":button").removeAttr("disabled");
-					if ((jQuery("#contentk").val==undefined)||(jQuery("#contentk").val().length==0)){
-						jQuery(":button").attr("disabled","disabled");
-					}
-				}
-				var objTextarea=document.getElementById("contentk");
-				if (document.all){
-				    objTextarea.onpropertychange=handle;
-				}else{
-				    objTextarea.addEventListener("input",handle,false);
-				}
-				/**
+                function handle()
+                {
+                    jQuery(":button").removeAttr("disabled");
+                    if ((jQuery("#contentk").val==undefined)||(jQuery("#contentk").val().length==0)){
+                        jQuery(":button").attr("disabled","disabled");
+                    }
+                }
+                var objTextarea=document.getElementById("contentk");
+                if (document.all){
+                    objTextarea.onpropertychange=handle;
+                }else{
+                    objTextarea.addEventListener("input",handle,false);
+                }
+                /**
 				jQuery("#contentk").click(function(){
 				    if (jQuery("#contentk").val().length>=0){
 					    jQuery(":button").attr("disabled","disabled");
