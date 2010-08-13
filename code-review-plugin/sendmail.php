@@ -9,6 +9,7 @@ if (isset ($_POST['content'])) {
 	$content = addslashes($_POST['content']);
     $recevier = array(
         array("sunxinghua008", "sunxinghua008@gmail.com")
+     
     );
     for ($i = 0; $i < count($recevier); $i++) {
        

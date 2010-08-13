@@ -22,9 +22,9 @@
 <div id="header">
     <div id="quick-search">
         <form method="get" action="/AnYuan/search/index/saas">
-        <input type="hidden" value="1" name="changesets"/>
+        <input type="hidden" value="1" name="changesets">
         <a accesskey="4" href="/AnYuan/search/index/saas">搜索</a>:
-        <input type="text" size="20" name="q" id="q" class="small" accesskey="f"/>
+        <input type="text" size="20" name="q" id="q" class="small" accesskey="f">
         </form>
         <select onchange="if (this.value != '') { window.location = this.value; }"><option value="">选择一个项目...</option><option disabled="disabled" value="">---</option><option value="/AnYuan/projects/saas?jump=repository" selected="selected">SaaS</option><option value="/AnYuan/projects/edu?jump=repository">&nbsp;&nbsp;» Kindergarten Assessment</option><option value="/AnYuan/projects/redmization?jump=repository">&nbsp;&nbsp;» Redmine Customization</option><option value="/AnYuan/projects/sandbox?jump=repository">沙盘</option><option value="/AnYuan/projects/svn?jump=repository">&nbsp;&nbsp;» svn</option></select>
     </div>
@@ -35,9 +35,9 @@
     <div id="main-menu">
         <ul><li><a class="overview" href="/AnYuan/projects/saas">概述</a></li>
 <li><a class="activity" href="/AnYuan/projects/saas/activity">活动</a></li>
+<li><a class="roadmap" href="/AnYuan/projects/saas/roadmap">路线图</a></li>
 <li><a class="issues" href="/AnYuan/projects/saas/issues">问题</a></li>
 <li><a class="new-issue" accesskey="7" href="/AnYuan/projects/saas/issues/new">新建问题</a></li>
-<li><a class="news" href="/AnYuan/projects/saas/news">新闻</a></li>
 <li><a class="wiki" href="/AnYuan/projects/saas/wiki">Wiki</a></li>
 <li><a class="files" href="/AnYuan/projects/saas/files">文件</a></li>
 <li><a class="repository selected" href="/AnYuan/projects/saas/repository">版本库</a></li>
@@ -54,6 +54,27 @@
 
     <div id="content">
 
+
+
+<div class="contextual">
+
+
+<a class="icon icon-stats" href="/AnYuan/projects/saas/repository/statistics">统计</a>
+
+<form method="get" id="revision_selector" action="/AnYuan/projects/saas/repository/entry/widget/wcaptcha.php?rev=">  <!-- Branches Dropdown -->
+      | 分支:
+    <select name="branch" id="branch"><option value=""></option>
+<option value="leask">leask</option>
+<option selected="selected" value="master">master</option>
+<option value="sunxinghua">sunxinghua</option>
+<option value="wcm">wcm</option></select>
+
+
+  | 修订:
+  <input type="text" value="master" size="8" name="rev" id="rev">
+</form>
+</div>
+
 <h2><a href="/AnYuan/projects/saas/repository/revisions/master/show">root</a>
 
     / <a href="/AnYuan/projects/saas/repository/revisions/master/show/widget">widget</a>
@@ -66,892 +87,185 @@
 
 </h2>
 
+<p>
 
-<!-- Choose view type -->
-<form method="get" action="/AnYuan/projects/saas/repository/revisions/a91b663b4aa77cfccca9e507ec3ed16c57957119/diff">
-  <input type="hidden" value="a91b663b4aa77cfccca9e507ec3ed16c57957119" name="rev" id="rev"/>
-  <input type="hidden" value="b049d7c7eff9df8f19ca07bf198c942972853cce" name="rev_to" id="rev_to"/>
-  <p><label>查看差别</label>
-  <select onchange="if (this.value != '') {this.form.submit()}" name="type" id="type"><option selected="selected" value="inline">直列</option>
-<option value="sbs">并排</option></select></p>
-</form>
+</p><p>
+<a href="/AnYuan/projects/saas/repository/revisions/master/changes/widget/wcaptcha.php">历史记录</a> |
+
+    查看 |
+
+
+    <a href="/AnYuan/projects/saas/repository/revisions/master/annotate/widget/wcaptcha.php">追溯</a> |
+
+<a href="/AnYuan/projects/saas/repository/revisions/master/raw/widget/wcaptcha.php">下载</a>
+(820 Bytes)
+</p>
+
+
+
 
 <div class="autoscroll" id="c1">
 <table class="filecontent syntaxhl">
-<thead>
-<tr><th class="filename" colspan="3">b/controller/demo.php</th></tr>
-</thead>
 <tbody>
 
-<tr>
-  <th class="line-num" style="cursor: pointer;">441</th>
-  <th class="line-num" style="cursor: pointer;">441</th>
-    <td class="line-code ">
-    <pre>        Base::load('library.user.userctrl');
-</pre>
- </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">442</th>
-  <th class="line-num" style="cursor: pointer;">442</th>
-    <td class="line-code ">
-    <pre>        $objUserCtrl = new UserCtrl;
-</pre>
-
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">443</th>
-  <th class="line-num" style="cursor: pointer;">443</th>
-    <td class="line-code ">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">444</th>
-  <th class="line-num" style="cursor: pointer;"></th>
-    <td class="line-code diff_out">
-    <pre>        $objUserCtrl-&gt;freezeUser('Leask')</pre>
-    </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">444</th>
-    <td class="line-code diff_in">
-    <pre>        $bolResult = $objUserCtrl-&gt;freezeUser('Leask');</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">445</th>
-  <th class="line-num" style="cursor: pointer;">445</th>
-    <td class="line-code ">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">446</th>
-  <th class="line-num" style="cursor: pointer;"></th>
-    <td class="line-code diff_out">
-    <pre>        echo 'User Leask has been freesed!';
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">446</th>
-    <td class="line-code diff_in">
-    <pre>        if ($bolResult) {
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">447</th>
-    <td class="line-code diff_in">
-    <pre>            echo 'User Leask has been freesed!';
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">448</th>
-    <td class="line-code diff_in">
-    <pre>        } else {
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">449</th>
-    <td class="line-code diff_in">
-    <pre>            echo 'Failure!';
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">450</th>
-    <td class="line-code diff_in">
-    <pre>        }
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">447</th>
-  <th class="line-num" style="cursor: pointer;">451</th>
-    <td class="line-code ">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">448</th>
-  <th class="line-num" style="cursor: pointer;">452</th>
-    <td class="line-code ">
-    <pre>        $objUserCtrl = null;
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">449</th>
-  <th class="line-num" style="cursor: pointer;">453</th>
-    <td class="line-code ">
-    <pre>    }
-</pre>
-  </td>
-  </tr>
-
-<tr class="spacing">
-<th class="line-num" style="cursor: pointer;">...</th><th class="line-num" style="cursor: pointer;">...</th><td></td>
-</tr>
-<tr>
-  <th class="line-num" style="cursor: pointer;">457</th>
-  <th class="line-num" style="cursor: pointer;">461</th>
-    <td class="line-code ">
-    <pre>        Base::load('library.user.userctrl');
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">458</th>
-  <th class="line-num" style="cursor: pointer;">462</th>
-    <td class="line-code ">
-    <pre>        $objUserCtrl = new UserCtrl;
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">459</th>
-  <th class="line-num" style="cursor: pointer;">463</th>
-    <td class="line-code ">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">460</th>
-  <th class="line-num" style="cursor: pointer;"></th>
-    <td class="line-code diff_out">
-    <pre>        $objUserCtrl-&gt;thawUser('Leask');
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">464</th>
-    <td class="line-code diff_in">
-    <pre>        $bolResult = $objUserCtrl-&gt;thawUser('Leask');
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">461</th>
-  <th class="line-num" style="cursor: pointer;">465</th>
-    <td class="line-code ">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">462</th>
-  <th class="line-num" style="cursor: pointer;"></th>
-    <td class="line-code diff_out">
-    <pre>        echo 'User Leask has been thawed!';
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">466</th>
-    <td class="line-code diff_in">
-    <pre>        if ($bolResult) {
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">467</th>
-    <td class="line-code diff_in">
-    <pre>            echo 'User Leask has been thawed!';
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">468</th>
-    <td class="line-code diff_in">
-    <pre>        } else {
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">469</th>
-    <td class="line-code diff_in">
-    <pre>            echo 'Failure!';
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">470</th>
-    <td class="line-code diff_in">
-    <pre>        }
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">463</th>
-  <th class="line-num" style="cursor: pointer;">471</th>
-    <td class="line-code ">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">464</th>
-  <th class="line-num" style="cursor: pointer;">472</th>
-    <td class="line-code ">
-    <pre>        $objUserCtrl = null;
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">465</th>
-  <th class="line-num" style="cursor: pointer;">473</th>
-    <td class="line-code ">
-    <pre>    }
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">466</th>
-  <th class="line-num" style="cursor: pointer;">474</th>
-    <td class="line-code ">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">475</th>
-    <td class="line-code diff_in">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">476</th>
-    <td class="line-code diff_in">
-    <pre>    public function actionCreateCompany()
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">477</th>
-    <td class="line-code diff_in">
-    <pre>    {
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">478</th>
-    <td class="line-code diff_in">
-    <pre>        @$strName          = $_POST['name'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">479</th>
-    <td class="line-code diff_in">
-    <pre>        @$strPermissions   = $_POST['permissions'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">480</th>
-    <td class="line-code diff_in">
-    <pre>        @$strParent        = $_POST['parent'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">481</th>
-    <td class="line-code diff_in">
-    <pre>        @$strType          = $_POST['type'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">482</th>
-    <td class="line-code diff_in">
-    <pre>        @$strBusinessModel = $_POST['businessmodel'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">483</th>
-    <td class="line-code diff_in">
-    <pre>        @$strScale         = $_POST['scale'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">484</th>
-    <td class="line-code diff_in">
-    <pre>        @$strCountry       = $_POST['country'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">485</th>
-    <td class="line-code diff_in">
-    <pre>        @$strProvince      = $_POST['province'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">486</th>
-    <td class="line-code diff_in">
-    <pre>        @$strCity          = $_POST['city'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">487</th>
-    <td class="line-code diff_in">
-    <pre>        @$strAddress       = $_POST['address'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">488</th>
-    <td class="line-code diff_in">
-    <pre>        @$strZip           = $_POST['zip'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">489</th>
-    <td class="line-code diff_in">
-    <pre>        @$strTel           = $_POST['tel'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">490</th>
-    <td class="line-code diff_in">
-    <pre>        @$strMobile        = $_POST['mobile'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">491</th>
-    <td class="line-code diff_in">
-    <pre>        @$strFax           = $_POST['fax'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">492</th>
-    <td class="line-code diff_in">
-    <pre>        @$strEmail         = $_POST['email'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">493</th>
-    <td class="line-code diff_in">
-    <pre>        @$strQq            = $_POST['qq'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">494</th>
-    <td class="line-code diff_in">
-    <pre>        @$strMsn           = $_POST['msn'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">495</th>
-    <td class="line-code diff_in">
-    <pre>        @$strContact       = $_POST['contact'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">496</th>
-    <td class="line-code diff_in">
-    <pre>        @$strMainBusiness  = $_POST['mainbusiness'];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">497</th>
-    <td class="line-code diff_in">
-    <pre>        @$strIndustry      = $_POST[''];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">498</th>
-    <td class="line-code diff_in">
-    <pre>        @$strInterest      = $_POST[''];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">499</th>
-    <td class="line-code diff_in">
-    <pre>        @$strAbout         = $_POST[''];
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">500</th>
-    <td class="line-code diff_in">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">501</th>
-    <td class="line-code diff_in">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">502</th>
-    <td class="line-code diff_in">
-    <pre>        Base::load('library.company.companyctrl');
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">503</th>
-    <td class="line-code diff_in">
-    <pre>        $objCompanyCtrl = new CompanyCtrl;
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">504</th>
-    <td class="line-code diff_in">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">505</th>
-    <td class="line-code diff_in">
-    <pre>        //temp
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">506</th>
-    <td class="line-code diff_in">
-    <pre>        $objCompanyCtrl-&gt;createCompany($strName,
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">507</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strPermissions   = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">508</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strParent        = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">509</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strType          = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">510</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strBusinessModel = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">511</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strScale         = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">512</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strCountry       = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">513</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strProvince      = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">514</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strCity          = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">515</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strAddress       = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">516</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strZip           = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">517</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strTel           = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">518</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strMobile        = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">519</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strFax           = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">520</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strEmail         = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">521</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strQq            = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">522</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strMsn           = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">523</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strContact       = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">524</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strMainBusiness  = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">525</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strIndustry      = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">526</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strInterest      = '',
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">527</th>
-    <td class="line-code diff_in">
-    <pre>                                       $strAbout         = '');
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">528</th>
-    <td class="line-code diff_in">
-    <pre>    }
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">529</th>
-    <td class="line-code diff_in">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">530</th>
-    <td class="line-code diff_in">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">531</th>
-    <td class="line-code diff_in">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">467</th>
-  <th class="line-num" style="cursor: pointer;">532</th>
-    <td class="line-code ">
-    <pre>}
-</pre>
-  </td>
-  </tr>
+
+<tr><th id="L1" class="line-num" style="cursor: pointer;"><a href="#L1">1</a></th><td class="line-code"><pre><span class="idl">&lt;?php</span>
+</pre></td></tr>
+
+
+<tr><th id="L2" class="line-num" style="cursor: pointer;"><a href="#L2">2</a></th><td class="line-code"><pre><span class="c">/**
+</span></pre></td></tr>
+
+
+<tr><th id="L3" class="line-num" style="cursor: pointer;"><a href="#L3">3</a></th><td class="line-code"><pre> * Captchar widget class file
+</pre></td></tr>
+
+
+<tr><th id="L4" class="line-num" style="cursor: pointer;"><a href="#L4">4</a></th><td class="line-code"><pre> */
+</pre></td></tr>
+
+
+<tr><th id="L5" class="line-num" style="cursor: pointer;"><a href="#L5">5</a></th><td class="line-code"><pre></pre></td></tr>
+
+
+<tr><th id="L6" class="line-num" style="cursor: pointer;"><a href="#L6">6</a></th><td class="line-code"><pre><span class="c">/**
+</span></pre></td></tr>
+
+
+<tr><th id="L7" class="line-num" style="cursor: pointer;"><a href="#L7">7</a></th><td class="line-code"><pre> * Captchar as a widget
+</pre></td></tr>
+
+
+<tr><th id="L8" class="line-num" style="cursor: pointer;"><a href="#L8">8</a></th><td class="line-code"><pre> */
+</pre></td></tr>
+
+
+<tr><th id="L9" class="line-num" style="cursor: pointer;"><a href="#L9">9</a></th><td class="line-code"><pre><span class="r">class</span> <span class="cl">WCaptcha</span> <span class="r">extends</span> <span class="co">Widget</span>
+</pre></td></tr>
+
+
+<tr><th id="L10" class="line-num" style="cursor: pointer;"><a href="#L10">10</a></th><td class="line-code"><pre>{
+</pre></td></tr>
+
+
+<tr><th id="L11" class="line-num" style="cursor: pointer;"><a href="#L11">11</a></th><td class="line-code"><pre></pre></td></tr>
+
+
+<tr><th id="L12" class="line-num" style="cursor: pointer;"><a href="#L12">12</a></th><td class="line-code"><pre>    <span class="c">/**
+</span></pre></td></tr>
+
+
+<tr><th id="L13" class="line-num" style="cursor: pointer;"><a href="#L13">13</a></th><td class="line-code"><pre>     * Initialization
+</pre></td></tr>
+
+
+<tr><th id="L14" class="line-num" style="cursor: pointer;"><a href="#L14">14</a></th><td class="line-code"><pre>     */
+</pre></td></tr>
+
+
+<tr><th id="L15" class="line-num" style="cursor: pointer;"><a href="#L15">15</a></th><td class="line-code"><pre>    <span class="r">public</span> <span class="r">function</span> <span class="fu">__construct</span>(<span class="lv">$strCaptchaHash</span> = <span class="pc">null</span>)
+</pre></td></tr>
+
+
+<tr><th id="L16" class="line-num" style="cursor: pointer;"><a href="#L16">16</a></th><td class="line-code"><pre>    {
+</pre></td></tr>
+
+
+<tr><th id="L17" class="line-num" style="cursor: pointer;"><a href="#L17">17</a></th><td class="line-code"><pre>        <span class="pc">parent</span>::__construct();
+</pre></td></tr>
+
+
+<tr><th id="L18" class="line-num" style="cursor: pointer;"><a href="#L18">18</a></th><td class="line-code"><pre>        <span class="co">Base</span>::load(<span class="s"><span class="dl">'</span><span class="k">library.platform.gadget.captcha.captcha</span><span class="dl">'</span></span>);
+</pre></td></tr>
+
+
+<tr><th id="L19" class="line-num" style="cursor: pointer;"><a href="#L19">19</a></th><td class="line-code"><pre>    }
+</pre></td></tr>
+
+
+<tr><th id="L20" class="line-num" style="cursor: pointer;"><a href="#L20">20</a></th><td class="line-code"><pre></pre></td></tr>
+
+
+<tr><th id="L21" class="line-num" style="cursor: pointer;"><a href="#L21">21</a></th><td class="line-code"><pre>    <span class="c">/**
+</span></pre></td></tr>
+
+
+<tr><th id="L22" class="line-num" style="cursor: pointer;"><a href="#L22">22</a></th><td class="line-code"><pre>     * Render the captcha image
+</pre></td></tr>
+
+
+<tr><th id="L23" class="line-num" style="cursor: pointer;"><a href="#L23">23</a></th><td class="line-code"><pre>     */
+</pre></td></tr>
+
+
+<tr><th id="L24" class="line-num" style="cursor: pointer;"><a href="#L24">24</a></th><td class="line-code"><pre>    <span class="r">public</span> <span class="r">function</span> <span class="fu">actionRender</span>()
+</pre></td></tr>
+
+
+<tr><th id="L25" class="line-num" style="cursor: pointer;"><a href="#L25">25</a></th><td class="line-code"><pre>    {
+</pre></td></tr>
+
+
+<tr><th id="L26" class="line-num" style="cursor: pointer;"><a href="#L26">26</a></th><td class="line-code"><pre>        <span class="ex">@</span><span class="lv">$strCaptchaId</span> = <span class="pd">$_REQUEST</span>[<span class="s"><span class="dl">'</span><span class="k">captchaid</span><span class="dl">'</span></span>];
+</pre></td></tr>
+
+
+<tr><th id="L27" class="line-num" style="cursor: pointer;"><a href="#L27">27</a></th><td class="line-code"><pre>        <span class="r">if</span> (<span class="lv">$strCaptchaId</span>) {
+</pre></td></tr>
+
+
+<tr><th id="L28" class="line-num" style="cursor: pointer;"><a href="#L28">28</a></th><td class="line-code"><pre>            <span class="lv">$objCaptcha</span> = <span class="r">new</span> <span class="co">Captcha</span>;
+</pre></td></tr>
+
+
+<tr><th id="L29" class="line-num" style="cursor: pointer;"><a href="#L29">29</a></th><td class="line-code"><pre>            <span class="lv">$objCache</span> = <span class="r">new</span> <span class="co">Mcache</span>();
+</pre></td></tr>
+
+
+<tr><th id="L30" class="line-num" style="cursor: pointer;"><a href="#L30">30</a></th><td class="line-code"><pre></pre></td></tr>
+
+
+<tr><th id="L31" class="line-num" style="cursor: pointer;"><a href="#L31">31</a></th><td class="line-code"><pre>            <span class="lv">$strVerifyCode</span> = <span class="lv">$objCaptcha</span>-&gt;generateVerifyCode();
+</pre></td></tr>
+
+
+<tr><th id="L32" class="line-num" style="cursor: pointer;"><a href="#L32">32</a></th><td class="line-code"><pre></pre></td></tr>
+
+
+<tr><th id="L33" class="line-num" style="cursor: pointer;"><a href="#L33">33</a></th><td class="line-code"><pre>            <span class="lv">$objCache</span>-&gt;set(<span class="lv">$strCaptchaId</span>, <span class="lv">$strVerifyCode</span>, <span class="i">180</span>);
+</pre></td></tr>
+
+
+<tr><th id="L34" class="line-num" style="cursor: pointer;"><a href="#L34">34</a></th><td class="line-code"><pre></pre></td></tr>
+
+
+<tr><th id="L35" class="line-num" style="cursor: pointer;"><a href="#L35">35</a></th><td class="line-code"><pre>            <span class="lv">$objCaptcha</span>-&gt;renderImage(<span class="lv">$strVerifyCode</span>);
+</pre></td></tr>
+
+
+<tr><th id="L36" class="line-num" style="cursor: pointer;"><a href="#L36">36</a></th><td class="line-code"><pre>        } <span class="r">else</span> {
+</pre></td></tr>
+
+
+<tr><th id="L37" class="line-num" style="cursor: pointer;"><a href="#L37">37</a></th><td class="line-code"><pre>            <span class="co">Debug</span>::out(<span class="s"><span class="dl">'</span><span class="k">Wrong parameters!</span><span class="dl">'</span></span>);
+</pre></td></tr>
+
+
+<tr><th id="L38" class="line-num" style="cursor: pointer;"><a href="#L38">38</a></th><td class="line-code"><pre>        }
+</pre></td></tr>
+
+
+<tr><th id="L39" class="line-num" style="cursor: pointer;"><a href="#L39">39</a></th><td class="line-code"><pre>    }
+</pre></td></tr>
+
+
+<tr><th id="L40" class="line-num" style="cursor: pointer;"><a href="#L40">40</a></th><td class="line-code"><pre>}
+</pre></td></tr>
+
+
 </tbody>
 </table>
-
 </div>
-<div class="autoscroll" id="c2">
-<table class="filecontent syntaxhl">
-<thead>
-<tr><th class="filename" colspan="3">b/library/common/object.php</th></tr>
-</thead>
-<tbody>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">80</th>
-  <th class="line-num" style="cursor: pointer;">80</th>
-    <td class="line-code ">
-    <pre>    {
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">81</th>
-  <th class="line-num" style="cursor: pointer;">81</th>
-    <td class="line-code ">
-    <pre>        Base::load('library.validate.' . strtolower(get_class($this)) . 'rule');
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">82</th>
-  <th class="line-num" style="cursor: pointer;">82</th>
-    <td class="line-code ">
-    <pre>    }
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">83</th>
-    <td class="line-code diff_in">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;"></th>
-  <th class="line-num" style="cursor: pointer;">84</th>
-    <td class="line-code diff_in">
-    <pre></pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">83</th>
-  <th class="line-num" style="cursor: pointer;">85</th>
-    <td class="line-code ">
-    <pre>}
-</pre>
-  </td>
-  </tr>
-
-<tr>
-  <th class="line-num" style="cursor: pointer;">84</th>
-  <th class="line-num" style="cursor: pointer;">86</th>
-    <td class="line-code ">
-    <pre></pre>
-  </td>
-  </tr>
-</tbody>
-</table>
-
-</div>
-
-
-
-
-<p class="other-formats">导出
-	<span><a rel="nofollow" class="diff" href="/AnYuan/projects/saas/repository/revisions/a91b663b4aa77cfccca9e507ec3ed16c57957119/diff.diff?rev_to=b049d7c7eff9df8f19ca07bf198c942972853cce">Unified diff</a></span>
-</p>
 
 
 

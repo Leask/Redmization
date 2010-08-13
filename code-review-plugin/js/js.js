@@ -3,6 +3,7 @@ jQuery("document").ready(function(){
     var location_url=location.href;
     var patt=new RegExp("repository");
     var last=patt.test(location_url);
+    var maoHao = false;
     if (last) {
         function show (){
             var classnum=jQuery(".autoscroll");
@@ -13,10 +14,9 @@ jQuery("document").ready(function(){
             url=jQuery("#content").children("h2").text();
             if (url.indexOf(':')>-1) {
                 newUrl=url.substr(url.length-18);
+                maoHao = true;
             } else {
-
                 newUrl = url;
-
             }
             url = newUrl;
             jQuery.post("/projects/redmization/code-review-plugin/show.php", {
@@ -35,12 +35,16 @@ jQuery("document").ready(function(){
                             var content=f[i-1].content;
                             var username=f[i-1].username;
                             content=username+"："+content;
-                            var tr=div1.find("tr:gt(0)");
+                            var tr=div1.find("tr");
                             jQuery.each(tr,function(){
                                 var th=jQuery(this).find("th");
                                 var th1=th.eq(0).text();
                                 var th2=th.eq(1).text();
-                                var total=th1+","+th2;
+                                if (maoHao) {
+                                    var total=th1+","+th2;
+                                } else {
+                                    var total=th1 + th2;
+                                }
                                 if (line==total){
                                     k++;
                                     var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;vertical-align:top;"></td><td style="width:50%;"></td></tr></table>';
@@ -79,9 +83,7 @@ jQuery("document").ready(function(){
                     if (url.indexOf(':')>-1) {
                         newUrl=url.substr(url.length-18);
                     } else {
-
                         newUrl = url;
-
                     }
                     url = newUrl;
                     jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
