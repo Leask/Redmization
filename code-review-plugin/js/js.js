@@ -19,6 +19,7 @@ jQuery("document").ready(function(){
                     newUrl+=jQuery(this).text();
                 });
                 url = newUrl;
+                alert (url);
             }
             jQuery.post("/projects/redmization/code-review-plugin/show.php", {
                 url:url
