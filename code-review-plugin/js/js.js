@@ -3,7 +3,6 @@ jQuery("document").ready(function(){
     var location_url=location.href;
     var patt=new RegExp("repository");
     var last=patt.test(location_url);
-    var newUrl;
     if (last) {
         function show (){
             var classnum=jQuery(".autoscroll");
@@ -15,12 +14,11 @@ jQuery("document").ready(function(){
             if (url.indexOf(':')>-1) {
                 newUrl=url.substr(url.length-18);
             } else {
-                jQuery (url,function(){
-                    newUrl+=jQuery(this).text();
-                });
-                url = newUrl;
-                alert (url);
+
+                newUrl = url;
+
             }
+            url = newUrl;
             jQuery.post("/projects/redmization/code-review-plugin/show.php", {
                 url:url
             }, function(data,textStatus){
@@ -77,16 +75,15 @@ jQuery("document").ready(function(){
                 var username=jQuery("#loggedas").find("a").text();
                 if (content==""){
                 } else {
-                    //   url=jQuery("#content").children("h2").text();
+                    url=jQuery("#content").children("h2").text();
                     if (url.indexOf(':')>-1) {
                         newUrl=url.substr(url.length-18);
                     } else {
-                        jQuery (url,function(){
-                            newUrl+=jQuery(this).text();
-                        });
-                        url = newUrl;
+
+                        newUrl = url;
+
                     }
-                    alert (newUrl);
+                    url = newUrl;
                     jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
                         line:add,
                         primary:primary,
