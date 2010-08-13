@@ -15,7 +15,7 @@ jQuery("document").ready(function(){
             if (url.indexOf(':')>-1) {
                 newUrl=url.substr(url.length-18);
             } else {
-                jQuery (jQuery("#content").children("h2"),function(){
+                jQuery (url,function(){
                     newUrl+=jQuery(this).text();
                 });
                 url = newUrl;
@@ -80,7 +80,7 @@ jQuery("document").ready(function(){
                     if (url.indexOf(':')>-1) {
                         newUrl=url.substr(url.length-18);
                     } else {
-                        jQuery (jQuery("#content").children("h2"),function(){
+                        jQuery (url,function(){
                             newUrl+=jQuery(this).text();
                         });
                         url = newUrl;
