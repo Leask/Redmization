@@ -132,7 +132,8 @@ jQuery("document").ready(function(){
                         primary:ab,
                         content:content,
                         username:username,
-                        title:urll
+                        title:urll,
+                        file:kk
                     },function(data){
                         //alert (data);
                         });
