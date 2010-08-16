@@ -9,15 +9,15 @@ if (isset ($_POST['content'])) {
     $name = $_POST['file'];
 	$content = addslashes($_POST['content']);
     $recevier = array(
-        array("sunxinghua008", "sunxinghua008@gmail.com")
-        //array("xjzc", "xjzc01@gmail.com"),
-        //array("Leask", "leaskh@gmail.com"),
-        //array("lovelywcm", "lovelywcm@gmail.com")
+        array("sunxinghua008", "sunxinghua008@gmail.com"),
+        array("xjzc", "xjzc01@gmail.com"),
+        array("Leask", "leaskh@gmail.com"),
+        array("lovelywcm", "lovelywcm@gmail.com")
     );
     for ($i = 0; $i < count($recevier); $i++) {
-        //if ($recevier[$i][0] != $username) {
+        if ($recevier[$i][0] != $username) {
             $newrecevier[] = $recevier[$i][1];
-        //}
+        }
     }
     $email = new Email(array(
                 'host' => 'smtp.gmail.com',
