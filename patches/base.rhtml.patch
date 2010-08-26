@@ -1,13 +1,12 @@
-Index: base.rhtml
-===================================================================
---- base.rhtml	(revision 3735)
-+++ base.rhtml	(working copy)
-@@ -17,6 +17,8 @@
- <%= call_hook :view_layouts_base_html_head %>
- <!-- page specific tags -->
- <%= yield :header_tags -%>
-+<script src="/redmization/redmine/js/jquery.js"></script>
-+<script src="/redmization/redmine/js/js.js"></script>
- </head>
- <body>
- <div id="wrapper">
+--- base.rhtml.old	2010-08-26 16:58:01.191340311 +0800
++++ base.rhtml.new	2010-08-26 16:50:21.943339884 +0800
+@@ -6,6 +6,9 @@
+ <meta name="description" content="<%= Redmine::Info.app_name %>" />
+ <meta name="keywords" content="issue,bug,tracker" />
+ <%= stylesheet_link_tag 'application', :media => 'all' %>
++<link rel="stylesheet" href="/projects/redmization/code-review-plugin/css/css.css" type="text/css">
++<script src="/projects/redmization/code-review-plugin/js/jquery.js"></script>
++<script src="/projects/redmization/code-review-plugin/js/js.js"></script>
+ <%= javascript_include_tag :defaults %>
+ <%= heads_for_wiki_formatter %>
+ <!--[if IE]>
