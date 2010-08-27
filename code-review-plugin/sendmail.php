@@ -26,7 +26,7 @@ if (isset ($_POST['content'])) {
                 'username' => 'anyuanproject@gmail.com',
                 'password' => 'AnYuan.Project.for.Redmine'
                     ), "anyuanproject@gmail.com");
-    $email->send($newrecevier, "[SaaS]" . "$name" . $filename, '', "<html><body>" . "<br>" . $username . "：" . "<a href=" . $url . ">" . $content . "</a>" . "</body></html>");
+    $email->send($newrecevier, "[SaaS]" .  $filename, '', "<html><body>" . "<br>" . $username . "：" . "<a href=" . $url . ">" . $content . "</a>" . "</body></html>");
 } else {
     echo '<script type="text/javascript">alert ("You do not have access to this document!!!");history.go(-1);</script>';
 }
