@@ -122,7 +122,7 @@ jQuery("document").ready(function(){
 
 
 
-                    var kk=jQuery(".filename").text();
+                    var kk=jQuery(this).parent().parent().prev(".filename").text();
                     var urll=location.pathname;
                     var search=location.search;
                     urll+=search;
