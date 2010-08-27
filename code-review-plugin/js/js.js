@@ -101,6 +101,8 @@ jQuery("document").ready(function(){
                         url:url
                     },function(data,textStatus){
                         if (textStatus=="success"){
+                            content = content.replace('<', '&lt;');
+                            content =  content.replace('>', '&gt;');
                             jQuery(".display").remove();
                             jQuery("#content").val("");
                             if (now.parent().find("td").find("td").eq(1).children().is("div")==true){
@@ -122,7 +124,6 @@ jQuery("document").ready(function(){
 
 
 
-                    var kk=jQuery(this).parent().parent().prev(".filename").text();
                     var urll=location.pathname;
                     var search=location.search;
                     urll+=search;
@@ -133,7 +134,7 @@ jQuery("document").ready(function(){
                         content:content,
                         username:username,
                         title:urll,
-                        file:kk
+                        file:currentUrl
                     },function(data){
                         //alert (data);
                         });
@@ -142,6 +143,7 @@ jQuery("document").ready(function(){
             var line=jQuery(this).text();
             var total=jQuery(this).parent().children('.line-num');
             var now=jQuery(this);
+            var currentUrl = jQuery(this).parent().parent().prev().find(".filename").text();
             var add="";
             var file=jQuery(this).parent().parent().parent().children().eq(1).text();
             var primary=jQuery(this).parent().parent().parent().parent().attr("id");
