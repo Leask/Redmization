@@ -8,6 +8,8 @@ if (isset ($_POST['content'])) {
 	$username = $_POST['username'];
     $name = $_POST['file'];
 	$content = $_POST['content'];
+    $content = str_replace('<', '&lt;', $content);
+    $content = str_replace('>', '&gt;', $content);
     $recevier = array(
         array("sunxinghua008", "sunxinghua008@gmail.com"),
         array("xjzc", "xjzc01@gmail.com"),
