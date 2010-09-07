@@ -13,14 +13,18 @@ jQuery("document").ready(function(){
                 jQuery(this).attr("id","c"+m);
             });
             url=jQuery("#content").children("h2").text();
-            
-            if (url.indexOf(':')>-1) {
-                newUrl=url.substr(url.length-18);
-                maoHao = true;
-            } else {
+            url = url.replace(/(\s)/g,"");
+            if (url.indexOf('@') != -1) {
                 jQuery.each (jQuery("#content").children("h2").children(),function(){
                     newUrl = newUrl + jQuery(this).text();
                 });
+            } else {
+                newUrl=url.substr(2);
+                if (url.indexOf(':') != -1) {
+                    maoHao = true;
+                } else {
+                    maoHao = false;
+                }
             }
             url = newUrl;
             jQuery.post("/projects/redmization/code-review-plugin/show.php", {
@@ -84,13 +88,14 @@ jQuery("document").ready(function(){
                 if (content==""){
                 } else {
                     url=jQuery("#content").children("h2").text();
+                    url = url.replace(/(\s)/g,"");
                     newUrl = '';
-                    if (url.indexOf(':')>-1) {
-                        newUrl=url.substr(url.length-18);
-                    } else {
+                    if (url.indexOf('@') != -1) {
                         jQuery.each (jQuery("#content").children("h2").children(),function(){
                             newUrl = newUrl + jQuery(this).text();
                         });
+                    } else {
+                        newUrl=url.substr(2);
                     }
                     url = newUrl;
                     jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
@@ -101,7 +106,7 @@ jQuery("document").ready(function(){
                         url:url
                     },function(data,textStatus){
                         if (textStatus=="success"){
-                           content = content.replace (/</g,'&lt;');
+                            content = content.replace (/</g,'&lt;');
                             content = content.replace (/>/g,'&gt;')
                             jQuery(".display").remove();
                             jQuery("#content").val("");
