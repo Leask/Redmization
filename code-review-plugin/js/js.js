@@ -20,11 +20,7 @@ jQuery("document").ready(function(){
                 });
             } else {
                 newUrl=url.substr(2);
-                if (url.indexOf(':') != -1) {
                     maoHao = true;
-                } else {
-                    maoHao = false;
-                }
             }
             url = newUrl;
             jQuery.post("/projects/redmization/code-review-plugin/show.php", {
