@@ -19,8 +19,12 @@ jQuery("document").ready(function(){
                     newUrl = newUrl + jQuery(this).text();
                 });
             } else {
-                newUrl=url.substr(2);
-                    maoHao = true;
+				if (url.indexOf('Revision') != -1) {
+					 newUrl=url.substr(2);
+				} else {
+					 newUrl=url.substr(8);
+				}
+                maoHao = true;
             }
             url = newUrl;
             jQuery.post("/projects/redmization/code-review-plugin/show.php", {
@@ -91,7 +95,11 @@ jQuery("document").ready(function(){
                             newUrl = newUrl + jQuery(this).text();
                         });
                     } else {
-                        newUrl=url.substr(2);
+                        if (url.indexOf('Revision') != -1) {
+							newUrl=url.substr(2);
+						} else {
+							newUrl=url.substr(8);
+						}
                     }
                     url = newUrl;
                     jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
