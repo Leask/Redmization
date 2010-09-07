@@ -20,9 +20,9 @@ jQuery("document").ready(function(){
                 });
             } else {
 				if (url.indexOf('Revision') != -1) {
-					 newUrl=url.substr(2);
-				} else {
 					 newUrl=url.substr(8);
+				} else {
+					 newUrl=url.substr(2);
 				}
                 maoHao = true;
             }
@@ -96,9 +96,9 @@ jQuery("document").ready(function(){
                         });
                     } else {
                         if (url.indexOf('Revision') != -1) {
-							newUrl=url.substr(2);
-						} else {
 							newUrl=url.substr(8);
+						} else {
+							newUrl=url.substr(2);
 						}
                     }
                     url = newUrl;
