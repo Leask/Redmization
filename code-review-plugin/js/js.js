@@ -100,6 +100,7 @@ jQuery("document").ready(function(){
 						} else {
 							newUrl=url.substr(2);
 						}
+						 maoHao = true;
                     }
                     url = newUrl;
                     jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
