@@ -17,9 +17,9 @@ if (isset ($_POST['content'])) {
         array("lovelywcm", "lovelywcm@gmail.com")
     );
     for ($i = 0; $i < count($recevier); $i++) {
-        
+        if ($recevier[$i][0] != $username) {
             $newrecevier[] = $recevier[$i][1];
-        
+        }
     }
     $email = new Email(array(
                 'host' => 'smtp.gmail.com',
