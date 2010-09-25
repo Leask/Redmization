@@ -105,7 +105,7 @@ jQuery("document").ready(function(){
 							newUrl=url.substr(2);
 						}
 						 maoHao = true;
-                         urlTitle = newUrl
+                         urlTitle = jQuery(this).parent().parent().parent().parent().children().find("thead").children().text();
                     }
                     ab = urlTitle;
                     url = newUrl;
@@ -163,7 +163,6 @@ jQuery("document").ready(function(){
             var add="";
             var file=jQuery(this).parent().parent().parent().children().eq(1).text();
             var primary=jQuery(this).parent().parent().parent().parent().attr("id");
-            var ab=jQuery(this).parent().parent().parent().parent().children().find("thead").children().text();
             file=file.replace(/(^\s*)/g,"");
             jQuery.each(total, function(m){
                 if (jQuery(total).eq(m).text()==""){
