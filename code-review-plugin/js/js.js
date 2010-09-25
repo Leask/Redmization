@@ -90,9 +90,13 @@ jQuery("document").ready(function(){
                     url=jQuery("#content").children("h2").text();
                     url = url.replace(/(\s)/g,"");
                     newUrl = '';
+                    var newUrlTitle;
+                    var urlTitle = '';
                     if (url.indexOf('@') != -1) {
                         jQuery.each (jQuery("#content").children("h2").children(),function(){
                             newUrl = newUrl + jQuery(this).text();
+                            newUrlTitle = jQuery(this).text() + '/'
+                            urlTitle = urlTitle + newUrlTitle;
                         });
                     } else {
                         if (url.indexOf('Revision') != -1) {
@@ -101,7 +105,9 @@ jQuery("document").ready(function(){
 							newUrl=url.substr(2);
 						}
 						 maoHao = true;
+                         urlTitle = newUrl
                     }
+                    ab = urlTitle;
                     url = newUrl;
                     jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
                         line:add,
