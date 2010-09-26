@@ -98,6 +98,7 @@ jQuery("document").ready(function(){
                             newUrlTitle = jQuery(this).text() + '/'
                             urlTitle = urlTitle + newUrlTitle;
                         });
+						urlTitle = urlTitle.substr(0,urlTitle.length-1);
                     } else {
                         if (url.indexOf('Revision') != -1) {
 							newUrl=url.substr(8);
