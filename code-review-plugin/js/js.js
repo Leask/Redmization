@@ -54,20 +54,6 @@ jQuery("document").ready(function(){
                                 } else {
                                     var total=th1 + th2;
                                 }
-                                if (f[i-1].primary == 'c1') {
-                                    tag = '';
-                                } else {
-                                    tag = f[i-1].primary;
-                                }
-                                if (th1 == '') {
-                                    th.eq(0).attr('id', tag + 'L'+ th1);
-                                    th.eq(0).html('<a href=#'
-                                                 + tag + 'L'+ th1 +'>'+ th1+ '</a>');
-                                } else {
-                                    th.eq(1).attr('id', tag + 'L'+ th1);
-                                    th.eq(1).html('<a href=#'
-                                                 + tag+'L' +th1 +'>'+ th1+ '</a>');
-                                }
                                 if (line==total){
                                     k++;
                                     var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;vertical-align:top;"></td><td style="width:50%;"></td></tr></table>';
