@@ -44,6 +44,7 @@ jQuery("document").ready(function(){
                             var username=f[i-1].username;
                             content=username+"\uff1a"+content;
                             var tr=div1.find("tr");
+                            var tag;
                             jQuery.each(tr,function(){
                                 var th=jQuery(this).find("th");
                                 var th1=th.eq(0).text();
@@ -52,6 +53,20 @@ jQuery("document").ready(function(){
                                     var total=th1+","+th2;
                                 } else {
                                     var total=th1 + th2;
+                                }
+                                if (f[i-1].primary == 'c1') {
+                                    tag = '';
+                                } else {
+                                    tag = f[i-1].primary;
+                                }
+                                if (th1 == '') {
+                                    th.eq(0).attr('id', tag + 'L'+ th1);
+                                    th.eq(0).html('<a href=#'
+                                                 + tag + 'L'+ th1 +'>'+ th1+ '</a>');
+                                } else {
+                                    th.eq(1).attr('id', tag + 'L'+ th1);
+                                    th.eq(1).html('<a href=#'
+                                                 + tag+'L' +th1 +'>'+ th1+ '</a>');
                                 }
                                 if (line==total){
                                     k++;
