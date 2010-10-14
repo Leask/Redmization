@@ -42,6 +42,7 @@ jQuery("document").ready(function(){
                             var line=f[i-1].line;
                             var content=f[i-1].content;
                             var username=f[i-1].username;
+                            var lineNum=f[i-1].lineNum;
                             content=username+"\uff1a"+content;
                             var tr=div1.find("tr");
                             var tag;
@@ -55,6 +56,19 @@ jQuery("document").ready(function(){
                                     var total=th1 + th2;
                                 }
                                 if (line==total){
+                                    if (lineNum) {
+                                        var lineNumMark =lineNum.substr(1);
+                                        if (th.eq(0).id == undefined || th.eq(1).id == undefined) {
+                                            if (th1 == lineNumMark) {
+                                                th.eq(0).attr('id',lineNum );
+                                                th.eq(0).html('<a href=#' + lineNum + '>' + th1+ '</a>');
+                                            }
+                                            if (th2 == lineNum) {
+                                                th.eq(0).attr('id',lineNum );
+                                                th.eq(0).html('<a href=#' + lineNum + '>' + th1+ '</a>');
+                                            }
+                                        }
+                                    }
                                     k++;
                                     var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;vertical-align:top;"></td><td style="width:50%;"></td></tr></table>';
                                     if (th.parent().find("td").children().is("table")==false){
@@ -147,7 +161,7 @@ jQuery("document").ready(function(){
                     var urll=location.pathname;
                     var search=location.search;
                     urll+=search;
-                    urll="http://testing.aysaas.com"+urll;
+                    urll="http://testing.aysaas.com" + urll + '/#' + lineNum;
                     jQuery.post("/projects/redmization/code-review-plugin/sendmail.php",{
                         line:add,
                         primary:ab,
@@ -163,6 +177,13 @@ jQuery("document").ready(function(){
             var line=jQuery(this).text();
             var total=jQuery(this).parent().children('.line-num');
             var now=jQuery(this);
+            var lineNum;
+            var lineId = total.attr('id');
+            if (total.attr('id')) {
+                lineNum = lineId;
+            } else {
+                lineNum = 'L' + total.html();
+            }
             var currentUrl = jQuery(this).parent().parent().prev().find(".filename").text();
             var add="";
             var file=jQuery(this).parent().parent().parent().children().eq(1).text();
