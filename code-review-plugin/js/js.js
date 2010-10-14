@@ -90,7 +90,9 @@ jQuery("document").ready(function(){
                                 }
                             });
                         }
-                         document.location = document.location;
+                        if (document.location.indexOf('#') != -1) {
+                             document.location = document.location;
+                        }
                     }
                 }
             });
