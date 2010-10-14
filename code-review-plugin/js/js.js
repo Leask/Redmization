@@ -127,7 +127,6 @@ jQuery("document").ready(function(){
 						ab = urlTitle;
 					}
                     url = newUrl;
-                    alert(lineNum);
                     jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
                         line:add,
                         primary:primary,
@@ -163,7 +162,6 @@ jQuery("document").ready(function(){
                     var search=location.search;
                     urll+=search;
                     urll="http://testing.aysaas.com" + urll + '#' + lineNum;
-                    alert(urll);
                     jQuery.post("/projects/redmization/code-review-plugin/sendmail.php",{
                         line:add,
                         primary:ab,
