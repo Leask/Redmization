@@ -27,7 +27,7 @@ jQuery("document").ready(function(){
                 maoHao = true;
             }
             url = newUrl;
-            jQuery.post("/projects/redmization/code-review-plugin/show.php", {
+            jQuery.post("projects/redmization/code-review-plugin/show.php", {
                 url:url
             }, function(data,textStatus){
                 if (textStatus=="success"){
@@ -62,9 +62,9 @@ jQuery("document").ready(function(){
                                                 th.eq(0).attr('id',lineNum );
                                                 th.eq(0).html('<a href=#' + lineNum + '>' + th1+ '</a>');
                                             }
-                                            if (th2 == lineNum) {
-                                                th.eq(0).attr('id',lineNum );
-                                                th.eq(0).html('<a href=#' + lineNum + '>' + th1+ '</a>');
+                                            if (th2 == lineNumMark) {
+                                                th.eq(1).attr('id',lineNum );
+                                                th.eq(1).html('<a href=#' + lineNum + '>' + th2+ '</a>');
                                             }
                                         }
                                     }
@@ -127,7 +127,8 @@ jQuery("document").ready(function(){
 						ab = urlTitle;
 					}
                     url = newUrl;
-                    jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
+                    alert(lineNum);
+                    jQuery.post("projects/redmization/code-review-plugin/feedback.php",{
                         line:add,
                         primary:primary,
                         content:content,
@@ -163,13 +164,13 @@ jQuery("document").ready(function(){
                     urll+=search;
                     urll="http://testing.aysaas.com" + urll + '#' + lineNum;
                     alert(urll);
-                    jQuery.post("/projects/redmization/code-review-plugin/sendmail.php",{
+                    jQuery.post("projects/redmization/code-review-plugin/sendmail.php",{
                         line:add,
                         primary:ab,
                         content:content,
                         username:username,
                         title:urll,
-                        file:currentUrl,
+                        file:currentUrl
                     },function(data){
                         //alert (data);
                         });
@@ -182,7 +183,7 @@ jQuery("document").ready(function(){
             if (total.attr('id')) {
                 lineNum = lineId;
             } else {
-                lineNum = 'L' + total.html();
+                lineNum = 'L' + line;
             }
             var now=jQuery(this);
             var currentUrl = jQuery(this).parent().parent().prev().find(".filename").text();
@@ -275,3 +276,6 @@ jQuery("document").ready(function(){
         });
     }
 });
+
+
+///projects/redmization/code-review-plugin/
