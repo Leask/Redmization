@@ -90,7 +90,8 @@ jQuery("document").ready(function(){
                                 }
                             });
                         }
-                        if (document.location.indexOf('#') != -1) {
+                        var currentUrl = location.href;
+                        if (currentUrl.indexOf('#') != -1) {
                              document.location = document.location;
                         }
                     }
