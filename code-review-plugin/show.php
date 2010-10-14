@@ -5,7 +5,8 @@ $sql="select * from feedbackview where url='".$str."'";
 $query=mysql_query($sql);
 $vailable=false;
  while ($row=mysql_fetch_array($query)){
-    $arr[]=array("primary"=>$row["filename"],"url"=>$row["url"],"line"=>$row["line"],"content"=>$row["content"],"username"=>$row["username"]);
+    $arr[]=array("primary"=>$row["filename"],"url"=>$row["url"],"line"=>$row["line"],
+                "content"=>$row["content"],"username"=>$row["username"],"lineNum"=>$row["lineNum"]);
 	$vailable=true;
 }
 if ($vailable==false) {
