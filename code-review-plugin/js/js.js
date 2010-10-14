@@ -27,7 +27,7 @@ jQuery("document").ready(function(){
                 maoHao = true;
             }
             url = newUrl;
-            jQuery.post("projects/redmization/code-review-plugin/show.php", {
+            jQuery.post("/projects/redmization/code-review-plugin/show.php", {
                 url:url
             }, function(data,textStatus){
                 if (textStatus=="success"){
@@ -128,7 +128,7 @@ jQuery("document").ready(function(){
 					}
                     url = newUrl;
                     alert(lineNum);
-                    jQuery.post("projects/redmization/code-review-plugin/feedback.php",{
+                    jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
                         line:add,
                         primary:primary,
                         content:content,
@@ -164,7 +164,7 @@ jQuery("document").ready(function(){
                     urll+=search;
                     urll="http://testing.aysaas.com" + urll + '#' + lineNum;
                     alert(urll);
-                    jQuery.post("projects/redmization/code-review-plugin/sendmail.php",{
+                    jQuery.post("/projects/redmization/code-review-plugin/sendmail.php",{
                         line:add,
                         primary:ab,
                         content:content,
