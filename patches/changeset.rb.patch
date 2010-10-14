@@ -1,0 +1,11 @@
+--- app/models/changeset.rb.old	2010-10-14 10:37:12.382647353 +0800
++++ app/models/changeset.rb.new	2010-10-14 11:07:16.726898716 +0800
+@@ -23,7 +23,7 @@
+   has_many :changes, :dependent => :delete_all
+   has_and_belongs_to_many :issues
+ 
+-  acts_as_event :title => Proc.new {|o| "#{l(:label_revision)} #{o.revision}" + (o.short_comments.blank? ? '' : (': ' + o.short_comments))},
++  acts_as_event :title => Proc.new {|o| o.short_comments.blank? ? '' : o.short_comments},
+                 :description => :long_comments,
+                 :datetime => :committed_on,
+                 :url => Proc.new {|o| {:controller => 'repositories', :action => 'revision', :id => o.repository.project, :rev => o.revision}}
