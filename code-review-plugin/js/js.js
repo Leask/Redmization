@@ -45,7 +45,6 @@ jQuery("document").ready(function(){
                             var lineNum=f[i-1].lineNum;
                             content=username+"\uff1a"+content;
                             var tr=div1.find("tr");
-                            var tag;
                             jQuery.each(tr,function(){
                                 var th=jQuery(this).find("th");
                                 var th1=th.eq(0).text();
@@ -69,6 +68,7 @@ jQuery("document").ready(function(){
                                             }
                                         }
                                     }
+
                                     k++;
                                     var str='<table width="100%" border="0" cellspacing="0" cellpadding="0" id="insert"><tr><td style="width:50%;vertical-align:top;"></td><td style="width:50%;"></td></tr></table>';
                                     if (th.parent().find("td").children().is("table")==false){
@@ -127,11 +127,13 @@ jQuery("document").ready(function(){
 						ab = urlTitle;
 					}
                     url = newUrl;
+                    alert(lineNum);
                     jQuery.post("/projects/redmization/code-review-plugin/feedback.php",{
                         line:add,
                         primary:primary,
                         content:content,
                         username:username,
+                        lineNum : lineNum,
                         url:url
                     },function(data,textStatus){
                         if (textStatus=="success"){
@@ -157,18 +159,18 @@ jQuery("document").ready(function(){
                     //发送邮件
 
 
-
                     var urll=location.pathname;
                     var search=location.search;
                     urll+=search;
                     urll="http://testing.aysaas.com" + urll + '/#' + lineNum;
+                    alert(urll);
                     jQuery.post("/projects/redmization/code-review-plugin/sendmail.php",{
                         line:add,
                         primary:ab,
                         content:content,
                         username:username,
                         title:urll,
-                        file:currentUrl
+                        file:currentUrl,
                     },function(data){
                         //alert (data);
                         });
@@ -176,7 +178,6 @@ jQuery("document").ready(function(){
             }
             var line=jQuery(this).text();
             var total=jQuery(this).parent().children('.line-num');
-            var now=jQuery(this);
             var lineNum;
             var lineId = total.attr('id');
             if (total.attr('id')) {
@@ -184,6 +185,7 @@ jQuery("document").ready(function(){
             } else {
                 lineNum = 'L' + total.html();
             }
+            var now=jQuery(this);
             var currentUrl = jQuery(this).parent().parent().prev().find(".filename").text();
             var add="";
             var file=jQuery(this).parent().parent().parent().children().eq(1).text();
