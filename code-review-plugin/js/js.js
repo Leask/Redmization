@@ -89,8 +89,8 @@ jQuery("document").ready(function(){
                                     kk=false;
                                 }
                             });
-                            document.location = document.location;
                         }
+                         document.location = document.location;
                     }
                 }
             });
