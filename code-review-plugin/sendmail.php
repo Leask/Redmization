@@ -10,11 +10,12 @@ if (isset ($_POST['content'])) {
 	$content = $_POST['content'];
     $content = str_replace('<', '&lt;', $content);
     $content = str_replace('>', '&gt;', $content);
-    $recevier = array(
-        array("sunxinghua008", "sunxinghua008@gmail.com"),
-        array("xjzc", "xjzc01@gmail.com"),
-        array("Leask", "leaskh@gmail.com"),
-        array("lovelywcm", "lovelywcm@gmail.com")
+    $recevier = array(array("sunxinghua008", "sunxinghua008@gmail.com"),
+                      array("xjzc", "xjzc01@gmail.com"),
+                      array("Leask", "leaskh@gmail.com"),
+                      array('lovelywcm', "lovelywcm@gmail.com"),
+                      array('wuhao520', '957554513@qq.com'),
+                      array('pekingBoy', 'hzlhu.dargon@gmail.com'),
     );
     for ($i = 0; $i < count($recevier); $i++) {
         if ($recevier[$i][0] != $username) {
@@ -26,8 +27,9 @@ if (isset ($_POST['content'])) {
                 'port' => '587', // Backup port: 465
                 'auth' => true,
                 'username' => 'anyuanproject@gmail.com',
-                'password' => 'AnYuan.Project.for.Redmine'
-                    ), "anyuanproject@gmail.com");
+                'password' => 'AnYuan.Project.for.Redmine')
+                , "anyuanproject@gmail.com"
+            );
     $email->send($newrecevier, "[SaaS]" .  $filename, '', "<html><body>" . "<br>" . $username . "：" . "<a href=" . $url . ">" . $content . "</a>" . "</body></html>");
 } else {
     echo '<script type="text/javascript">alert ("You do not have access to this document!!!");history.go(-1);</script>';
