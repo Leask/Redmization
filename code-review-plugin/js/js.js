@@ -165,7 +165,7 @@ jQuery("document").ready(function(){
                     var urll=location.pathname;
                     var search=location.search;
                     urll+=search;
-                    urll="http://testing.aysaas.com" + urll + '#' + lineNum;
+                    urll="http://testing" + urll + '#' + lineNum;
                     jQuery.post("/project/redmization/code-review-plugin/sendmail.php",{
                         line:add,
                         primary:ab,
