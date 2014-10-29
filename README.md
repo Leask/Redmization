@@ -1,4 +1,4 @@
 Redmization
 ===========
 
-[ABANDON] A code commenting plugin for Remind.
+[ABANDON] A code review plugin for Remind.

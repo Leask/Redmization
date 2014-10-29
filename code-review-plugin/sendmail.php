@@ -26,9 +26,9 @@ if (isset ($_POST['content'])) {
                 'host' => 'smtp.gmail.com',
                 'port' => '587', // Backup port: 465
                 'auth' => true,
-                'username' => 'anyuanproject@gmail.com',
-                'password' => 'AnYuan.Project.for.Redmine')
-                , "anyuanproject@gmail.com"
+                'username' => '*******',
+                'password' => '*******')
+                , "*******"
             );
     $email->send($newrecevier, "[SaaS]" .  $filename, '', "<html><body>" . "<br>" . $username . "：" . "<a href=" . $url . ">" . $content . "</a>" . "</body></html>");
 } else {
